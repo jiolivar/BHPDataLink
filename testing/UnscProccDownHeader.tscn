@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/ui/fonts/roboto/Roboto_Condensed-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://addons/GodotUITutorial/fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/ui/fonts/roboto/Roboto-Bold.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = ExtResource( 2 )
+
+[node name="Header" type="ColorRect"]
+anchor_right = 1.018
+anchor_bottom = 0.148
+margin_right = -18.432
+margin_bottom = 0.199997
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.001
+anchor_bottom = 1.0
+margin_right = -0.0240479
+margin_bottom = -1.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_top = 20.0
+margin_right = 97.0
+margin_bottom = 68.0
+custom_colors/font_color = Color( 0.933333, 0.458824, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "   BHP"
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+margin_left = 101.0
+margin_right = 366.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+margin_left = 370.0
+margin_top = 33.0
+margin_right = 631.0
+margin_bottom = 55.0
+custom_colors/font_color = Color( 0.933333, 0.458824, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Unscheduled Process Downtime"
+
+[node name="Control2" type="Control" parent="HBoxContainer"]
+margin_left = 635.0
+margin_right = 901.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="HBoxContainer"]
+margin_left = 905.0
+margin_top = 31.0
+margin_right = 1025.0
+margin_bottom = 57.0
+custom_colors/font_color = Color( 0.933333, 0.458824, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "                        "

@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/drag_image.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/drop_zone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/main_screens/question_templates/Elements/dragable_element.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 124.75, 59.75 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="SistemaEagle" instance=ExtResource( 1 )]
+title = "Tiempo medio para reparación"
+question = "Identifica la fórmula correcta para calcular cuánto tarda, en promedio, reparar una falla del equipo."
+
+[node name="Title" parent="Panel" index="0"]
+text = "Tiempo medio para reparación"
+
+[node name="Question" parent="Panel" index="2"]
+text = "Identifica la fórmula correcta para calcular cuánto tarda, en promedio, reparar una falla del equipo."
+
+[node name="Zones" parent="." index="4"]
+margin_top = -1.0
+margin_bottom = 39.0
+
+[node name="DropZone" parent="Zones" index="0" instance=ExtResource( 2 )]
+position = Vector2( 287, 74 )
+id = 1
+
+[node name="CollisionShape2D" parent="Zones/DropZone" index="0"]
+position = Vector2( 2, -2 )
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone" index="1"]
+margin_left = -124.75
+margin_top = -59.75
+margin_right = 124.75
+margin_bottom = 59.75
+custom_styles/panel = SubResource( 2 )
+
+[node name="CorrectElements" parent="." index="5"]
+margin_top = 12.0
+margin_bottom = 52.0
+
+[node name="DragableElement2" parent="CorrectElements" index="0" instance=ExtResource( 3 )]
+position = Vector2( 1.00003, 3 )
+id = 1
+text = "Inactividad / fallas"
+image_scale = 0.27
+
+[node name="DragableElement10" parent="IncorrectElements" index="0" instance=ExtResource( 3 )]
+position = Vector2( 4.00003, 160 )
+id = 2
+text = "Disponible / calendario"
+image_scale = 0.27
+
+[node name="DragableElement11" parent="IncorrectElements" index="1" instance=ExtResource( 3 )]
+position = Vector2( -301, 36 )
+id = 2
+text = "Producción / requerido"
+image_scale = 0.27
+
+[node name="DragableElement12" parent="IncorrectElements" index="2" instance=ExtResource( 3 )]
+position = Vector2( -306, 159 )
+id = 2
+text = "Fallas / calendario"
+image_scale = 0.27
+
+[node name="PopUp" parent="." index="7"]
+text = "¡Efectivamente! Esta métrica permite prever recursos técnicos y tiempos de detención futuros, lo que es clave para una buena planificación del mantenimiento."
+
+[node name="CursorHelp" parent="." index="9" instance=ExtResource( 4 )]
+margin_left = -270.0
+margin_top = 10.0
+margin_right = -209.0
+margin_bottom = 74.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 521.0
+margin_top = 47.0
+margin_right = 561.0
+margin_bottom = 87.0
+
+[editable path="Zones/DropZone"]
+[editable path="CursorHelp"]

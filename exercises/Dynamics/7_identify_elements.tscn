@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/connect_pairs.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/pair_element.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+
+[node name="FatigaSomnolencia" instance=ExtResource( 1 )]
+margin_right = 0.0
+title = "Clasifica los tiempos"
+question = "Cada código TUM pertenece a una categoría específica. Relaciona correctamente los códigos a sus tipos de tiempo"
+
+[node name="Title" parent="Panel" index="0"]
+text = "Clasifica los tiempos"
+
+[node name="TextureRect" type="TextureRect" parent="Panel" index="2"]
+margin_left = 361.0
+margin_top = 150.0
+margin_right = 561.0
+margin_bottom = 270.0
+mouse_filter = 2
+expand = true
+stretch_mode = 5
+
+[node name="HighLite" type="Panel" parent="Panel/TextureRect" index="0"]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="Question" parent="Panel" index="3"]
+margin_top = 77.0
+margin_bottom = -264.0
+text = "Cada código TUM pertenece a una categoría específica. Relaciona correctamente los códigos a sus tipos de tiempo"
+
+[node name="Elements" parent="." index="4"]
+margin_left = -10.0
+margin_top = -56.0
+margin_right = 30.0
+margin_bottom = -16.0
+
+[node name="PairElement" parent="Elements" index="0" instance=ExtResource( 2 )]
+position = Vector2( -289, -10 )
+text = "Operativo (1000)"
+
+[node name="PairElement3" parent="Elements" index="1" instance=ExtResource( 2 )]
+position = Vector2( -303, 113 )
+id = 2
+text = "Sin Operador (4000)"
+
+[node name="PairElement2" parent="Elements" index="2" instance=ExtResource( 2 )]
+position = Vector2( -283, 54 )
+id = 1
+text = "Reserva (2000)"
+
+[node name="PairElement5" parent="Elements" index="3" instance=ExtResource( 2 )]
+position = Vector2( 161, -10 )
+id = 1
+text = "Inactividad programada"
+
+[node name="PairElement9" parent="Elements" index="4" instance=ExtResource( 2 )]
+position = Vector2( 147, 233 )
+id = 2
+text = "Inactividad no programada"
+
+[node name="PairElement6" parent="Elements" index="5" instance=ExtResource( 2 )]
+position = Vector2( 212, 113 )
+text = "Producción"
+
+[node name="PairElement10" parent="Elements" index="6" instance=ExtResource( 2 )]
+position = Vector2( 226, 176 )
+id = 4
+text = "Espera"
+
+[node name="PairElement12" parent="Elements" index="7" instance=ExtResource( 2 )]
+position = Vector2( 166, 54 )
+id = 3
+text = "Inactividad de equipos"
+
+[node name="PairElement4" parent="Elements" index="8" instance=ExtResource( 2 )]
+position = Vector2( -339, 176 )
+id = 3
+text = "Inactividad de Equipos (5000)"
+
+[node name="PairElement7" parent="Elements" index="9" instance=ExtResource( 2 )]
+position = Vector2( -330, 233 )
+id = 4
+text = "Tiempo de Espera (6000)"
+
+[node name="PopUp" parent="." index="5"]
+text = "¡Exacto! Clasificar los tiempos correctamente garantiza que los análisis de desempeño sean precisos y se puedan implementar acciones de mejora en la operación minera."
+
+[node name="CursorHelp" parent="." index="7" instance=ExtResource( 3 )]
+margin_left = -210.0
+margin_top = -39.0
+margin_right = -149.0
+margin_bottom = 25.0
+
+[node name="Panel3" parent="CursorHelp/ClickEffect" index="1"]
+margin_left = 13.0
+margin_top = -5.0
+margin_right = 39.0
+margin_bottom = 3.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 407.0
+margin_top = -24.0
+margin_right = 447.0
+margin_bottom = 16.0
+
+[editable path="CursorHelp"]

@@ -1,0 +1,250 @@
+{
+	"eval1": [
+		{
+			"title": "¿Cuándo se selecciona desde la nube y cuando se debe cargar el archivo?",
+			"question": "En la nube se encuentran los polígonos analizados anteriormente, por lo que en general se usa cuando se busca hacer algún tipo de ajuste en las cargas (Ya no se puede cambiar el diseño). Por otro lado, si quiero analizar un nuevo polígono que todavía no se ha perforado, debo cargarlo.\nRespecto a la afirmación anterior:",
+			"alternatives": [
+				"VERDADERO",
+				"FALSO"
+			],
+			"correct_alternative": 0
+		},
+		{
+			"title": "¿Qué tipo de archivos se admiten?",
+			"alternatives": [
+				"CSV",
+				"PDF",
+				"DXF",
+				"MSR"
+			],
+			"correct_alternative": 2
+		},
+		{
+			"title": "Selecciona un archivo desde la nube.",
+			"trigger": {
+				"element":"/root/Main/VBoxContainer/Control/HBoxContainer/TabContainer/LoadFile/MarginContainer2/Panel/MarginContainer/VBoxContainer/CloudOptionButton/CloudFileOptions",
+				"flag": 0
+			}
+		},
+		{
+			"title": "¿Qué representa el offset y para que se utiliza?",
+			"alternatives": [
+				"Es la inclinación de los pozos en los bordes.",
+				"Es un borde extra al del polígono. Permite ver y analizar qué pasa con la dureza en los bordes.",
+				"Es un área de seguridad para la estimación."
+			],
+			"correct_alternative": 1
+		},
+		{
+			"title": "Presiona “Proyectar Bancos“.",
+			"trigger": {
+				"element": "/root/Main/VBoxContainer/Control/HBoxContainer/TabContainer/PolygonDescription/MarginContainer2/PolygonDescription/ButtonsContainer/ProjectBankButton",
+				"flag": 0
+			}
+		},
+		{
+			"title": "Y ahora baja hasta ver el gráfico.",
+			"trigger": {
+				"element": "/root/Main/VBoxContainer/Control/HBoxContainer/TabContainer/ScrollContainer/SuperiorBankVisualization/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/TabContainer/Pozo/VBoxContainer/Graph",
+				"flag": -1
+			}
+		},
+		{
+			"title": "¿Qué estoy viendo en la primera grafica “Pozo”, ¿qué representa?",
+			"alternatives": [
+				"Es la dureza de cada pozo en función de la litología de la mina.",
+				"Es la dureza de cada pozo en función de los tiempos de perforación.",
+				"La generalización de la influencia de la dureza de cada pozo. Es la extrapolación de la data histórica de perforación de la mina (De los bancos superiores)."
+			],
+			"correct_alternative": 2
+		},
+		{
+			"title": "Presiona el check de “Con signos vitales completos“ para desactivarlo y dejar visible solo los Sin signos vitales.",
+			"trigger": {
+				"element": "/root/Main/VBoxContainer/Control/HBoxContainer/TabContainer/ScrollContainer/SuperiorBankVisualization/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/TabContainer/Pozo/SideVBoxContainer/TypeList/PanelContainer/VBoxContainer/CompleteVitalSigns/HBoxContainer/CompleteVitalCheckBox",
+				"flag": 0
+			}
+		},
+		{
+			"title": "¿Qué significa que tenga 55,17% sin signos vitales?",
+			"question": "El 55,7% de los pozos en la malla no vienen con datos de signos vitales, por lo tanto, la información desplegada es estimada.",
+			"alternatives": [
+				"VERDADERO",
+				"FALSO"
+			],
+			"correct_alternative": 0
+		},
+		{
+			"title": "Si tuviéramos un 100% sin signos vitales:",
+			"alternatives": [
+				"La estimación del modelo no es válida, no tiene ningún dato para estimar.",
+				"Precisamente es en estos casos donde la estimación del modelo es relevante y se realiza con la data histórica de la mina."
+			],
+			"correct_alternative": 1
+		},
+		{
+			"title": "¿Con respecto a que está calculando la dureza? ¿En función de qué?",
+			"alternatives": [
+				"RPM, pulldown, tasa de penetración y torque.",
+				"El modelo de bloques.",
+				"Mediciones en terreno.",
+				"Litología."
+			],
+			"correct_alternative": 0
+		},
+		{
+			"title": "Presiona el check de “Con signos vitales completos“ nuevamenta para volver a activarlo.",
+			"trigger": {
+				"element": "/root/Main/VBoxContainer/Control/HBoxContainer/TabContainer/ScrollContainer/SuperiorBankVisualization/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/TabContainer/Pozo/SideVBoxContainer/TypeList/PanelContainer/VBoxContainer/CompleteVitalSigns/HBoxContainer/CompleteVitalCheckBox",
+				"flag": 0
+			}
+		},
+		{
+			"title": "¿El modelo considera el promedio del pozo de los signos vitales?",
+			"alternatives": [
+				"VERDADERO",
+				"FALSO"
+			],
+			"correct_alternative": 0
+		},
+		{
+			"title": "¿Qué perforadoras tienen mayor participación en el diagrama de dureza?, si no hubiera ninguna perforadora presente, que significa?",
+			"alternatives": [
+				"PO19. El modelo considera perforaciones que están en los alrededores.",
+				"PO23. El modelo considera perforaciones que están en los alrededores.",
+				"Ninguna, no se puede hacer la estimación"
+			],
+			"correct_alternative": 1
+		},
+		{
+			"title": "Baja hasta ver los botónes de exportación.",
+			"trigger": {
+				"element": "/root/Main/VBoxContainer/Control/HBoxContainer/TabContainer/ScrollContainer/SuperiorBankVisualization/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/ExportCVS",
+				"flag": -1
+			}
+		},
+		{
+			"title": "El botón exportar, ¿qué entrega y en que formato?",
+			"alternatives": [
+				"Entrega el dxf con los polígonos generalizados separados por zonas de dureza y un csv con un resumen de los distintos subpolígonos.",
+				"Un PDF con los gráficos",
+				"Un CSV con los tiempos de perforación"
+			],
+			"correct_alternative": 0
+		},
+		{
+			"title": "Sube hasta ver las pestañas de vista.",
+			"trigger": {
+				"element": "/root/Main/VBoxContainer/Control/HBoxContainer/TabContainer/ScrollContainer/SuperiorBankVisualization/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/Tabs",
+				"flag": -1
+			}
+		},
+		{
+			"title": "y cambia a la pestaña “Generalizado“ para revisar la siguiente vista.",
+			"trigger": {
+				"element": "/root/Main/VBoxContainer/Control/HBoxContainer/TabContainer/ScrollContainer/SuperiorBankVisualization/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/Tabs",
+				"flag": 1
+			}
+		},
+		{
+			"title": "¿Para qué sirve la pestaña generalizado? ¿O que representa?",
+			"alternatives": [
+				"Generalización de dos niveles: Si tiene más de 3 pozos iguales se asigna el nivel de dureza predominante en el clúster.\nSi tiene menos de 3 pozos, se mantiene nivel de dureza estimado.",
+				"Es lo mismo que la pestaña “Pozo”, pero sin los bordes de influencia de los pozos.",
+				"Generalización de dos niveles: Si tiene más de 3 pozos iguales se mantiene nivel de dureza estimado.\nSi tiene menos, se asigna el nivel de dureza predominante en el clúster."
+			],
+			"correct_alternative": 2
+		},
+		{
+			"title": "¿Según el modelo estimado, que malla utilizarías?",
+			"question": "Suponiendo que el polígono del banco superior se realizó con una malla 6x7 (Roca dura), la decisión a tomar sería:",
+			"alternatives": [
+				"Reducir malla con respecto a la del banco superior.",
+				"Ampliar malla con respecto a la del banco superior.",
+				"Mantener la malla del banco superior."
+			],
+			"correct_alternative": 0
+		},
+		{
+			"title": "Cambia a la pestaña “3D“ para revisar la siguiente vista.",
+			"trigger": {
+				"element": "/root/Main/VBoxContainer/Control/HBoxContainer/TabContainer/ScrollContainer/SuperiorBankVisualization/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer/VBoxContainer/Tabs",
+				"flag": 2
+			}
+		},
+		{
+			"title": "¿Para qué sirve la pestaña 3D? ¿O que representa?",
+			"alternatives": [
+				"Muestra el avance de los pozos perforados en el polígono que se está analizando y su dureza estimada.",
+				"Muestra los pozos teóricos de la malla.",
+				"Muestra el avance de carguío de los pozos en la malla."
+			],
+			"correct_alternative": 0
+		},
+		{
+			"title": "Al presionar el botón “Estimación banco a diseñar”, ¿qué es lo que hace la lógica?",
+			"alternatives": [
+				"Muestra la información de los bancos superiores.",
+				"Muestra los pozos perforados.",
+				"Estimar el polígono que se va a diseñar, pero que todavía no se perfora."
+			],
+			"correct_alternative": 2
+		},
+		{
+			"title": "Baja hasta ver el botón “Estimación banco a diseñar”.",
+			"trigger": {
+				"element": "/root/Main/VBoxContainer/Control/HBoxContainer/TabContainer/ScrollContainer/SuperiorBankVisualization/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer/PanelContainer/MarginContainer2/PanelContainer/EstimateBankButton",
+				"flag": -1
+			}
+		},
+		{
+			"title": "Presiona el botón “Estimación banco a diseñar”.",
+			"trigger": {
+				"element": "/root/Main/VBoxContainer/Control/HBoxContainer/TabContainer/ScrollContainer/SuperiorBankVisualization/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer/PanelContainer/MarginContainer2/PanelContainer/EstimateBankButton",
+				"flag": 0
+			}
+		},
+		{
+			"title": "Diferencia entre el medido y el estimado:",
+			"question": "Permite contrastar el error de la herramienta, en la medida que tengamos la medición real de los pozos en terreno.",
+			"alternatives": [
+				"VERDADERO",
+				"FALSO"
+			],
+			"correct_alternative": 0
+		},
+		{
+			"title": "En la pestaña medido, ¿Qué significa que aparezca el polígono en blanco?",
+			"alternatives": [
+				"Se perforó y se estimó su dureza.",
+				"Se perforó y se midió empíricamente su dureza.",
+				"No se ha perforado ni estimado su dureza",
+				"No se ha medido empíricamente su dureza"
+			],
+			"correct_alternative": 2
+		},
+		{
+			"title": "Baja hasta ver el botón “Registrar formulario“.",
+			"trigger": {
+				"element": "/root/Main/VBoxContainer/Control/HBoxContainer/TabContainer/ScrollContainer2/BankEstimattion/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer/PanelContainer/MarginContainer2/PanelContainer/RegisterButton",
+				"flag": -1
+			}
+		},
+		{
+			"title": "Presiona el botón “Registrar formulario“.",
+			"trigger": {
+				"element": "/root/Main/VBoxContainer/Control/HBoxContainer/TabContainer/ScrollContainer2/BankEstimattion/MarginContainer2/VBoxContainer/Panel/MarginContainer/VBoxContainer/PanelContainer/MarginContainer2/PanelContainer/RegisterButton",
+				"flag": 0
+			}
+		},
+		{
+			"title": "¿Cuándo se debe llenar el registro de actividad?",
+			"alternatives": [
+				"Cada vez que lo usen, es una cosa de mejora continua.",
+				"Nunca.",
+				"Cuando estimen conveniente dar feedback."
+			],
+			"correct_alternative": 0
+		}
+	]
+}

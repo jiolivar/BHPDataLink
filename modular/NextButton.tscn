@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/ui/fonts/roboto/Roboto_Condensed_Regular_1B.tres" type="DynamicFont" id=1]
+[ext_resource path="res://modular/NextButton.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.8, 0.8, 0.8, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[node name="NextButton" type="Button"]
+unique_name_in_owner = true
+margin_right = 125.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 125, 100 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 2 )
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 80.0
+margin_right = 125.0
+margin_bottom = 93.0
+custom_colors/font_color = Color( 0.32549, 0.556863, 0.796078, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Text"
+align = 1
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+margin_top = 97.0
+margin_right = 125.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 3 )
+
+[node name="Polygon2D1" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+position = Vector2( 61, 37 )
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+polygon = PoolVector2Array( -20, -23, -20, 22, 24, 3 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2( 60, 38 )
+rotation = 3.14159
+color = Color( 0.647059, 0.647059, 0.647059, 1 )
+polygon = PoolVector2Array( -20, -23, -20, 22, 24, 3 )

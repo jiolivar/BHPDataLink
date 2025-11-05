@@ -1,0 +1,461 @@
+[gd_scene load_steps=60 format=2]
+
+[ext_resource path="res://game/assets/ui/fonts/BaseFontVeryHuge.tres" type="DynamicFont" id=1]
+[ext_resource path="res://testing/CodeButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/images/Icons/img9_imresizer.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/Icons/img1_imresizer.png" type="Texture" id=4]
+[ext_resource path="res://exercises/UnshceduledProcessDowntimeSlide.gd" type="Script" id=5]
+[ext_resource path="res://testing/PopupButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/images/Icons/img3_imresizer.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Icons/img7_imresizer.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/Icons/img13_imresizer.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/Icons/img5_imresizer.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/Icons/img18_imresizer.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/Icons/img4_imresizer.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/Icons/img8_imresizer.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/Icons/img19_imresizer.png" type="Texture" id=14]
+[ext_resource path="res://game/assets/ui/theme/panel_style.tres" type="StyleBox" id=17]
+[ext_resource path="res://game/assets/ui/images/bg-02.png" type="Texture" id=18]
+[ext_resource path="res://game/assets/sounds/quiz-game-music.ogg" type="AudioStream" id=19]
+[ext_resource path="res://game/components/overlay/overlay.tscn" type="PackedScene" id=20]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontHuge.tres" type="DynamicFont" id=21]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.811765, 0.296471, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.911765, 0.396471, 0.1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.631373, 0.230588, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.901961, 0.329412, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.811765, 0.296471, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.911765, 0.396471, 0.1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.631373, 0.230588, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.901961, 0.329412, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.811765, 0.296471, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.911765, 0.396471, 0.1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.631373, 0.230588, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.901961, 0.329412, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.875294, 0.642353, 0.18, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.975294, 0.742353, 0.28, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.680784, 0.499608, 0.14, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.972549, 0.713726, 0.2, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.875294, 0.642353, 0.18, 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.975294, 0.742353, 0.28, 1 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.680784, 0.499608, 0.14, 1 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.972549, 0.713726, 0.2, 1 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.875294, 0.642353, 0.18, 1 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.975294, 0.742353, 0.28, 1 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.680784, 0.499608, 0.14, 1 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.972549, 0.713726, 0.2, 1 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.811765, 0.296471, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0.911765, 0.396471, 0.1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0.631373, 0.230588, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0.901961, 0.329412, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0.811765, 0.296471, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=30]
+bg_color = Color( 0.911765, 0.396471, 0.1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=31]
+bg_color = Color( 0.631373, 0.230588, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=32]
+bg_color = Color( 0.901961, 0.329412, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=33]
+bg_color = Color( 0.811765, 0.296471, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=34]
+bg_color = Color( 0.911765, 0.396471, 0.1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=35]
+bg_color = Color( 0.631373, 0.230588, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=36]
+bg_color = Color( 0.901961, 0.329412, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0.811765, 0.296471, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=38]
+bg_color = Color( 0.911765, 0.396471, 0.1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=39]
+bg_color = Color( 0.631373, 0.230588, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=40]
+bg_color = Color( 0.901961, 0.329412, 0, 1 )
+
+[node name="Control" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="BG" type="Control" parent="."]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.866667, 0.34902, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bg-02" type="TextureRect" parent="BG"]
+modulate = Color( 1, 1, 1, 0.372549 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = -300.0
+margin_right = 180.0
+margin_bottom = 780.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 18 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bg-03" type="TextureRect" parent="BG"]
+modulate = Color( 1, 1, 1, 0.372549 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 225.0
+margin_top = 301.0
+margin_right = 630.0
+margin_bottom = 1381.0
+rect_rotation = 180.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 18 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -466.0
+margin_top = -257.0
+margin_right = 466.0
+margin_bottom = 257.0
+mouse_filter = 2
+custom_styles/panel = ExtResource( 17 )
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -391.0
+margin_top = -149.0
+margin_right = 391.0
+margin_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+custom_constants/vseparation = 34
+custom_constants/hseparation = 8
+columns = 5
+
+[node name="Button2" parent="Panel/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 150.0
+margin_bottom = 150.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+texto_popup = "• Estacionar el equipo al final del turno para el relevo (independientemente de si el siguiente operador está presente o no).
+• Incluye la inspección pre-operacional durante la actividad de cambio de turno.
+• Durante este tiempo, los AHTs se ubicarán en los lugares acordados que han sido asignados colaborativamente entre Producción y Control Mina."
+code_text = "2000"
+title_text = "Cambio de turno                                                                                                                                           "
+icon_texture = ExtResource( 9 )
+
+[node name="Button4" parent="Panel/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 158.0
+margin_top = 0.0
+margin_right = 308.0
+margin_bottom = 150.0
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+texto_popup = "• Retorno al trabajo (reinicio de labores).
+• Reforzamiento de seguridad (Safety resets).
+• Estado de la operación / Reunión informativa general (State of the nation), etc.
+• La cuadrilla de cambio de turno que tenga una reunión programada de equipo completo por cualquiera de las razones anteriores."
+code_text = "2040"
+title_text = "Comunicación de Cuadrilla                                                                                                               "
+icon_texture = ExtResource( 12 )
+
+[node name="Button9" parent="Panel/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 316.0
+margin_top = 0.0
+margin_right = 466.0
+margin_bottom = 150.0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+texto_popup = "• El operador del equipo realiza un relevo durante la carga de combustible.
+• Espera prolongada por un camión de servicio para cargar combustible, debido a la baja disponibilidad de dichos camiones.
+• Cuando un camión sufre una falla por falta de combustible, ya sea con un indicador de nivel defectuoso o uno que funcione correctamente.
+• Equipo con bajo nivel de combustible que se encuentra inaccesible debido al clima y debe estacionarse."
+code_text = "2020"
+title_text = "Carga de Combustible                                                                                  "
+icon_texture = ExtResource( 3 )
+
+[node name="Button" parent="Panel/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 474.0
+margin_top = 0.0
+margin_right = 624.0
+margin_bottom = 150.0
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/disabled = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+texto_popup = "• La máquina entra en demora por \"Falta de Operador\" durante el cambio de turno, hasta que haya un operador disponible.
+• El equipo se estaciona para que el operador pueda hacer un \"relevo en caliente\" (hot seat) en otro equipo (incluye equipos auxiliares).
+• El equipo es entregado por Mantenimiento, independientemente de si se dio un aviso de 30 minutos de anticipación a Control o a Operaciones."
+code_text = "4000"
+title_text = "Sin Operador                                                                                                                                      "
+icon_texture = ExtResource( 4 )
+invert_colors = true
+
+[node name="Button3" parent="Panel/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 632.0
+margin_top = 0.0
+margin_right = 782.0
+margin_bottom = 150.0
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/disabled = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
+texto_popup = "• Espera por equipo no programado en el área operacional que está bloqueando una maniobra normal.
+• La dragalina está trabajando en el área activa de la mina o la posición de su pluma no permite el acceso al rajo.
+• Un equipo sufre una falla en la rampa o debajo de una unidad de excavación, bloqueando el acceso al área operacional.
+• La cama baja (float) está bloqueando el circuito mientras se carga un equipo (bulldozer/unidad de excavación)."
+code_text = "4020"
+title_text = "Espera por Equipo                                                                                                                      "
+icon_texture = ExtResource( 7 )
+invert_colors = true
+
+[node name="Button5" parent="Panel/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 184.0
+margin_right = 150.0
+margin_bottom = 334.0
+custom_styles/hover = SubResource( 21 )
+custom_styles/pressed = SubResource( 22 )
+custom_styles/disabled = SubResource( 23 )
+custom_styles/normal = SubResource( 24 )
+texto_popup = "• Camión es ingresado al taller en preparación para un evento climático, antes de la hora de inicio de su mantención programada.
+• Equipo estacionado debido a un evento climático en curso: Lluvia, Tormenta Eléctrica (Rayos) o Niebla.
+• Equipo estacionado por problemas de acceso como resultado de un evento climático.
+• Si el camino de acceso está cerrado para vehículos de emergencia durante condiciones climáticas adversas."
+code_text = "4040"
+title_text = "Demora por Clima                                                                                                                                            "
+icon_texture = ExtResource( 10 )
+invert_colors = true
+
+[node name="Button7" parent="Panel/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 158.0
+margin_top = 184.0
+margin_right = 308.0
+margin_bottom = 334.0
+custom_styles/hover = SubResource( 25 )
+custom_styles/pressed = SubResource( 26 )
+custom_styles/disabled = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
+texto_popup = "• Un LV (Vehículo Liviano) en el área de explotación activa, por lo que el camión debe detenerse. No hay otras unidades de carguío cercanas para reasignación.
+• Instalación o ajustes en el AMA para las torres de iluminación o la señalética del área.
+• Personal de Topografía completando el levantamiento o escaneo del área de excavación."
+code_text = "4070"
+title_text = "Espera por Acceso                                                                                                                                            "
+icon_texture = ExtResource( 8 )
+
+[node name="Button8" parent="Panel/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 316.0
+margin_top = 184.0
+margin_right = 466.0
+margin_bottom = 334.0
+custom_styles/hover = SubResource( 29 )
+custom_styles/pressed = SubResource( 30 )
+custom_styles/disabled = SubResource( 31 )
+custom_styles/normal = SubResource( 32 )
+texto_popup = "• El punto de descarga en uso no está disponible o está cerrado, y no hay otros puntos de descarga disponibles.
+• (Camión) Esperando cargado por un punto de descarga de respaldo/alternativo.
+• Camiones cargados esperando en el punto de descarga, sin poder bascular hasta que un equipo de limpieza se retire del piso debido a requisitos específicos del JSA/JHA. No hay otro punto de descarga disponible."
+code_text = "4080"
+title_text = "Espera en Punto de Descarga (Botadero)                                                                                                                                                                        "
+icon_texture = ExtResource( 13 )
+
+[node name="Button11" parent="Panel/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 474.0
+margin_top = 184.0
+margin_right = 624.0
+margin_bottom = 334.0
+custom_styles/hover = SubResource( 33 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/disabled = SubResource( 35 )
+custom_styles/normal = SubResource( 36 )
+texto_popup = "• Equipo en espera de fluidos (distintos al combustible) tras haber notificado a mantención.
+• Equipo fuera de la faena por reparaciones (incluyendo reparaciones por garantía).
+• Tronadura o evento climático que limita el acceso del personal de mantención al equipo.
+• El equipo sigue presentando problemas después de una mantención.
+• Si un mecánico/supervisor (Fitter/M1) indica que el equipo debe ser estacionado o inspeccionado. (Se debe recategorizar la demora completa a este código).
+• Alerta de seguridad con instrucción de inspeccionar todos los equipos de un tipo específico por el mismo problema."
+code_text = "5000"
+title_text = "Comunicación no Programada con el Operador                                                                        "
+icon_texture = ExtResource( 11 )
+
+[node name="Button10" parent="Panel/GridContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 632.0
+margin_top = 184.0
+margin_right = 782.0
+margin_bottom = 334.0
+custom_styles/hover = SubResource( 37 )
+custom_styles/pressed = SubResource( 38 )
+custom_styles/disabled = SubResource( 39 )
+custom_styles/normal = SubResource( 40 )
+texto_popup = "• Daño al equipo durante la operación (que no sea parte del desgaste normal por uso).
+• Se aplica una vez que ha finalizado una emergencia provocada por el daño.
+• Equipo operado fuera de sus límites de diseño, o un error en el método de operación que provoque un daño."
+code_text = "5010"
+title_text = "Daño                                                                                                                                                               "
+icon_texture = ExtResource( 14 )
+
+[node name="Title" type="Label" parent="Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 0.095
+margin_left = 2.0
+margin_top = 11.0
+margin_right = 2.0
+margin_bottom = 11.17
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Códigos más comunes"
+align = 1
+valign = 1
+
+[node name="Enunc" type="Label" parent="Panel"]
+unique_name_in_owner = true
+anchor_left = -0.061
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 103.682
+margin_top = 68.0
+margin_right = -45.0
+margin_bottom = -447.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 21 )
+text = "Haga click para ver especificaciones de cada codigo"
+align = 1
+autowrap = true
+
+[node name="Popup" parent="." instance=ExtResource( 6 )]
+unique_name_in_owner = true
+visible = false
+
+[node name="Overlay" parent="." instance=ExtResource( 20 )]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -10.0
+autoplay = true

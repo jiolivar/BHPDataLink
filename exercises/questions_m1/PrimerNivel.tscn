@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/connect_pairs.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/pair_element.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/images/img94.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/images/img96.jpg" type="Texture" id=5]
+[ext_resource path="res://assets/images/img98.jpg" type="Texture" id=6]
+
+[node name="18" instance=ExtResource( 1 )]
+title = "Primer nivel"
+question = "Arrastre la información en tiempo real que despliega el dispositivo Eagle para el operador según corresponda el estado de alerta de somnolencia."
+
+[node name="Title" parent="Panel" index="0"]
+text = "Primer nivel"
+
+[node name="TextureRect" type="TextureRect" parent="Panel" index="2"]
+margin_left = 281.0
+margin_top = 155.0
+margin_right = 401.0
+margin_bottom = 255.0
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="Panel" index="3"]
+margin_left = 405.0
+margin_top = 155.0
+margin_right = 525.0
+margin_bottom = 255.0
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect3" type="TextureRect" parent="Panel" index="4"]
+margin_left = 529.0
+margin_top = 155.0
+margin_right = 649.0
+margin_bottom = 255.0
+mouse_filter = 2
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="Question" parent="Panel" index="5"]
+margin_top = 75.0
+margin_bottom = -206.0
+text = "Arrastre la información en tiempo real que despliega el dispositivo Eagle para el operador según corresponda el estado de alerta de somnolencia."
+
+[node name="PairElement" parent="Elements" index="0" instance=ExtResource( 2 )]
+position = Vector2( -248, 45 )
+text = "Somnolencia en un nivel
+de bajo riesgo."
+
+[node name="PairElement2" parent="Elements" index="1" instance=ExtResource( 2 )]
+position = Vector2( -208, 134 )
+id = 1
+text = "Primeros signos de
+somnolencia."
+
+[node name="PairElement3" parent="Elements" index="2" instance=ExtResource( 2 )]
+position = Vector2( -184, 218 )
+id = 2
+text = "Niveles altos de
+somnolencia."
+
+[node name="PairElement5" parent="Elements" index="3" instance=ExtResource( 2 )]
+position = Vector2( 98.0001, 53 )
+id = 1
+text = "JDS: 4.5 - 4.9"
+
+[node name="PairElement6" parent="Elements" index="4" instance=ExtResource( 2 )]
+position = Vector2( 100, 146 )
+id = 2
+text = "JDS >= 5.0"
+
+[node name="PairElement7" parent="Elements" index="5" instance=ExtResource( 2 )]
+position = Vector2( 98, 229 )
+text = "JDS: 0 – 4.4"
+
+[node name="PopUp" parent="." index="5"]
+text = "¡Muy bien! Es muy importante estar atento a la información en tiempo real. Al presentar los primeros signos de somnolencia por favor toma medidas preventivas y consulte la política de gestión de somnolencia de su empresa."
+
+[node name="CursorHelp" parent="." index="7" instance=ExtResource( 3 )]
+margin_left = -62.9999
+margin_top = 43.0
+margin_right = -1.99994
+margin_bottom = 107.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 143.0
+margin_top = -2.0
+margin_right = 183.0
+margin_bottom = 38.0
+
+[editable path="CursorHelp"]

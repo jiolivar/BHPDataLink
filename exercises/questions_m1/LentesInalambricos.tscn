@@ -1,0 +1,311 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/Elements/dragable_element.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/drag_image.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/main_screens/question_templates/Elements/drop_zone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/images/glasses2.png" type="Texture" id=4]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=14]
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 212.587, 174.5 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+
+[sub_resource type="RectangleShape2D" id=9]
+resource_local_to_scene = true
+extents = Vector2( 111.5, 25.5 )
+
+[sub_resource type="Shader" id=17]
+code = "shader_type canvas_item;
+uniform float width = 2.0;
+uniform vec4 color: hint_color;
+
+void vertex() {
+	VERTEX += (UV * 2.0 - 1.0) * width;
+}
+
+void fragment(){
+	vec2 uv = UV;
+    vec4 col;
+	
+	vec2 texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(width * 2.0));
+	uv = (uv - texture_pixel_size * width) * TEXTURE_PIXEL_SIZE / texture_pixel_size;
+	if (uv != clamp(uv, vec2(0.0), vec2(1.0))) {
+		COLOR.a = 0.0;
+	} else {
+		col = texture(TEXTURE, uv);
+	}
+	
+	
+    vec2 ps = TEXTURE_PIXEL_SIZE * width; // multiply only once instead of eight times.
+    float a;
+    float maxa = col.a;
+    float mina = col.a;
+
+    // Use 8-way kernel for smoothness
+    //------------------//
+    //    X   X   X     //
+    //      \\ | /       //
+    //    X - O - X     //
+    //      / | \\       //
+    //    X   X   X     //
+    //------------------//
+
+    for(float y = -1.0; y <= 1.0; y++) {
+        for(float x = -1.0; x <= 1.0; x++) {
+            if(vec2(x,y) == vec2(0.0)) {
+                continue; // ignore the center of kernel
+            }
+
+            a = texture(TEXTURE, UV + vec2(x,y)*ps).a;
+            maxa = max(a, maxa); 
+            mina = min(a, mina);
+        }
+    }
+
+    // Fill transparent pixels only, don't overlap texture
+    if(col.a == 0.0) {
+        COLOR = mix(col, color, maxa-mina);
+    } else {
+        // Note on old code: if the last mix value is always 0, why even use it?
+        COLOR = col;
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+resource_local_to_scene = true
+shader = SubResource( 17 )
+shader_param/width = 2.0
+shader_param/color = null
+
+[sub_resource type="RectangleShape2D" id=10]
+resource_local_to_scene = true
+extents = Vector2( 181.5, 22 )
+
+[sub_resource type="RectangleShape2D" id=11]
+resource_local_to_scene = true
+extents = Vector2( 139.5, 25.5 )
+
+[sub_resource type="RectangleShape2D" id=14]
+resource_local_to_scene = true
+extents = Vector2( 166.5, 25.5 )
+
+[sub_resource type="RectangleShape2D" id=13]
+resource_local_to_scene = true
+extents = Vector2( 134.5, 25.5 )
+
+[node name="EPP" instance=ExtResource( 2 )]
+margin_left = 42.292
+margin_right = -32.0566
+title = "Lentes inalámbricos"
+question = "Los lentes inalámbricos capturan información 500 veces por segundo. Arrastre a la zona las otras características correspondientes a los lentes."
+
+[node name="Panel" parent="." index="1"]
+margin_left = -428.826
+margin_right = 503.174
+
+[node name="Title" parent="Panel" index="0"]
+text = "Lentes inalámbricos"
+
+[node name="Question" parent="Panel" index="2"]
+text = "Los lentes inalámbricos capturan información 500 veces por segundo. Arrastre a la zona las otras características correspondientes a los lentes."
+
+[node name="Zones" parent="." index="4"]
+unique_name_in_owner = true
+margin_left = 142.0
+margin_top = 224.0
+margin_right = 182.0
+margin_bottom = 264.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zones" index="0"]
+position = Vector2( 96.5872, -158.5 )
+shape = SubResource( 12 )
+
+[node name="DropZone" parent="Zones/CollisionShape2D" index="0" instance=ExtResource( 3 )]
+position = Vector2( 1.5871, 29.5 )
+
+[node name="DropZone2" parent="Zones/CollisionShape2D" index="1" instance=ExtResource( 3 )]
+position = Vector2( 1.5871, 82.5 )
+id = 1
+
+[node name="DropZone3" parent="Zones/CollisionShape2D" index="2" instance=ExtResource( 3 )]
+position = Vector2( 1.5871, 138.5 )
+id = 2
+
+[node name="TextureRect" type="TextureRect" parent="Zones/CollisionShape2D" index="3"]
+margin_left = -138.413
+margin_top = -159.5
+margin_right = 147.587
+margin_bottom = -21.5
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="HighLite" type="Panel" parent="Zones/CollisionShape2D/TextureRect" index="0"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 16 )
+
+[node name="DragableElement2" parent="CorrectElements" index="0" instance=ExtResource( 1 )]
+position = Vector2( -266.826, 10 )
+text = "Emisiones LED infrarroja"
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement2" index="0"]
+shape = SubResource( 9 )
+
+[node name="Label" parent="CorrectElements/DragableElement2" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -91.5
+margin_top = -15.5
+margin_right = 91.5
+margin_bottom = 15.5
+text = "Emisiones LED infrarroja"
+
+[node name="Icon" parent="CorrectElements/DragableElement2" index="2"]
+material = SubResource( 8 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement2" index="6"]
+margin_left = -111.5
+margin_top = -25.5
+margin_right = 111.5
+margin_bottom = 25.5
+
+[node name="DragableElement3" parent="CorrectElements" index="1" instance=ExtResource( 1 )]
+position = Vector2( -153.826, -60 )
+id = 1
+text = "Bluetooth 2.1 de bajo consumo energético"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement3" index="0"]
+shape = SubResource( 10 )
+
+[node name="Label" parent="CorrectElements/DragableElement3" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -161.5
+margin_top = -12.0
+margin_right = 161.5
+margin_bottom = 12.0
+text = "Bluetooth 2.1 de bajo consumo energético"
+
+[node name="Icon" parent="CorrectElements/DragableElement3" index="2"]
+material = SubResource( 8 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement3" index="6"]
+margin_left = -181.5
+margin_top = -22.0
+margin_right = 181.5
+margin_bottom = 22.0
+
+[node name="DragableElement4" parent="CorrectElements" index="2" instance=ExtResource( 1 )]
+position = Vector2( -156.826, 228 )
+id = 2
+text = "Capacidad de batería de 25 hrs"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement4" index="0"]
+shape = SubResource( 11 )
+
+[node name="Label" parent="CorrectElements/DragableElement4" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -119.5
+margin_top = -15.5
+margin_right = 119.5
+margin_bottom = 15.5
+text = "Capacidad de batería de 25 hrs"
+
+[node name="Icon" parent="CorrectElements/DragableElement4" index="2"]
+material = SubResource( 8 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement4" index="6"]
+margin_left = -139.5
+margin_top = -25.5
+margin_right = 139.5
+margin_bottom = 25.5
+
+[node name="DragableElement5" parent="IncorrectElements" index="0" instance=ExtResource( 1 )]
+position = Vector2( -218.826, 155 )
+id = 3
+text = "Requiere conexión cableada constante"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="IncorrectElements/DragableElement5" index="0"]
+shape = SubResource( 14 )
+
+[node name="Label" parent="IncorrectElements/DragableElement5" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -146.5
+margin_top = -15.5
+margin_right = 146.5
+margin_bottom = 15.5
+text = "Requiere conexión cableada constante"
+
+[node name="Icon" parent="IncorrectElements/DragableElement5" index="2"]
+material = SubResource( 8 )
+
+[node name="HighLite" parent="IncorrectElements/DragableElement5" index="6"]
+margin_left = -166.5
+margin_top = -25.5
+margin_right = 166.5
+margin_bottom = 25.5
+
+[node name="DragableElement6" parent="IncorrectElements" index="1" instance=ExtResource( 1 )]
+position = Vector2( -156.826, 82 )
+id = 4
+text = "Capacidad de batería de 3 hrs"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="IncorrectElements/DragableElement6" index="0"]
+shape = SubResource( 13 )
+
+[node name="Label" parent="IncorrectElements/DragableElement6" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -114.5
+margin_top = -15.5
+margin_right = 114.5
+margin_bottom = 15.5
+text = "Capacidad de batería de 3 hrs"
+
+[node name="Icon" parent="IncorrectElements/DragableElement6" index="2"]
+material = SubResource( 8 )
+
+[node name="HighLite" parent="IncorrectElements/DragableElement6" index="6"]
+margin_left = -134.5
+margin_top = -25.5
+margin_right = 134.5
+margin_bottom = 25.5
+
+[node name="PopUp" parent="." index="7"]
+text = "¡Muy bien! Los lentes cumplen con características reconocidas por el Instituto Nacional de Medición de Australia, Nueva Zelanda y las Normas Internacionales para un uso seguro."
+
+[node name="CursorHelp" parent="." index="9" instance=ExtResource( 14 )]
+margin_left = -74.8257
+margin_top = 61.0
+margin_right = -13.8257
+margin_bottom = 125.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 187.0
+margin_top = 64.0
+margin_right = 227.0
+margin_bottom = 104.0
+
+[editable path="CorrectElements/DragableElement2"]
+[editable path="CorrectElements/DragableElement3"]
+[editable path="CorrectElements/DragableElement4"]
+[editable path="IncorrectElements/DragableElement5"]
+[editable path="IncorrectElements/DragableElement6"]
+[editable path="CursorHelp"]

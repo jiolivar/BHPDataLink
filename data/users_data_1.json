@@ -1,0 +1,62 @@
+[
+  {
+    "user_name": "Javier López",
+    "id": "20004",
+    "punctuation": 5.5,
+    "total_high_risk": 2,
+    "total_med_risk": 0,
+    "vehicle": "CE1510",
+    "place": "Spence",
+    "self_management": false,
+    "user_state": 3,
+    "graph_index": 6
+  },
+  {
+    "user_name": "Laura González",
+    "id": "20001",
+    "punctuation": 4.9,
+    "total_high_risk": 0,
+    "total_med_risk": 9,
+    "vehicle": "CEX01",
+    "place": "Spence",
+    "self_management": false,
+    "user_state": 3,
+    "graph_index": 4
+  },
+  {
+    "user_name": "María Sánchez",
+    "id": "20005",
+    "punctuation": 4.8,
+    "total_high_risk": 0,
+    "total_med_risk": 1,
+    "vehicle": "CEX04",
+    "place": "Spence",
+    "self_management": false,
+    "user_state": 3,
+    "graph_index": 7
+  },
+  {
+    "user_name": "Carlos Muñoz",
+    "id": "20002",
+    "punctuation": 0.0,
+    "total_high_risk": 0,
+    "total_med_risk": 0,
+    "vehicle": "CEX02",
+    "place": "Spence",
+    "self_management": false,
+    "user_state": 3,
+    "graph_index": 5
+  },
+  {
+    "user_name": "Ana Torres",
+    "id": "20003",
+    "punctuation": 3.8,
+    "total_high_risk": 0,
+    "total_med_risk": 0,
+    "vehicle": "CE0001",
+    "place": "Spence",
+    "self_management": false,
+    "user_state": 3,
+    "graph_index": 3
+  }
+]

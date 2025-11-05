@@ -1,0 +1,161 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/ui/fonts/roboto/Roboto_Condensed_Regular_3.tres" type="DynamicFont" id=1]
+[ext_resource path="res://modular/RiskSummaryRow.gd" type="Script" id=2]
+
+[node name="RiskSummaryRow" type="HBoxContainer"]
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 45 )
+size_flags_horizontal = 3
+script = ExtResource( 2 )
+
+[node name="Panel" type="Control" parent="."]
+margin_right = 122.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="UserName" type="LinkButton" parent="Panel/CenterContainer"]
+unique_name_in_owner = true
+margin_left = 33.0
+margin_top = 13.0
+margin_right = 88.0
+margin_bottom = 31.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.333333, 0.372549, 0.921569, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Operador"
+
+[node name="Panel2" type="Control" parent="."]
+margin_left = 126.0
+margin_right = 249.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="Place" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Sitio"
+align = 1
+valign = 1
+
+[node name="Panel3" type="Control" parent="."]
+margin_left = 253.0
+margin_right = 340.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+
+[node name="Shift" type="Label" parent="Panel3"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Turno"
+align = 1
+valign = 1
+
+[node name="Panel4" type="Control" parent="."]
+margin_left = 344.0
+margin_right = 466.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="Id" type="Label" parent="Panel4"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Identificador"
+align = 1
+valign = 1
+
+[node name="Panel5" type="Control" parent="."]
+margin_left = 470.0
+margin_right = 593.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="TotalRisk" type="Label" parent="Panel5"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Cuenta de alerta <<"
+align = 1
+valign = 1
+
+[node name="Panel6" type="Control" parent="."]
+margin_left = 597.0
+margin_right = 720.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="TotalHighRisk" type="Label" parent="Panel6"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Riesgo alto (RA)"
+align = 1
+valign = 1
+
+[node name="Panel7" type="Control" parent="."]
+margin_left = 724.0
+margin_right = 847.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+
+[node name="TotalMedRisk" type="Label" parent="Panel7"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Riesgo medio (RM)"
+align = 1
+valign = 1
+
+[node name="Panel8" type="Control" parent="."]
+margin_left = 851.0
+margin_right = 1024.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.4
+
+[node name="EventTime" type="Label" parent="Panel8"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Ultimo evento"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Panel/CenterContainer/UserName" to="." method="_on_UserName_pressed"]

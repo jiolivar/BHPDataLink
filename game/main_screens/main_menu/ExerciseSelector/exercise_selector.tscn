@@ -1,0 +1,363 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://game/assets/ui/theme/button_normal.tres" type="StyleBox" id=1]
+[ext_resource path="res://game/assets/ui/theme/button_pressed.tres" type="StyleBox" id=2]
+[ext_resource path="res://game/assets/ui/theme/button_hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://game/assets/ui/theme/panel_style.tres" type="StyleBox" id=4]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontVeryHuge.tres" type="DynamicFont" id=5]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontBig.tres" type="DynamicFont" id=6]
+[ext_resource path="res://game/main_screens/main_menu/ExerciseSelector/exercise_selector.gd" type="Script" id=7]
+[ext_resource path="res://game/assets/ui/images/bg-02.png" type="Texture" id=8]
+[ext_resource path="res://game/components/overlay/overlay.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/main_screens/main_menu/ExerciseSelector/ExerciseButton.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/assets/sounds/button.ogg" type="AudioStream" id=12]
+[ext_resource path="res://game/assets/ui/icons/star.png" type="Texture" id=13]
+
+[node name="ExerciseSelector" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 7 )
+
+[node name="BG" type="Control" parent="."]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.866667, 0.34902, 0, 1 )
+
+[node name="Bg-02" type="TextureRect" parent="BG"]
+modulate = Color( 1, 1, 1, 0.372549 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = -300.0
+margin_right = 180.0
+margin_bottom = 780.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Bg-03" type="TextureRect" parent="BG"]
+modulate = Color( 1, 1, 1, 0.372549 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 225.0
+margin_top = 301.0
+margin_right = 630.0
+margin_bottom = 1381.0
+rect_rotation = 180.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="TitleAndMenu" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="TitleAndMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -450.0
+margin_top = -250.0
+margin_right = 450.0
+margin_bottom = 250.0
+mouse_filter = 2
+size_flags_horizontal = 7
+custom_constants/separation = 10
+
+[node name="Panel" type="Panel" parent="TitleAndMenu/VBox"]
+margin_right = 900.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 170, 150 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 4 )
+
+[node name="Margin" type="MarginContainer" parent="TitleAndMenu/VBox/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="TitleAndMenu/VBox/Panel/Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 880.0
+margin_bottom = 480.0
+mouse_filter = 2
+custom_constants/separation = 10
+
+[node name="Title" type="Label" parent="TitleAndMenu/VBox/Panel/Margin/VBox"]
+margin_right = 860.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 5 )
+text = "Training Games"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="TitleAndMenu/VBox/Panel/Margin/VBox"]
+margin_top = 42.0
+margin_right = 860.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 0, 10 )
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TitleAndMenu/VBox/Panel/Margin/VBox"]
+margin_left = 3.0
+margin_top = 62.0
+margin_right = 856.0
+margin_bottom = 410.0
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="MarginContainer" type="MarginContainer" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer"]
+margin_right = 853.0
+margin_bottom = 348.0
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+custom_constants/margin_top = 14
+
+[node name="GridContainer" type="GridContainer" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer"]
+margin_top = 14.0
+margin_right = 853.0
+margin_bottom = 348.0
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+custom_constants/vseparation = 20
+custom_constants/hseparation = 8
+columns = 7
+
+[node name="ExerciseButton" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+
+[node name="ExerciseButton2" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 123.0
+margin_right = 238.0
+
+[node name="ExerciseButton3" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 246.0
+margin_right = 361.0
+
+[node name="ExerciseButton4" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 369.0
+margin_right = 484.0
+
+[node name="ExerciseButton5" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 492.0
+margin_right = 607.0
+
+[node name="ExerciseButton6" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 615.0
+margin_right = 730.0
+
+[node name="ExerciseButton7" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 738.0
+margin_right = 853.0
+
+[node name="ExerciseButton8" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_top = 80.0
+margin_bottom = 140.0
+
+[node name="ExerciseButton9" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 123.0
+margin_top = 80.0
+margin_right = 238.0
+margin_bottom = 140.0
+
+[node name="ExerciseButton10" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 246.0
+margin_top = 80.0
+margin_right = 361.0
+margin_bottom = 140.0
+
+[node name="ExerciseButton11" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 369.0
+margin_top = 80.0
+margin_right = 484.0
+margin_bottom = 140.0
+
+[node name="ExerciseButton12" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 492.0
+margin_top = 80.0
+margin_right = 607.0
+margin_bottom = 140.0
+
+[node name="ExerciseButton13" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 615.0
+margin_top = 80.0
+margin_right = 730.0
+margin_bottom = 140.0
+
+[node name="ExerciseButton14" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 738.0
+margin_top = 80.0
+margin_right = 853.0
+margin_bottom = 140.0
+
+[node name="ExerciseButton15" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_top = 160.0
+margin_bottom = 220.0
+
+[node name="ExerciseButton16" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 123.0
+margin_top = 160.0
+margin_right = 238.0
+margin_bottom = 220.0
+
+[node name="ExerciseButton17" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 246.0
+margin_top = 160.0
+margin_right = 361.0
+margin_bottom = 220.0
+
+[node name="ExerciseButton18" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 369.0
+margin_top = 160.0
+margin_right = 484.0
+margin_bottom = 220.0
+
+[node name="ExerciseButton19" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 492.0
+margin_top = 160.0
+margin_right = 607.0
+margin_bottom = 220.0
+
+[node name="ExerciseButton20" parent="TitleAndMenu/VBox/Panel/Margin/VBox/ScrollContainer/MarginContainer/GridContainer" instance=ExtResource( 11 )]
+margin_left = 615.0
+margin_top = 160.0
+margin_right = 730.0
+margin_bottom = 220.0
+
+[node name="Control2" type="Control" parent="TitleAndMenu/VBox/Panel/Margin/VBox"]
+margin_top = 420.0
+margin_right = 860.0
+margin_bottom = 460.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 7
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TitleAndMenu/VBox/Panel/Margin/VBox/Control2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Control" type="Control" parent="TitleAndMenu/VBox/Panel/Margin/VBox/Control2/HBoxContainer"]
+margin_right = 332.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="Return" type="Button" parent="TitleAndMenu/VBox/Panel/Margin/VBox/Control2/HBoxContainer"]
+margin_left = 362.0
+margin_right = 497.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 135, 30 )
+focus_mode = 0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 6 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 1 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Volver al Inicio"
+
+[node name="Control2" type="HBoxContainer" parent="TitleAndMenu/VBox/Panel/Margin/VBox/Control2/HBoxContainer"]
+margin_left = 527.0
+margin_right = 860.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="StartsNum" type="Label" parent="TitleAndMenu/VBox/Panel/Margin/VBox/Control2/HBoxContainer/Control2"]
+unique_name_in_owner = true
+margin_left = 252.0
+margin_right = 297.0
+margin_bottom = 40.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 6 )
+text = "22/45"
+align = 1
+valign = 1
+
+[node name="StarIcon" type="TextureRect" parent="TitleAndMenu/VBox/Panel/Margin/VBox/Control2/HBoxContainer/Control2"]
+unique_name_in_owner = true
+margin_left = 301.0
+margin_right = 333.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 32, 32 )
+rect_pivot_offset = Vector2( 45, 65 )
+mouse_filter = 2
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 5
+
+[node name="Start" type="Button" parent="TitleAndMenu/VBox/Panel/Margin/VBox/Control2/HBoxContainer"]
+visible = false
+margin_left = 395.0
+margin_right = 530.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 135, 30 )
+size_flags_horizontal = 4
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 6 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 1 )
+shortcut_in_tooltip = false
+text = "Comenzar"
+
+[node name="Enaex" type="TextureRect" parent="TitleAndMenu"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -137.0
+margin_top = -254.5
+margin_right = 131.0
+margin_bottom = -9.5
+expand = true
+stretch_mode = 6
+
+[node name="Overlay" parent="." instance=ExtResource( 10 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 12 )
+
+[connection signal="pressed" from="TitleAndMenu/VBox/Panel/Margin/VBox/Control2/HBoxContainer/Return" to="." method="_on_Return_pressed"]
+[connection signal="pressed" from="TitleAndMenu/VBox/Panel/Margin/VBox/Control2/HBoxContainer/Start" to="." method="_on_Start_pressed"]

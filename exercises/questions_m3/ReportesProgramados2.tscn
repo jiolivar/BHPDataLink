@@ -1,0 +1,290 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/drag_image.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/drop_zone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/main_screens/question_templates/Elements/dragable_element.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/images/eagle1.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/glasses2.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/arrow.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/seq1.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/seq2.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/seq4.png" type="Texture" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 68, 60 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=6]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="SistemaEagle" instance=ExtResource( 1 )]
+title = "Reportes Programados"
+question = "Optalert elabora y envía una serie de informes para facilitar la gestión de la fatiga en su organización. Arrastre las imágenes ordenando la transmisión de datos desde su origen hasta su destino"
+
+[node name="Title" parent="Panel" index="0"]
+text = "Reportes Programados"
+
+[node name="Question" parent="Panel" index="1"]
+text = "Optalert elabora y envía una serie de informes para facilitar la gestión de la fatiga en su organización. Arrastre las imágenes ordenando la transmisión de datos desde su origen hasta su destino"
+
+[node name="DropZone" parent="Zones" index="0" instance=ExtResource( 2 )]
+position = Vector2( -272, 137 )
+id = 1
+
+[node name="CollisionShape2D" parent="Zones/DropZone" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone" index="1"]
+margin_left = -68.0
+margin_top = -60.0
+margin_right = 68.0
+margin_bottom = 60.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="Label" parent="Zones/DropZone/HighLite" index="0"]
+margin_left = -85.0
+margin_right = 85.0
+margin_bottom = 34.0
+
+[node name="DropZone16" parent="Zones" index="1" instance=ExtResource( 2 )]
+position = Vector2( -81, 140 )
+id = 2
+
+[node name="CollisionShape2D" parent="Zones/DropZone16" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone16" index="1"]
+margin_left = -68.0
+margin_top = -60.0
+margin_right = 68.0
+margin_bottom = 60.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="Label" parent="Zones/DropZone16/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+
+[node name="DropZone17" parent="Zones" index="2" instance=ExtResource( 2 )]
+position = Vector2( 109, 141 )
+id = 3
+
+[node name="CollisionShape2D" parent="Zones/DropZone17" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone17" index="1"]
+margin_left = -68.0
+margin_top = -60.0
+margin_right = 68.0
+margin_bottom = 60.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="Label" parent="Zones/DropZone17/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+
+[node name="DropZone18" parent="Zones" index="3" instance=ExtResource( 2 )]
+position = Vector2( 320, 63 )
+id = 4
+
+[node name="CollisionShape2D" parent="Zones/DropZone18" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone18" index="1"]
+margin_left = -68.0
+margin_top = -60.0
+margin_right = 68.0
+margin_bottom = 60.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="Label" parent="Zones/DropZone18/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+
+[node name="DropZone19" parent="Zones" index="4" instance=ExtResource( 2 )]
+position = Vector2( 319, 205 )
+id = 4
+
+[node name="CollisionShape2D" parent="Zones/DropZone19" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone19" index="1"]
+margin_left = -68.0
+margin_top = -60.0
+margin_right = 68.0
+margin_bottom = 60.0
+custom_styles/panel = SubResource( 6 )
+
+[node name="Label" parent="Zones/DropZone19/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+
+[node name="TextureRect" type="TextureRect" parent="Zones" index="5"]
+modulate = Color( 0.227451, 0.878431, 1, 1 )
+margin_left = -196.0
+margin_top = 107.0
+margin_right = -156.0
+margin_bottom = 149.0
+rect_scale = Vector2( 1, 1.5 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="Zones" index="6"]
+modulate = Color( 0.227451, 0.878431, 1, 1 )
+margin_left = -3.99997
+margin_top = 111.0
+margin_right = 36.0
+margin_bottom = 153.0
+rect_scale = Vector2( 1, 1.5 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect3" type="TextureRect" parent="Zones" index="7"]
+modulate = Color( 0.227451, 0.878431, 1, 1 )
+margin_left = 186.0
+margin_top = 62.0
+margin_right = 226.0
+margin_bottom = 104.0
+rect_rotation = -19.3
+rect_scale = Vector2( 1, 1.5 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect4" type="TextureRect" parent="Zones" index="8"]
+modulate = Color( 0.227451, 0.878431, 1, 1 )
+margin_left = 205.0
+margin_top = 165.0
+margin_right = 245.0
+margin_bottom = 207.0
+rect_rotation = 19.3
+rect_scale = Vector2( 1, 1.5 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="DragableElement2" parent="CorrectElements" index="0" instance=ExtResource( 3 )]
+position = Vector2( -368, 2 )
+id = 1
+image = ExtResource( 6 )
+image_scale = 0.2
+
+[node name="DragableElement10" parent="CorrectElements" index="1" instance=ExtResource( 3 )]
+position = Vector2( 55, 5 )
+id = 2
+image = ExtResource( 5 )
+image_scale = 0.21
+
+[node name="DragableElement11" parent="CorrectElements" index="2" instance=ExtResource( 3 )]
+position = Vector2( 180, 4 )
+id = 3
+image = ExtResource( 8 )
+image_scale = 0.5
+
+[node name="DragableElement12" parent="CorrectElements" index="3" instance=ExtResource( 3 )]
+position = Vector2( -88, 5 )
+id = 4
+image = ExtResource( 10 )
+image_scale = 0.31
+
+[node name="DragableElement13" parent="CorrectElements" index="4" instance=ExtResource( 3 )]
+position = Vector2( -227, 3 )
+id = 4
+image = ExtResource( 11 )
+image_scale = 0.3
+
+[node name="PopUp" parent="." index="7"]
+text = "Efectivamente, los datos son capturados por el lente y transmitidos mediante Bluetooth al dispositivo Eagle, el cual luego transmite al servidor donde se puede desplegar en el FRP y también ser enviado en formato de informes a la lista de correos asociada."
+
+[node name="CursorHelp" parent="." index="9" instance=ExtResource( 4 )]
+margin_left = -313.0
+margin_top = 80.0
+margin_right = -252.0
+margin_bottom = 144.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 100.5
+margin_top = 33.0
+margin_right = 140.5
+margin_bottom = 73.0
+
+[connection signal="dragged" from="CorrectElements/DragableElement2" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement10" to="." method="_on_DragableElement10_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement11" to="." method="_on_DragableElement10_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement12" to="." method="_on_DragableElement10_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement13" to="." method="_on_DragableElement10_dragged"]
+
+[editable path="Zones/DropZone"]
+[editable path="Zones/DropZone16"]
+[editable path="Zones/DropZone17"]
+[editable path="Zones/DropZone18"]
+[editable path="Zones/DropZone19"]
+[editable path="CursorHelp"]

@@ -1,0 +1,268 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://game/assets/ui/theme/button_hover.tres" type="StyleBox" id=1]
+[ext_resource path="res://game/assets/ui/theme/panel_style.tres" type="StyleBox" id=2]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontBig.tres" type="DynamicFont" id=3]
+[ext_resource path="res://game/assets/ui/theme/button_pressed.tres" type="StyleBox" id=4]
+[ext_resource path="res://game/main_screens/main_menu/ExerciseSelector/exercise_button_group.tres" type="ButtonGroup" id=5]
+[ext_resource path="res://game/assets/ui/theme/button_normal.tres" type="StyleBox" id=6]
+[ext_resource path="res://game/main_screens/main_menu/ExerciseSelector/ExerciseButton.gd" type="Script" id=7]
+[ext_resource path="res://game/assets/sounds/button.ogg" type="AudioStream" id=8]
+[ext_resource path="res://game/assets/ui/icons/star.png" type="Texture" id=9]
+[ext_resource path="res://game/main_screens/popups/Star.tscn" type="PackedScene" id=10]
+[ext_resource path="res://game/assets/ui/icons/lock-fill.png" type="Texture" id=11]
+[ext_resource path="res://game/assets/ui/icons/checkbox-circle-fill.png" type="Texture" id=12]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.69, 0.2001, 0.2001, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="ExerciseButton" type="Control"]
+margin_right = 115.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 115, 60 )
+script = ExtResource( 7 )
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = ExtResource( 2 )
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 100.0
+margin_bottom = 62.0
+custom_constants/separation = 10
+
+[node name="Title" type="Label" parent="Panel/Margin/VBox"]
+margin_right = 80.0
+margin_bottom = 14.0
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 3 )
+text = "Ejercicio 1"
+align = 1
+valign = 1
+
+[node name="Start" type="Button" parent="Panel/Margin/VBox"]
+margin_top = 24.0
+margin_right = 80.0
+margin_bottom = 42.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 6 )
+shortcut_in_tooltip = false
+text = "Comenzar"
+
+[node name="Start" type="Button" parent="."]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = ExtResource( 6 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+group = ExtResource( 5 )
+
+[node name="locked" type="TextureRect" parent="Start"]
+unique_name_in_owner = true
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -23.0
+margin_top = -6.0
+margin_right = 3.0
+margin_bottom = 20.0
+mouse_filter = 2
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+
+[node name="completed" type="TextureRect" parent="Start"]
+unique_name_in_owner = true
+visible = false
+modulate = Color( 0.403922, 0.831373, 0.352941, 1 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -23.0
+margin_top = -6.0
+margin_right = 3.0
+margin_bottom = 20.0
+mouse_filter = 2
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+
+[node name="VBox" type="VBoxContainer" parent="Start"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Control" type="Control" parent="Start/VBox"]
+margin_top = 18.0
+margin_right = 115.0
+margin_bottom = 18.0
+
+[node name="StatusIncomplete" type="Label" parent="Start/VBox"]
+margin_top = 28.0
+margin_right = 115.0
+margin_bottom = 42.0
+custom_fonts/font = ExtResource( 3 )
+text = "Incompleto"
+align = 1
+valign = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Start"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="Start/MarginContainer"]
+unique_name_in_owner = true
+margin_left = 4.0
+margin_top = 23.0
+margin_right = 111.0
+margin_bottom = 37.0
+custom_fonts/font = ExtResource( 3 )
+text = "Ejercicio 99"
+align = 1
+
+[node name="Stars" type="Control" parent="."]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_top = 15.0
+margin_bottom = 31.0
+rect_scale = Vector2( 0.3, 0.3 )
+
+[node name="Star1" parent="Stars" instance=ExtResource( 10 )]
+unique_name_in_owner = true
+margin_left = -87.0
+margin_top = -69.0
+margin_right = -27.0
+margin_bottom = -9.0
+mouse_filter = 2
+bg_modulate = Color( 0.215686, 0.215686, 0.215686, 0.45098 )
+
+[node name="Star2" parent="Stars" instance=ExtResource( 10 )]
+unique_name_in_owner = true
+margin_left = 27.0
+margin_top = -69.0
+margin_right = 87.0
+margin_bottom = -9.0
+mouse_filter = 2
+bg_modulate = Color( 0.215686, 0.215686, 0.215686, 0.45098 )
+
+[node name="Star3" parent="Stars" instance=ExtResource( 10 )]
+unique_name_in_owner = true
+margin_top = -101.0
+margin_bottom = -11.0
+mouse_filter = 2
+bg_modulate = Color( 0.215686, 0.215686, 0.215686, 0.45098 )
+
+[node name="Statuscomplete" type="HBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -28.0
+margin_top = 5.0
+margin_right = 28.0
+margin_bottom = 21.0
+mouse_filter = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Statuscomplete"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+mouse_filter = 2
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="Statuscomplete"]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+mouse_filter = 2
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect3" type="TextureRect" parent="Statuscomplete"]
+margin_left = 40.0
+margin_right = 56.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+mouse_filter = 2
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = ExtResource( 2 )
+
+[node name="Margin" type="MarginContainer" parent="Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="Panel2/Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 96.0
+margin_bottom = 40.0
+custom_constants/separation = 10
+
+[node name="Title" type="Label" parent="Panel2/Margin/VBox"]
+margin_right = 76.0
+margin_bottom = 20.0
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 3 )
+text = "Ejercicio 1"
+align = 1
+valign = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 8 )
+
+[connection signal="pressed" from="Panel/Margin/VBox/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://game/assets/ui/fonts/BaseFontBig.tres" type="DynamicFont" id=1]
+[ext_resource path="res://game/assets/ui/theme/panel_style.tres" type="StyleBox" id=2]
+[ext_resource path="res://game/components/top_info_level/top_info_level.gd" type="Script" id=3]
+[ext_resource path="res://game/assets/sounds/funky-loop.ogg" type="AudioStream" id=4]
+[ext_resource path="res://game/components/overlay/overlay.tscn" type="PackedScene" id=5]
+
+[node name="TopInfoLevel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 3 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="Control/Margin"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 1016.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+
+[node name="Info" type="Panel" parent="Control/Margin/HBox"]
+margin_right = 300.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 300, 40 )
+custom_styles/panel = ExtResource( 2 )
+
+[node name="Description" type="Label" parent="Control/Margin/HBox/Info"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="Control/Margin/HBox"]
+margin_left = 304.0
+margin_right = 704.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="Time" type="Panel" parent="Control/Margin/HBox"]
+margin_left = 708.0
+margin_right = 1008.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 300, 40 )
+custom_styles/panel = ExtResource( 2 )
+
+[node name="Time" type="Label" parent="Control/Margin/HBox/Time"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "Tiempo: 0"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -8.0
+autoplay = true
+
+[node name="Overlay" parent="." instance=ExtResource( 5 )]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

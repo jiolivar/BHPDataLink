@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/drag_image.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/drop_zone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/main_screens/question_templates/Elements/dragable_element.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/images/eagle1.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/eagle2.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 80, 70.5 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="SistemaEagle" instance=ExtResource( 1 )]
+title = "Sistema Eagle"
+question = "Existen 2 formatos de dispositivo Eagle, uno pensado para mantener fijo en el vehículo y otro para ser trasladado. Arrastre el dispositivo donde corresponda"
+
+[node name="Title" parent="Panel" index="0"]
+text = "Sistema Eagle"
+
+[node name="Question" parent="Panel" index="2"]
+text = "Existen 2 formatos de dispositivo Eagle, uno pensado para mantener fijo en el vehículo y otro para ser trasladado. Arrastre el dispositivo donde corresponda"
+
+[node name="Zones" parent="." index="4"]
+margin_top = -1.0
+margin_bottom = 39.0
+
+[node name="DropZone" parent="Zones" index="0" instance=ExtResource( 2 )]
+position = Vector2( 142, 67 )
+id = 1
+text = "Eagle Industrial"
+
+[node name="CollisionShape2D" parent="Zones/DropZone" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone" index="1"]
+margin_left = -80.0
+margin_top = -70.5
+margin_right = 80.0
+margin_bottom = 70.5
+custom_styles/panel = SubResource( 2 )
+
+[node name="Label" parent="Zones/DropZone/HighLite" index="0"]
+margin_left = -85.0
+margin_right = 85.0
+margin_bottom = 34.0
+text = "Eagle Industrial"
+
+[node name="DropZone16" parent="Zones" index="1" instance=ExtResource( 2 )]
+position = Vector2( 352, 67 )
+id = 2
+text = "Eagle Light"
+
+[node name="CollisionShape2D" parent="Zones/DropZone16" index="0"]
+position = Vector2( -1, 0 )
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone16" index="1"]
+margin_left = -80.0
+margin_top = -70.5
+margin_right = 80.0
+margin_bottom = 70.5
+custom_styles/panel = SubResource( 3 )
+
+[node name="Label" parent="Zones/DropZone16/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+text = "Eagle Light"
+
+[node name="CorrectElements" parent="." index="5"]
+margin_top = 12.0
+margin_bottom = 52.0
+
+[node name="DragableElement2" parent="CorrectElements" index="0" instance=ExtResource( 3 )]
+position = Vector2( -320, 42 )
+id = 2
+image = ExtResource( 6 )
+image_scale = 0.27
+
+[node name="DragableElement10" parent="CorrectElements" index="1" instance=ExtResource( 3 )]
+position = Vector2( -152, 42 )
+id = 1
+image = ExtResource( 5 )
+image_scale = 0.27
+
+[node name="PopUp" parent="." index="7"]
+text = "¡Excelente! Eagle Light te permite una instalación rápida y además permite transferir fácilmente entre vehículos."
+
+[node name="CursorHelp" parent="." index="9" instance=ExtResource( 4 )]
+margin_left = -136.0
+margin_top = 39.0
+margin_right = -74.9999
+margin_bottom = 103.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 240.0
+margin_top = -2.0
+margin_right = 280.0
+margin_bottom = 38.0
+
+[connection signal="dragged" from="CorrectElements/DragableElement2" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement10" to="." method="_on_DragableElement10_dragged"]
+
+[editable path="Zones/DropZone"]
+[editable path="Zones/DropZone16"]
+[editable path="CursorHelp"]

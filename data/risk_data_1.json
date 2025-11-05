@@ -1,0 +1,65 @@
+{
+  "Laura González": [
+    {
+      "punctuation": 4.6,
+      "vehicle": "CEX01"
+    },
+    {
+      "punctuation": 4.7,
+      "vehicle": "CEX01"
+    },
+    {
+      "punctuation": 4.8,
+      "vehicle": "CEX01"
+    },
+    {
+      "punctuation": 4.7,
+      "vehicle": "CEX01"
+    },
+    {
+      "punctuation": 4.9,
+      "vehicle": "CEX01"
+    },
+    {
+      "punctuation": 4.8,
+      "vehicle": "CEX01"
+    },
+    {
+      "punctuation": 4.9,
+      "vehicle": "CEX01"
+    },
+    {
+      "punctuation": 4.8,
+      "vehicle": "CEX01"
+    },
+    {
+      "punctuation": 4.9,
+      "vehicle": "CEX01"
+    }
+  ],
+  "Carlos Muñoz": [
+    
+  ],
+  "Ana Torres": [
+    {
+      "punctuation": 3.8,
+      "vehicle": "CE0001"
+    }
+  ],
+  "Javier López": [
+    {
+      "punctuation": 5.5,
+      "vehicle": "CE1510"
+    },
+    {
+      "punctuation": 5.1,
+      "vehicle": "CEX03"
+    }
+  ],
+  "María Sánchez": [
+    {
+      "punctuation": 4.8,
+      "vehicle": "CEX04"
+    }
+  ]
+}

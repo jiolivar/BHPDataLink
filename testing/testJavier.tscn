@@ -1,0 +1,223 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://game/assets/ui/images/bg-02.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/seq1.png" type="Texture" id=2]
+[ext_resource path="res://game/components/overlay/overlay.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/assets/ui/theme/panel_style.tres" type="StyleBox" id=4]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontVeryHuge.tres" type="DynamicFont" id=5]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontHuge.tres" type="DynamicFont" id=6]
+[ext_resource path="res://game/main_screens/question_templates/Elements/pair_element.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/assets/sounds/wrong.ogg" type="AudioStream" id=8]
+[ext_resource path="res://game/assets/sounds/correct.ogg" type="AudioStream" id=9]
+[ext_resource path="res://game/main_screens/popups/base_popup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://addons/GodotUITutorial/cursor_help.tscn" type="PackedScene" id=11]
+[ext_resource path="res://game/assets/sounds/quiz-game-music.ogg" type="AudioStream" id=13]
+[ext_resource path="res://game/assets/sounds/swipe.ogg" type="AudioStream" id=14]
+[ext_resource path="res://icon.png" type="Texture" id=15]
+
+[node name="TestJavier" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 1.00409, 1.02005 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_editor_description_": ""
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BG" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.866667, 0.34902, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bg-02" type="TextureRect" parent="CanvasLayer/BG"]
+modulate = Color( 1, 1, 1, 0.372549 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = -300.0
+margin_right = 180.0
+margin_bottom = 780.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bg-03" type="TextureRect" parent="CanvasLayer/BG"]
+modulate = Color( 1, 1, 1, 0.372549 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 225.0
+margin_top = 301.0
+margin_right = 630.0
+margin_bottom = 1381.0
+rect_rotation = 180.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Overlay" parent="CanvasLayer" instance=ExtResource( 3 )]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -428.826
+margin_top = -257.0
+margin_right = 503.174
+margin_bottom = 257.0
+mouse_filter = 2
+custom_styles/panel = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="Label" parent="Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+margin_bottom = 80.0
+custom_fonts/font = ExtResource( 5 )
+text = "Testing Javier"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Question" type="Label" parent="Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = 85.0
+margin_right = -45.0
+margin_bottom = -196.0
+custom_fonts/font = ExtResource( 6 )
+text = "Aqui testeando godot y replicando ejericicios para aprender oh yeah"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+anchor_left = 0.041
+anchor_top = 0.471
+anchor_right = 0.237
+anchor_bottom = 0.839
+margin_left = -0.386013
+margin_top = -0.0940094
+margin_right = -0.0580292
+margin_bottom = -0.246033
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.041
+anchor_top = 0.409
+anchor_right = 0.224
+anchor_bottom = 0.436
+margin_left = -0.386013
+margin_top = -0.225998
+margin_right = 0.0579834
+margin_bottom = -0.104004
+text = "Imagen de servidores creo"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Elements" type="Control" parent="."]
+anchor_left = 0.518
+anchor_top = 0.488
+anchor_right = 0.518
+anchor_bottom = 0.488
+margin_left = -16.432
+margin_top = -20.8
+margin_right = 18.568
+margin_bottom = 20.2
+
+[node name="PairElement" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( -97, 44 )
+scale = Vector2( 1.00254, 1.00807 )
+text = " Yoy"
+
+[node name="PairElement3" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( -97, 163 )
+id = 1
+text = " 2"
+
+[node name="PairElement2" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 295.687, 161.312 )
+scale = Vector2( 0.99738, 0.833823 )
+image = ExtResource( 15 )
+
+[node name="PairElement4" parent="Elements" instance=ExtResource( 7 )]
+position = Vector2( 284, 36 )
+scale = Vector2( 0.966402, 1 )
+id = 1
+text = " dos"
+
+[node name="CorrectAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="WrongAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="PopUp" parent="." instance=ExtResource( 10 )]
+text = "Wena"
+buton_text = "Continuar"
+show_stars = true
+
+[node name="CursorHelp" parent="." instance=ExtResource( 11 )]
+margin_left = -82.0
+margin_top = 67.0
+margin_right = -21.0
+margin_bottom = 131.0
+from_real_cursor = false
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 337.858
+margin_top = 0.629028
+margin_right = 377.858
+margin_bottom = 40.629
+
+[node name="SwipeAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 14 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -10.0
+autoplay = true
+
+[editable path="CursorHelp"]

@@ -1,0 +1,74 @@
+{
+	"tut1": [	
+		{
+			"element": "/root/Control/Control/Header/HBoxContainer2/ButtonCaex",
+			"flag": 0,
+			"text": "Atento central, operador de CEX02, ¿puede realizar cambio de sitio?\nPara abrir la ventana de despacho, haga clic en el botón del camión."
+		},
+		{
+			"element": "/root/Control/Control/DispatchWindow/VBoxContainer/HBoxContainer/VBoxContainer/MachineSearchLineEdit",
+			"flag": 0,
+			"text": "Haga clic aquí para buscar el camión CEX02.",
+			"force_as_button": true
+		},
+		{
+			"element": "/root/Control/Control/DispatchWindow/VBoxContainer/HBoxContainer/VBoxContainer/MachineSearchLineEdit/popup",
+			"flag": 2,
+			"text": "Aquí se despliegan las maquinarias dependiendo del botón. Seleccione la CEX02.",
+			"box_offset": [0, 0]
+		},
+		{
+			"element": "/root/Control/Control/DispatchWindow/VBoxContainer/HBoxContainer2/VBoxContainer/CodeStateButton",
+			"flag": 0,
+			"text": "Ahora, para asignar estado, haga clic en esta barra.",
+			"force_as_button": true
+		},
+		{
+			"element": "/root/Control/Control/DispatchWindow/VBoxContainer/HBoxContainer2/VBoxContainer/CodeStateButton/popup",
+			"flag": 7,
+			"text": "Asigne cambio de ruta con el código 4010.",
+			"box_offset": [0, 0]
+		},
+		{
+			"element": "/root/Control/Control/DiagramaControl/Panel2/Button",
+			"flag": 0,
+			"text": "Atento despacho mecánico, PAL08 está quedando en avería. (Se debe aplicar código de estado 5000).\nHaga clic aquí para cerrar la ventana de despacho actual para continuar."
+		},
+		{
+			"element": "/root/Control/Control/DiagramaControl/Panel2/Button",
+			"flag": 0,
+			"text": "Para acceder directamente a la ventana de despacho, haga doble clic sobre el botón con el código de PAL08.",
+			"custom_event": "double_click_detected"
+		},
+		{
+			"element": "/root/Control/Control/DispatchWindow/VBoxContainer/HBoxContainer2/VBoxContainer/CodeStateButton",
+			"flag": 0,
+			"text": "Ahora, para asignar estado, haga clic en esta barra.",
+			"force_as_button": true
+		},
+		{
+			"element": "/root/Control/Control/DispatchWindow/VBoxContainer/HBoxContainer2/VBoxContainer/CodeStateButton/popup",
+			"flag": 13,
+			"text": "Asigne el estado 5000.",
+			"box_offset": [0, 0]
+		},
+		{
+			"element": "/root/Control/Control/DiagramaControl/Panel2/Button",
+			"flag": 0,
+			"text": "Bien, ahora después de un tiempo se corrigió y PAL08 está en condiciones para operar. Haga clic para cerrar la ventana y luego clic derecho.",
+			"custom_event": "right_click_detected"
+		},
+		{
+			"element": "/root/Control/Control/DiagramaControl/Panel2/Button/MachineContextMenu",
+			"flag": 3,
+			"text": "De esta forma podemos asignar un estado directamente a través de este menú. Haga clic aquí.",
+			"box_offset": [0, 2]
+		},
+		{
+			"element": "/root/Control/Control/DiagramaControl/Panel2/Button/MachineContextMenu/ReasonCodeMenu",
+			"flag": 0,
+			"text": "Asigne el código de estado 1000 para marcarlo como operativo y finalizar.",
+			"box_offset": [0, -5]
+		}
+	]
+}

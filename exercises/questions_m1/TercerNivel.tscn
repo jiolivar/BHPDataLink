@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/true_false_sequence.tscn" type="PackedScene" id=1]
+[ext_resource path="res://exercises/questions_m1/TercerNivel.gd" type="Script" id=2]
+
+[node name="7" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+title = "Tercer nivel"
+
+[node name="PopUp" parent="." index="0"]
+title = "¡Muy Bien!"
+text = "¡Muy bien! Optalert permite generar una gran suit de reportes para ayudar tomar decisiones con el objetivo de reducir a cero los accidentes."
+buton_text = "Continuar"
+show_stars = true
+
+[connection signal="button_pressed" from="PopUp" to="." method="_on_PopUp_button_pressed"]

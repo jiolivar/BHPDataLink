@@ -1,0 +1,293 @@
+{
+	"tut1": [
+        {
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/MarginContainer/VBoxContainer/SiteLabel",
+			"flag": 0,
+			"text": "Vamos a identificar los elementos del Sistema Optalert. En esta sección, podemos ver el nombre del sitio."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/Header",
+			"flag": 0,
+			"text": "Este es el menú de acción, que nos permite acceder a opciones como exportación de datos, visualización de operadores, documentos de ayuda, entre otras funciones."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/Footer",
+			"flag": 0,
+			"text": "Esta es la barra de información, donde encontrarás datos como la fecha y hora actuales, así como el tiempo de actualización de la pantalla.",
+			"offset": [0, -100]
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer",
+			"flag": 0,
+			"text": "Este es el sistema Optalert IRIS: un gráfico vectorial escalable y configurable compuesto por 'cuadrantes'. Cada uno representa un usuario y/o vehículo de Optalert. La cantidad de cuadrantes visibles puede configurarse entre 20 y 60."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer",
+			"flag": 0,
+			"text": "Estos se ordenan en sentido horario, siendo el primero el que se encuentra en la posicion de las 12 del reloj."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/VBoxContainer/TabsButtonContainer",
+			"flag": 0,
+			"text": "Si existen más operadores de los que el IRIS puede mostrar simultáneamente, el sistema los organizará en pestañas diferentes."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/VBoxContainer/TabsButtonContainer/IrisTabButton_1",
+			"flag": 0,
+			"text": "Haz clic en el área indicada para acceder a la segunda pestaña."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/VBoxContainer/TabsButtonContainer/IrisTabButton_0",
+			"flag": 0,
+			"text": "Haz clic en el área indicada para regresar a la primera pestaña."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer",
+			"flag": 0,
+			"text": "Cada cuadrante muestra un color diferente según el nivel de alerta actual del usuario. Cuando se detecta riesgo medio o alto, el cuadrante correspondiente se desplaza automáticamente a la posición de las 12 en punto en la pestaña Nivel 1 del IRIS."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/CategoryContainer",
+			"flag": 0,
+			"text": "Estas \"barras\" indican el total de usuarios en los sitios seleccionados, clasificados por su estado actual (totales por estado del operador)."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/CategoryContainer/HighRiskCategory",
+			"flag": 0,
+			"text": "Esta barra muestra la cantidad de usuarios con riesgo alto (nivel de riesgo entre 5.0 y 10.0)."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/CategoryContainer/MedRiskCategory",
+			"flag": 0,
+			"text": "Esta barra muestra la cantidad de usuarios con riesgo medio (nivel de riesgo entre 4.5 y 4.9)."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/CategoryContainer/LowRiskCategory",
+			"flag": 0,
+			"text": "Esta barra muestra la cantidad de usuarios con riesgo bajo (nivel de riesgo igual o inferior a 4.4)."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/CategoryContainer/DisconectedCategory",
+			"flag": 0,
+			"text": "Aquí se muestran los usuarios con vehículo encendido que no están conectados al sistema."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/CategoryContainer/NoGlassesCategory",
+			"flag": 0,
+			"text": "Esta categoría indica la cantidad de usuarios que se desconectaron del sistema al retirarse los lentes."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/CategoryContainer/SelfManagementCategory",
+			"flag": 0,
+			"text": "Esta categoría muestra usuarios que han salido del rango de cobertura y están próximos a desaparecer del sistema."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/CategoryContainer/SelfManagementCategory",
+			"flag": 0,
+			"text": "Optalert puede almacenar información hasta por 30 días. Al recuperar la conexión, envía automáticamente los datos recolectados."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer/Tabs/Page_0/IrisButton_0/Control/Button",
+			"flag": 0,
+			"text": "Puedes seleccionar cada usuario para ver información detallada. Presiona el de más arriba."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer/UserInfo",
+			"flag": 0,
+			"text": "Aquí se muestra información detallada como: hora del último evento, número de advertencias en las últimas 12 horas y sitio correspondiente."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/ActivityGraphContainer",
+			"flag": 0,
+			"text": "Este gráfico muestra el registro de actividad del operador durante las últimas dos horas."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/ActivityGraphContainer",
+			"flag": 0,
+			"text": "Cuando una gráfica es plana sin puntuación significa que no esta marcando correctamente, en este caso se debe coordinar con el operador y personal de tecnología mina, el chequeo y calibración del lente."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/ActivityGraphContainer",
+			"flag": 0,
+			"text": "Cuando un lente se encuentra con alta sensibilidad, alerta erróneamente la marcación, aumentando la frecuencia de alertas. En este caso se debe coordinar la calibración del lente con el operador y personal de tecnologías mina."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer",
+			"flag": 0,
+			"text": "También es posible visualizar el tiempo acumulado de trabajo para cada usuario seleccionado."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer/Tabs/Page_0/IrisButton_1/Control/Button",
+			"flag": 0,
+			"text": "Se puede realizar una selección múltiple, para ello basta con seleccionar los siguientes usuarios. Presiona el siguiente."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer/Tabs/Page_0/IrisButton_2/Control/Button",
+			"flag": 0,
+			"text": "Continúa seleccionando un siguiente usuario."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer/Tabs/Page_0/IrisButton_3/Control/Button",
+			"flag": 0,
+			"text": "Finalicemos seleccionando un último usuario."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/VBoxContainer/MoreInfoButton",
+			"flag": 0,
+			"text": "Presiona aquí para acceder a información detallada de los usuarios seleccionados."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial2/Control/VBoxContainer/MarginContainer/Panel/MarginContainer",
+			"flag": 0,
+			"text": "Aquí se mostrarán los usuarios que hayas seleccionado previamente."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial2/Control/VBoxContainer/HBoxContainer/Control/MarginContainer/Panel",
+			"flag": 0,
+			"text": "En este panel podrás observar el comportamiento de cada usuario durante las últimas 12 horas."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial2/Control/VBoxContainer/MarginContainer/Panel/MarginContainer/UserInfoContainer/user_info_1/Button",
+			"flag": 0,
+			"text": "Haz clic aquí para cambiar de operador."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial2/Control/VBoxContainer/MarginContainer/Panel/MarginContainer/UserInfoContainer/user_info_2/Button",
+			"flag": 0,
+			"text": "Selecciona otro operador para ver su información."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial2/Control/VBoxContainer/MarginContainer/Panel/MarginContainer/UserInfoContainer/user_info_3/Button",
+			"flag": 0,
+			"text": "Ahora presiona en este otro operador."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial2/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/BackButton",
+			"flag": 0,
+			"text": "Regresa a la ventana anterior para continuar con el tutorial."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer/Tabs/Page_0/IrisButton_0/Control/Control",
+			"flag": 0,
+			"text": "Cuando un operador recibe una advertencia de riesgo, se mostrará una pestaña emergente sobre su cuadrante."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer/Tabs/Page_0/IrisButton_0/Control/MarginContainer2/RiskTagButton",
+			"flag": 0,
+			"text": "Haz clic en la pestaña de riesgo para abrir el Registro de Incidentes."
+		},
+		{
+			"comment": "COMIENZA TUTORIAL 3",
+			"element": "/root/MainTutorial1/Tutorial_1/Tutorial_3_Container/Tutorial3",
+			"flag": "",
+			"text": "Esta es la ventana de Registro de Riesgos. Aquí podrás documentar las acciones tomadas con el operador.",
+			"offset": [0, 0]
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Tutorial_3_Container/Tutorial3/MarginContainer/Control/VBoxContainer/MarginContainer2/HBoxContainer/MapContainer",
+			"flag": "",
+			"text": "Si el vehículo cuenta con GPS, se mostrará un mapa con la ubicación donde se registró la alerta."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Tutorial_3_Container/Tutorial3/MarginContainer/Control/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer2/RiskRowContainer",
+			"flag": "",
+			"text": "Aquí se registran históricamente todas las advertencias de riesgo previas."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Tutorial_3_Container/Tutorial3/MarginContainer/Control/VBoxContainer/MarginContainer2/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/UserInformation",
+			"flag": 0,
+			"text": "Información del operador: nombre, vehículo asignado y ubicación actual."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Tutorial_3_Container/Tutorial3/MarginContainer/Control/VBoxContainer/MarginContainer2/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/UserContact",
+			"flag": 0,
+			"text": "En esta sección puedes registrar el contacto establecido con el operador."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Tutorial_3_Container/Tutorial3/MarginContainer/Control/VBoxContainer/MarginContainer2/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/UserContact/Panel/MarginContainer/VBoxContainer/Option1",
+			"flag": 0,
+			"text": "Selecciona 'Operador contactado' para continuar."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Tutorial_3_Container/Tutorial3/MarginContainer/Control/VBoxContainer/MarginContainer2/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/UserContact/Panel/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/DescriptionTextBox",
+			"flag": "Recomienda descansar",
+			"text": "Escribe \"Recomienda descansar\" en el campo de texto."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Tutorial_3_Container/Tutorial3/MarginContainer/Control/VBoxContainer/MarginContainer2/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/UserContact/HBoxContainer4/AddRecordButton",
+			"flag": 0,
+			"text": "Presiona 'Añadir registro' para guardar la información."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Tutorial_3_Container/Tutorial3/MarginContainer/Control/VBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer2/RiskRowContainer",
+			"flag": "",
+			"text": "El nuevo registro aparecerá automáticamente en este historial."
+		},
+		{
+			"comment": "END TUTORIAL 3",
+			"element": "/root/MainTutorial1/Tutorial_1/Tutorial_3_Container/Tutorial3/MarginContainer/Control/VBoxContainer/CloseBar/HBoxContainer/CloseButton",
+			"flag": "",
+			"text": "Cierra esta ventana para continuar con el tutorial."
+		},
+        {
+            "element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/Header/HBoxContainer/Options",
+            "flag": 0,
+            "text": "Ahora accederemos a la ventana de Resumen de Riesgos. Para ello, haz clic en 'Opciones'."
+        },
+        {
+            "element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/Header/HBoxContainer/Options/OptionsPopupMenu",
+            "flag": 1,
+            "text": "Selecciona la opción 'Resumen de Riesgos'."
+        },
+        {
+            "comment": "START TUTORIAL 4",
+            "element": "/root/MainTutorial1/Tutorial_1/Tutorial_4_Container/Tutorial_4",
+            "flag": "",
+            "text": "Esta es la ventana de Resumen de Riesgos. Como su nombre indica, aquí podrás visualizar un resumen de los operadores y sus eventos de riesgo registrados."
+        },
+        {
+            "element": "/root/MainTutorial1/Tutorial_1/Tutorial_4_Container/Tutorial_4/MarginContainer/Control/VBoxContainer/MarginContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/TimeTextBox",
+            "flag": "00:00:00",
+            "text": "En este campo puedes establecer un filtro temporal para los eventos. Intenta ingresar 00:00:00 como hora de inicio."
+        },
+        {
+            "element": "/root/MainTutorial1/Tutorial_1/Tutorial_4_Container/Tutorial_4/MarginContainer/Control/VBoxContainer/MarginContainer/Panel2/MarginContainer/VBoxContainer/HBoxContainer/RefreshButton",
+            "flag": 0,
+            "text": "Presiona aquí para actualizar la información con el nuevo filtro aplicado."
+        },
+        {
+            "element": "/root/MainTutorial1/Tutorial_1/Tutorial_4_Container/Tutorial_4/MarginContainer/Control/VBoxContainer/MarginContainer/Panel2/MarginContainer",
+            "flag": 0,
+            "text": "En esta sección encontrarás: información de operadores, sitio asignado, turno, identificador único, cantidad de riesgos medios/altos detectados, y hora del último evento registrado.",
+			"offset": [-200, 100]
+        },
+        {
+            "element": "/root/MainTutorial1/Tutorial_1/Tutorial_4_Container/Tutorial_4/MarginContainer/Control/VBoxContainer/MarginContainer/Panel2/MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer2/RiskSummaryRowScrollContainer/MarginContainer/RiskSummaryRowContainer/risk_summary_row_0/Panel/CenterContainer/UserName",
+            "flag": 0,
+            "text": "Haz clic sobre el nombre de un operador para ver detalles específicos."
+        },
+        {
+            "comment": "MOSTRAMOS OTRA VEZ TUTORIAL 3",
+            "element": "/root/MainTutorial1/Tutorial_1/Tutorial_3_Container/Tutorial3",
+            "flag": "",
+            "text": "Al seleccionar un operador, se abrirá nuevamente la ventana de Registro de Riesgos con su información correspondiente.",
+			"offset": [0, 0]
+        },
+        {
+            "comment": "CERRAMOS OTRA VEZ TUTORIAL 3",
+            "element": "/root/MainTutorial1/Tutorial_1/Tutorial_3_Container/Tutorial3/MarginContainer/Control/VBoxContainer/CloseBar/HBoxContainer/CloseButton",
+            "flag": "",
+            "text": "Cierra esta ventana para volver al Resumen de Riesgos."
+        },
+        {
+            "element": "/root/MainTutorial1/Tutorial_1/Tutorial_4_Container/Tutorial_4/MarginContainer/Control/VBoxContainer/CloseBar/HBoxContainer/CloseButton",
+            "flag": "",
+            "text": "Cierra esta ventana para volver a la interfaz principal."
+        },
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/Header/HBoxContainer/Export/Control",
+			"flag": 0,
+			"text": "Finalmente seleccionando la opción 'Exportación' se generará un reporte en Excel del estado de todos los vehículos que se encuentran registrados en el sitio."
+		}
+	]
+}

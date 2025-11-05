@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/swipe.ogg-a2e42c72be0f1317d9b6456cfe0183ee.oggstr"
+
+[deps]
+
+source_file="res://game/assets/sounds/swipe.ogg"
+dest_files=[ "res://.import/swipe.ogg-a2e42c72be0f1317d9b6456cfe0183ee.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

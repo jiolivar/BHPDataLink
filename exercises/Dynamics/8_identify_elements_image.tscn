@@ -1,0 +1,245 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/images/DynamicImages/8_3.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/DynamicImages/8_1.png" type="Texture" id=2]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/main_screens/question_templates/drag_image.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/main_screens/question_templates/Elements/drop_zone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/main_screens/question_templates/Elements/dragable_element.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/images/DynamicImages/8_2.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/DynamicImages/8_4.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 80, 70.5 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="SistemaEagle" instance=ExtResource( 4 )]
+title = "Asocia código y estado"
+question = "Relaciona cada imagen con su código de clasificación de tiempo correcto."
+
+[node name="Title" parent="Panel" index="0"]
+text = "Asocia código y estado"
+
+[node name="Question" parent="Panel" index="2"]
+text = "Relaciona cada imagen con su código de clasificación de tiempo correcto."
+
+[node name="Zones" parent="." index="4"]
+margin_top = -1.0
+margin_bottom = 39.0
+
+[node name="DropZone" parent="Zones" index="0" instance=ExtResource( 5 )]
+position = Vector2( 145, -36 )
+text = "Tiempo de espera"
+
+[node name="CollisionShape2D" parent="Zones/DropZone" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone" index="1"]
+margin_left = -80.0
+margin_top = -70.5
+margin_right = 80.0
+margin_bottom = 70.5
+custom_styles/panel = SubResource( 2 )
+
+[node name="Label" parent="Zones/DropZone/HighLite" index="0"]
+margin_left = -85.0
+margin_right = 85.0
+margin_bottom = 34.0
+text = "Tiempo de espera"
+
+[node name="DropZone16" parent="Zones" index="1" instance=ExtResource( 5 )]
+position = Vector2( 350, -38 )
+id = 2
+text = "Producción"
+
+[node name="CollisionShape2D" parent="Zones/DropZone16" index="0"]
+position = Vector2( -1, 0 )
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone16" index="1"]
+margin_left = -80.0
+margin_top = -70.5
+margin_right = 80.0
+margin_bottom = 70.5
+custom_styles/panel = SubResource( 3 )
+
+[node name="Label" parent="Zones/DropZone16/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+text = "Producción"
+
+[node name="DropZone2" parent="Zones" index="2" instance=ExtResource( 5 )]
+position = Vector2( 143, 133 )
+id = 1
+text = "Inactividad programada"
+
+[node name="CollisionShape2D" parent="Zones/DropZone2" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone2" index="1"]
+margin_left = -80.0
+margin_top = -70.5
+margin_right = 80.0
+margin_bottom = 70.5
+custom_styles/panel = SubResource( 4 )
+
+[node name="Label" parent="Zones/DropZone2/HighLite" index="0"]
+margin_left = -85.0
+margin_right = 85.0
+margin_bottom = 34.0
+text = "Inactividad programada"
+
+[node name="DropZone17" parent="Zones" index="3" instance=ExtResource( 5 )]
+position = Vector2( 351, 135 )
+id = 3
+text = "Inactividad no programada"
+
+[node name="CollisionShape2D" parent="Zones/DropZone17" index="0"]
+position = Vector2( -1, 0 )
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone17" index="1"]
+margin_left = -80.0
+margin_top = -70.5
+margin_right = 80.0
+margin_bottom = 70.5
+custom_styles/panel = SubResource( 5 )
+
+[node name="Label" parent="Zones/DropZone17/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+text = "Inactividad no programada"
+
+[node name="CorrectElements" parent="." index="5"]
+margin_top = 12.0
+margin_bottom = 52.0
+
+[node name="DragableElement2" parent="CorrectElements" index="0" instance=ExtResource( 6 )]
+position = Vector2( -113, 129 )
+image = ExtResource( 2 )
+image_scale = 0.14
+
+[node name="Label4" type="Label" parent="CorrectElements/DragableElement2" index="7"]
+visible = false
+margin_left = -91.0
+margin_top = 41.0
+margin_right = 117.0
+margin_bottom = 61.0
+text = "Equipo detenido por tormenta "
+
+[node name="DragableElement10" parent="CorrectElements" index="1" instance=ExtResource( 6 )]
+position = Vector2( -108, -40 )
+id = 1
+image = ExtResource( 7 )
+image_scale = 0.37
+
+[node name="Label2" type="Label" parent="CorrectElements/DragableElement10" index="7"]
+visible = false
+margin_left = -83.0
+margin_top = 46.0
+margin_right = 92.0
+margin_bottom = 66.0
+text = "Equipo en mantenimiento"
+
+[node name="DragableElement3" parent="CorrectElements" index="2" instance=ExtResource( 6 )]
+position = Vector2( -316, -38 )
+id = 3
+image = ExtResource( 8 )
+image_scale = 0.122
+
+[node name="Label3" type="Label" parent="CorrectElements/DragableElement3" index="7"]
+visible = false
+margin_left = -80.0
+margin_top = 48.0
+margin_right = 98.0
+margin_bottom = 68.0
+text = "Equipo averiado en la ruta"
+
+[node name="DragableElement11" parent="CorrectElements" index="3" instance=ExtResource( 6 )]
+position = Vector2( -317, 132 )
+id = 2
+image = ExtResource( 1 )
+image_scale = 0.42
+
+[node name="Label2" type="Label" parent="CorrectElements/DragableElement11" index="7"]
+visible = false
+margin_left = -85.0
+margin_top = 42.0
+margin_right = 90.0
+margin_bottom = 62.0
+text = "Equipo cargando material"
+
+[node name="PopUp" parent="." index="7"]
+text = " ¡Así es! Saber asociar correctamente situaciones reales con sus códigos TUM permite mantener registros consistentes que reflejan lo que realmente ocurre en terreno."
+
+[node name="CursorHelp" parent="." index="9" instance=ExtResource( 3 )]
+margin_left = -325.0
+margin_top = 1.0
+margin_right = -264.0
+margin_bottom = 65.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 434.0
+margin_top = -55.0
+margin_right = 477.0
+margin_bottom = -12.0
+
+[editable path="Zones/DropZone"]
+[editable path="Zones/DropZone16"]
+[editable path="Zones/DropZone2"]
+[editable path="Zones/DropZone17"]
+[editable path="CursorHelp"]

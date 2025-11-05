@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/connect_pairs.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/pair_element.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/images/optalert_points.jpg" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+
+[node name="18" instance=ExtResource( 1 )]
+title = "Puntajes Optalert"
+question = "Optalert utiliza un sistema de puntaje JDS para medir los riesgos. Asocie los puntajes con los niveles de riesgo haciendo click en los elementos de una columna y arrastrando hacia la otra"
+
+[node name="Title" parent="Panel" index="0"]
+text = "Puntajes Optalert"
+
+[node name="Question" parent="Panel" index="1"]
+text = "Optalert utiliza un sistema de puntaje JDS para medir los riesgos. Asocie los puntajes con los niveles de riesgo haciendo click en los elementos de una columna y arrastrando hacia la otra"
+
+[node name="TextureRect" type="TextureRect" parent="Panel" index="2"]
+margin_left = 29.0
+margin_top = 202.0
+margin_right = 306.0
+margin_bottom = 448.0
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="HighLite" type="Panel" parent="Panel/TextureRect" index="0"]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="Elements" parent="." index="4"]
+margin_right = 30.0
+margin_bottom = 16.0
+mouse_filter = 2
+
+[node name="PairElement" parent="Elements" index="0" instance=ExtResource( 2 )]
+position = Vector2( -23, 8 )
+text = "Riesgo Bajo"
+
+[node name="PairElement2" parent="Elements" index="1" instance=ExtResource( 2 )]
+position = Vector2( -63, 78 )
+id = 1
+text = "Riesgo Medio"
+
+[node name="PairElement3" parent="Elements" index="2" instance=ExtResource( 2 )]
+position = Vector2( -48, 154 )
+id = 2
+text = "Riesgo Alto"
+
+[node name="PairElement5" parent="Elements" index="3" instance=ExtResource( 2 )]
+position = Vector2( 200, 6 )
+id = 1
+text = "Puntaje entre 4.0 y 5.0 JDS."
+
+[node name="PairElement6" parent="Elements" index="4" instance=ExtResource( 2 )]
+position = Vector2( 202, 77 )
+id = 2
+text = "Puntaje mayor a 5.0 JDS."
+
+[node name="PairElement7" parent="Elements" index="5" instance=ExtResource( 2 )]
+position = Vector2( 204, 155 )
+text = "Puntaje menor a 4.0 JDS."
+
+[node name="PopUp" parent="." index="5"]
+text = "¡Excelente! Es importante tener claro que existen 3 niveles de riesgo entregados por el sistema de monitoreo."
+
+[node name="CursorHelp" parent="." index="7" instance=ExtResource( 3 )]
+margin_left = 7.00003
+margin_top = 60.0
+margin_right = 68.0002
+margin_bottom = 124.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 171.0
+margin_top = 4.0
+margin_right = 211.0
+margin_bottom = 44.0
+
+[editable path="CursorHelp"]

@@ -1,0 +1,1551 @@
+[gd_scene load_steps=79 format=2]
+
+[ext_resource path="res://addons/GodotUITutorial/fonts/OpenSans.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ui/fonts/roboto/Roboto-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://testing/HaulButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/images/arrow3.png" type="Texture" id=4]
+[ext_resource path="res://testing/HaulRoute.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=48]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+use_mipmaps = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=56]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.986667, 0.826667, 0.153333, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=57]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.836667, 0.676667, 0.00333333, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=58]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.984314, 0.796078, 0.00392157, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=59]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.986667, 0.826667, 0.153333, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=60]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.836667, 0.676667, 0.00333333, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=61]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.984314, 0.796078, 0.00392157, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=62]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.986667, 0.826667, 0.153333, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=63]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.836667, 0.676667, 0.00333333, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=64]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.984314, 0.796078, 0.00392157, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=65]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.986667, 0.826667, 0.153333, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=66]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.836667, 0.676667, 0.00333333, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=67]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.984314, 0.796078, 0.00392157, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=68]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.986667, 0.826667, 0.153333, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=69]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.836667, 0.676667, 0.00333333, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=70]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.984314, 0.796078, 0.00392157, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=71]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.986667, 0.826667, 0.153333, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=72]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.836667, 0.676667, 0.00333333, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=73]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.984314, 0.796078, 0.00392157, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=47]
+bg_color = Color( 0.835294, 0.929412, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=55]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=74]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.996667, 0.526667, 0.38, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=75]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.846667, 0.376667, 0.23, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=76]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.996078, 0.443137, 0.270588, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=77]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=78]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=79]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=80]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=81]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=82]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=83]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=84]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=85]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=86]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=87]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=88]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=89]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=90]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=91]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=92]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=93]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=94]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=95]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=96]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=97]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=98]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.986667, 0.826667, 0.153333, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=99]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.836667, 0.676667, 0.00333333, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=100]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.984314, 0.796078, 0.00392157, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=101]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.986667, 0.826667, 0.153333, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=102]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.836667, 0.676667, 0.00333333, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=103]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.984314, 0.796078, 0.00392157, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=104]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=105]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=106]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=107]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=108]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=109]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=110]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=111]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=112]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=113]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=114]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=115]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=116]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=117]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=118]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=119]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=120]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=121]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=122]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.603333, 0.893333, 0.63, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+border_blend = true
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=123]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color( 0.453333, 0.743333, 0.48, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0.788235, 1, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=124]
+content_margin_left = 8.0
+content_margin_right = 8.0
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0.533333, 0.87451, 0.564706, 1 )
+anti_aliasing = false
+
+[node name="DiagramaControl" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = 3.0
+margin_right = -3.0
+margin_bottom = 4.0
+script = ExtResource( 5 )
+
+[node name="Panel4" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.975
+margin_left = 3.0
+margin_top = -7.0
+margin_right = -2.0
+custom_styles/panel = SubResource( 48 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="ColorRect" parent="."]
+anchor_left = 0.058
+anchor_right = 0.995
+anchor_bottom = 0.083
+margin_left = -0.101997
+margin_top = 7.0
+margin_right = -0.905029
+margin_bottom = -10.128
+color = Color( 0.898039, 0.901961, 0.901961, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 0.906
+margin_right = -24.05
+margin_bottom = -0.0107651
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer"]
+margin_top = 9.0
+margin_right = 341.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "AUTONOMIA / PRIMARIO / ALIMENTACION CHAN02: Tiene 4 camiones: 
+"
+align = 1
+
+[node name="Label2" type="Label" parent="Panel/HBoxContainer"]
+margin_left = 345.0
+margin_top = 8.0
+margin_right = 683.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Necesita 0,0 camiones (en base a un tamaño de camión promedio de 340,3)"
+align = 1
+
+[node name="Button5" parent="Panel" instance=ExtResource( 3 )]
+anchor_left = 0.003
+anchor_top = 1.245
+anchor_right = 0.087
+anchor_bottom = 1.835
+margin_left = 0.13785
+margin_top = 0.0183144
+margin_right = -0.164459
+margin_bottom = 0.0197983
+custom_styles/hover = SubResource( 56 )
+custom_styles/pressed = SubResource( 57 )
+custom_styles/normal = SubResource( 58 )
+disabled = true
+text = "aaa"
+truck_id = "PAL02"
+truck_status = 2
+show_x_overlay_on_label = true
+
+[node name="Button3" parent="Panel" instance=ExtResource( 3 )]
+anchor_left = 0.001
+anchor_top = 2.944
+anchor_right = 0.087
+anchor_bottom = 3.725
+margin_left = 0.043189
+margin_top = -0.43071
+margin_right = -0.242554
+margin_bottom = -0.0123672
+custom_styles/hover = SubResource( 59 )
+custom_styles/pressed = SubResource( 60 )
+custom_styles/normal = SubResource( 61 )
+disabled = true
+truck_id = "PAL02"
+truck_status = 2
+show_x_overlay_on_label = true
+
+[node name="Button6" parent="Panel" instance=ExtResource( 3 )]
+anchor_left = 0.87
+anchor_top = 1.291
+anchor_right = 0.966
+anchor_bottom = 2.545
+margin_left = -0.599548
+margin_top = 6.7133
+margin_right = -0.640991
+margin_bottom = -7.04327
+custom_styles/hover = SubResource( 62 )
+custom_styles/pressed = SubResource( 63 )
+custom_styles/normal = SubResource( 64 )
+disabled = true
+text = "aaa"
+truck_id = "PAL02"
+truck_status = 2
+show_x_overlay_on_label = true
+
+[node name="Button7" parent="Panel" instance=ExtResource( 3 )]
+anchor_left = 0.868
+anchor_top = 2.751
+anchor_right = 0.967
+anchor_bottom = 3.664
+margin_left = 0.313965
+margin_top = 0.891006
+margin_right = -0.410278
+margin_bottom = -0.0143204
+custom_styles/hover = SubResource( 65 )
+custom_styles/pressed = SubResource( 66 )
+custom_styles/normal = SubResource( 67 )
+disabled = true
+truck_id = "PAL02"
+truck_status = 2
+show_x_overlay_on_label = true
+
+[node name="Arrow3" type="TextureRect" parent="Panel"]
+anchor_left = 0.111
+anchor_top = 2.473
+anchor_right = 0.421
+anchor_bottom = 2.809
+margin_left = -0.380028
+margin_top = -0.00311279
+margin_right = 0.0085144
+margin_bottom = -0.00878906
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Arrow4" type="TextureRect" parent="Panel"]
+anchor_left = 0.113
+anchor_top = 3.48
+anchor_right = 0.42
+anchor_bottom = 3.816
+margin_left = -2.11964
+margin_top = -0.987389
+margin_right = 0.139374
+margin_bottom = 0.00691986
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Arrow5" type="TextureRect" parent="Panel"]
+anchor_left = 0.58
+anchor_top = 3.419
+anchor_right = 0.865
+anchor_bottom = 3.694
+margin_left = 0.0496216
+margin_top = 0.0106583
+margin_right = 0.358521
+margin_bottom = 2.00303
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Arrow6" type="TextureRect" parent="Panel"]
+anchor_left = 0.582
+anchor_top = 2.137
+anchor_right = 0.864
+anchor_bottom = 2.473
+margin_left = 0.135986
+margin_top = 0.00257111
+margin_right = 0.315308
+margin_bottom = -0.00311279
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Button" parent="Panel" instance=ExtResource( 3 )]
+anchor_left = 0.155
+anchor_top = 1.155
+anchor_right = 0.221
+anchor_bottom = 1.745
+margin_left = 0.122253
+margin_top = -0.00710678
+margin_right = -0.00717163
+margin_bottom = -0.00562286
+custom_styles/hover = SubResource( 68 )
+custom_styles/pressed = SubResource( 69 )
+custom_styles/normal = SubResource( 70 )
+truck_id = "CEX62"
+truck_status = 2
+
+[node name="Button2" parent="Panel" instance=ExtResource( 3 )]
+anchor_left = 0.262
+anchor_top = 1.155
+anchor_right = 0.318
+anchor_bottom = 1.745
+margin_left = 0.0388794
+margin_top = -0.00710678
+margin_right = 0.450378
+margin_bottom = -0.00562286
+custom_styles/hover = SubResource( 71 )
+custom_styles/pressed = SubResource( 72 )
+custom_styles/normal = SubResource( 73 )
+truck_id = "CEX48"
+truck_status = 2
+
+[node name="Panel" type="Panel" parent="Panel"]
+visible = false
+anchor_left = 0.192
+anchor_top = 1.897
+anchor_right = 0.284
+anchor_bottom = 2.66
+margin_left = -0.167984
+margin_top = 24.502
+margin_right = 3.064
+margin_bottom = 1.55999
+rect_rotation = -15.6156
+custom_styles/panel = SubResource( 47 )
+
+[node name="Panel2" type="Panel" parent="Panel"]
+visible = false
+anchor_left = 0.181
+anchor_top = 1.998
+anchor_right = 0.184
+anchor_bottom = 2.643
+margin_left = -0.182785
+margin_top = 17.5555
+margin_right = 14.9468
+margin_bottom = -1.57146
+rect_rotation = -91.1234
+custom_styles/panel = SubResource( 47 )
+
+[node name="Panel3" type="Panel" parent="Panel"]
+anchor_left = 0.425
+anchor_top = 1.223
+anchor_right = 0.57
+anchor_bottom = 3.813
+margin_left = -0.681305
+margin_top = -0.340563
+margin_right = 0.00384521
+margin_bottom = -0.00537109
+custom_styles/panel = SubResource( 55 )
+
+[node name="Button4" parent="Panel/Panel3" instance=ExtResource( 3 )]
+anchor_left = 0.19
+anchor_top = 0.246
+anchor_right = 0.737
+anchor_bottom = 0.708
+margin_left = -0.0300026
+margin_top = 0.00999928
+margin_right = 0.0309906
+margin_bottom = -0.0200005
+custom_styles/hover = SubResource( 74 )
+custom_styles/pressed = SubResource( 75 )
+custom_styles/normal = SubResource( 76 )
+truck_id = "Sin uso"
+truck_status = 3
+
+[node name="Panel2" type="ColorRect" parent="."]
+anchor_left = 0.059
+anchor_top = 0.223
+anchor_right = 0.995
+anchor_bottom = 0.278
+margin_left = -0.121002
+margin_top = -0.367996
+margin_right = 0.0949707
+margin_bottom = 2.752
+color = Color( 0.898039, 0.901961, 0.901961, 1 )
+
+[node name="Panel4" type="Panel" parent="Panel2"]
+anchor_left = 0.419
+anchor_top = 1.182
+anchor_right = 0.541
+anchor_bottom = 2.182
+margin_left = 0.574738
+margin_top = -0.332378
+margin_right = 11.9354
+margin_bottom = 8.46764
+custom_styles/panel = SubResource( 55 )
+
+[node name="Button" parent="Panel2/Panel4" instance=ExtResource( 3 )]
+anchor_left = 0.14
+anchor_top = 0.108
+anchor_right = 0.818
+anchor_bottom = 0.811
+margin_left = -0.0400009
+margin_top = 0.00399995
+margin_right = -0.0400009
+margin_bottom = -0.00700188
+custom_styles/hover = SubResource( 77 )
+custom_styles/pressed = SubResource( 78 )
+custom_styles/normal = SubResource( 79 )
+truck_id = "BOT1807B"
+
+[node name="Panel5" type="Panel" parent="Panel2"]
+anchor_left = 0.423
+anchor_top = 2.766
+anchor_right = 0.555
+anchor_bottom = 4.043
+margin_left = -0.331482
+margin_top = -0.00115204
+margin_right = -0.236328
+margin_bottom = -0.0125351
+custom_styles/panel = SubResource( 55 )
+
+[node name="Button" parent="Panel2/Panel5" instance=ExtResource( 3 )]
+anchor_left = 0.125
+anchor_top = 0.139
+anchor_right = 0.885
+anchor_bottom = 0.861
+margin_top = -0.00400066
+margin_right = 0.0399933
+margin_bottom = 0.0039978
+custom_styles/hover = SubResource( 80 )
+custom_styles/pressed = SubResource( 81 )
+custom_styles/normal = SubResource( 82 )
+truck_id = "BOT1823B"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel2"]
+anchor_right = 0.858
+anchor_bottom = 0.909
+margin_right = -778.575
+margin_bottom = 0.00944901
+
+[node name="Label" type="Label" parent="Panel2/HBoxContainer"]
+margin_top = 10.0
+margin_right = 262.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "AUTONOMIA / PRIMARIO / Fase 21: Tiene 4 camiones: 
+"
+align = 1
+
+[node name="Label2" type="Label" parent="Panel2/HBoxContainer"]
+margin_left = 266.0
+margin_top = 9.0
+margin_right = 605.0
+margin_bottom = 22.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Necesita 3.5 camiones (en base a un tamaño de camión promedio de 340,3)"
+align = 1
+
+[node name="Button" parent="Panel2" instance=ExtResource( 3 )]
+unique_name_in_owner = true
+anchor_top = 1.387
+anchor_right = 0.085
+anchor_bottom = 1.979
+margin_left = 3.0
+margin_top = -0.174706
+margin_right = -0.328682
+margin_bottom = 4.4097
+custom_styles/hover = SubResource( 83 )
+custom_styles/pressed = SubResource( 84 )
+custom_styles/normal = SubResource( 85 )
+text = "aaa"
+truck_id = "PAL08"
+
+[node name="Button2" parent="Panel2" instance=ExtResource( 3 )]
+unique_name_in_owner = true
+anchor_top = 3.133
+anchor_right = 0.084
+anchor_bottom = 3.852
+margin_left = 2.823
+margin_top = 0.00874329
+margin_right = 0.451118
+margin_bottom = -0.00106812
+custom_styles/hover = SubResource( 86 )
+custom_styles/pressed = SubResource( 87 )
+custom_styles/normal = SubResource( 88 )
+text = "aaa"
+truck_id = "PAL02"
+
+[node name="Button5" parent="Panel2" instance=ExtResource( 3 )]
+anchor_left = 0.874
+anchor_top = 1.647
+anchor_right = 0.956
+anchor_bottom = 2.569
+margin_left = -0.839661
+margin_top = -0.0121269
+margin_right = -1.23358
+margin_bottom = -0.0125122
+custom_styles/hover = SubResource( 89 )
+custom_styles/pressed = SubResource( 90 )
+custom_styles/normal = SubResource( 91 )
+text = "aaa"
+truck_id = "PAL02"
+
+[node name="Button6" parent="Panel2" instance=ExtResource( 3 )]
+anchor_left = 0.871
+anchor_top = 2.979
+anchor_right = 0.955
+anchor_bottom = 3.901
+margin_left = 1.17322
+margin_top = -0.00775146
+margin_right = -1.85712
+margin_bottom = -0.00813293
+custom_styles/hover = SubResource( 92 )
+custom_styles/pressed = SubResource( 93 )
+custom_styles/normal = SubResource( 94 )
+text = "aaa"
+truck_id = "PAL02"
+
+[node name="Button3" parent="Panel2" instance=ExtResource( 3 )]
+anchor_left = 0.285
+anchor_top = 2.518
+anchor_right = 0.37
+anchor_bottom = 3.262
+margin_left = 0.309692
+margin_top = -0.0886154
+margin_right = 0.981049
+margin_bottom = -0.00281525
+custom_styles/hover = SubResource( 95 )
+custom_styles/pressed = SubResource( 96 )
+custom_styles/normal = SubResource( 97 )
+text = "aaa"
+truck_id = "CEX53"
+
+[node name="Button4" parent="Panel2" instance=ExtResource( 3 )]
+anchor_left = 0.241
+anchor_top = 1.064
+anchor_right = 0.315
+anchor_bottom = 1.986
+margin_left = -0.0990295
+margin_top = -0.00478172
+margin_right = -0.863876
+margin_bottom = -0.0051651
+custom_styles/hover = SubResource( 98 )
+custom_styles/pressed = SubResource( 99 )
+custom_styles/normal = SubResource( 100 )
+truck_id = "CEX70"
+truck_status = 2
+
+[node name="Arrow7" type="TextureRect" parent="Panel2"]
+anchor_left = 0.093
+anchor_top = 2.211
+anchor_right = 0.416
+anchor_bottom = 2.543
+margin_left = 0.0168533
+margin_top = 0.0170975
+margin_right = -0.032135
+margin_bottom = -0.993004
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Arrow8" type="TextureRect" parent="Panel2"]
+anchor_left = 0.143
+anchor_top = 3.815
+anchor_right = 0.419
+anchor_bottom = 4.119
+margin_left = 0.176453
+margin_top = -0.00758362
+margin_right = 0.0974121
+margin_bottom = -0.004776
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Arrow9" type="TextureRect" parent="Panel2"]
+anchor_left = 0.605
+anchor_top = 3.594
+anchor_right = 0.869
+anchor_bottom = 3.898
+margin_left = 0.131165
+margin_top = -0.0129089
+margin_right = -0.466125
+margin_bottom = -0.0101166
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Arrow10" type="TextureRect" parent="Panel2"]
+anchor_left = 0.566
+anchor_top = 2.322
+anchor_right = 0.87
+anchor_bottom = 2.626
+margin_left = 0.446655
+margin_top = 0.00167847
+margin_right = -0.423096
+margin_bottom = 0.00447845
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Panel7" type="Panel" parent="Panel2"]
+visible = false
+anchor_left = 0.305
+anchor_top = 1.838
+anchor_right = 0.334
+anchor_bottom = 2.079
+margin_left = 28.0148
+margin_top = 10.585
+margin_right = 30.3473
+margin_bottom = 3.9825
+rect_rotation = -163.162
+custom_styles/panel = SubResource( 47 )
+
+[node name="Panel8" type="Panel" parent="Panel2"]
+visible = false
+anchor_left = 0.348
+anchor_top = 3.289
+anchor_right = 0.35
+anchor_bottom = 4.035
+margin_left = 0.0308228
+margin_top = 27.0205
+margin_right = 25.1172
+margin_bottom = 2.03391
+rect_rotation = -91.1234
+custom_styles/panel = SubResource( 47 )
+
+[node name="Panel3" type="ColorRect" parent="."]
+anchor_left = 0.059
+anchor_top = 0.5
+anchor_right = 0.995
+anchor_bottom = 0.572
+margin_left = -0.121002
+margin_right = 0.0949707
+margin_bottom = -6.35202
+color = Color( 0.898039, 0.901961, 0.901961, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel3"]
+anchor_right = 0.952
+anchor_bottom = 0.5
+margin_right = -868.256
+margin_bottom = 18.003
+
+[node name="Label" type="Label" parent="Panel3/HBoxContainer"]
+margin_top = 12.0
+margin_right = 326.0
+margin_bottom = 23.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "AUTONOMIA / PRIMARIO / Fase 19- Autonomia: Tiene 12 camiones: 
+"
+align = 1
+
+[node name="Label2" type="Label" parent="Panel3/HBoxContainer"]
+margin_left = 330.0
+margin_top = 11.0
+margin_right = 669.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Necesita 7.2 camiones (en base a un tamaño de camión promedio de 340,3)"
+align = 1
+
+[node name="Button2" parent="Panel3" instance=ExtResource( 3 )]
+anchor_left = 0.132
+anchor_top = 1.328
+anchor_right = 0.185
+anchor_bottom = 1.921
+margin_left = 0.0654221
+margin_top = 0.0219803
+margin_right = -0.149948
+margin_bottom = -0.0176163
+custom_styles/hover = SubResource( 101 )
+custom_styles/pressed = SubResource( 102 )
+custom_styles/normal = SubResource( 103 )
+truck_id = "CEX51"
+truck_status = 2
+
+[node name="Button" parent="Panel3" instance=ExtResource( 3 )]
+anchor_left = 0.735
+anchor_top = 1.169
+anchor_right = 0.791
+anchor_bottom = 1.76
+margin_left = -0.226685
+margin_top = 0.017025
+margin_right = 0.346497
+margin_bottom = 0.0165787
+custom_styles/hover = SubResource( 104 )
+custom_styles/pressed = SubResource( 105 )
+custom_styles/normal = SubResource( 106 )
+truck_id = "CEX54"
+
+[node name="Button5" parent="Panel3" instance=ExtResource( 3 )]
+anchor_left = 0.801
+anchor_top = 1.169
+anchor_right = 0.847
+anchor_bottom = 1.76
+margin_left = -0.194031
+margin_top = 0.017025
+margin_right = -0.0803223
+margin_bottom = 0.0165787
+custom_styles/hover = SubResource( 107 )
+custom_styles/pressed = SubResource( 108 )
+custom_styles/normal = SubResource( 109 )
+truck_id = "CEX43"
+
+[node name="Button6" parent="Panel3" instance=ExtResource( 3 )]
+anchor_left = 0.882
+anchor_top = 1.988
+anchor_right = 0.956
+anchor_bottom = 2.579
+margin_left = -0.472046
+margin_top = -0.0140533
+margin_right = -0.0717773
+margin_bottom = -0.0145035
+custom_styles/hover = SubResource( 110 )
+custom_styles/pressed = SubResource( 111 )
+custom_styles/normal = SubResource( 112 )
+truck_id = "PAL01"
+
+[node name="Button3" parent="Panel3" instance=ExtResource( 3 )]
+anchor_left = 0.239
+anchor_top = 1.328
+anchor_right = 0.291
+anchor_bottom = 1.921
+margin_left = -0.0179443
+margin_top = 0.0219803
+margin_right = -0.279236
+margin_bottom = -0.0176163
+custom_styles/hover = SubResource( 113 )
+custom_styles/pressed = SubResource( 114 )
+custom_styles/normal = SubResource( 115 )
+truck_id = "CEX61"
+
+[node name="Button4" parent="Panel3" instance=ExtResource( 3 )]
+anchor_left = 0.674
+anchor_top = 1.192
+anchor_right = 0.722
+anchor_bottom = 1.784
+margin_left = -0.0296631
+margin_top = 0.0051651
+margin_right = -0.474854
+margin_bottom = 0.00956726
+custom_styles/hover = SubResource( 116 )
+custom_styles/pressed = SubResource( 117 )
+custom_styles/normal = SubResource( 118 )
+truck_id = "CEX44"
+
+[node name="Panel6" type="Panel" parent="Panel3"]
+anchor_left = 0.421
+anchor_top = 1.159
+anchor_right = 0.546
+anchor_bottom = 3.097
+margin_left = 0.121613
+margin_top = 0.309702
+margin_right = 4.30264
+margin_bottom = -0.00849915
+custom_styles/panel = SubResource( 55 )
+
+[node name="Button" parent="Panel3/Panel6" instance=ExtResource( 3 )]
+anchor_left = 0.039
+anchor_top = 0.254
+anchor_right = 0.904
+anchor_bottom = 0.695
+margin_left = 0.0300026
+margin_top = 0.0140018
+margin_right = 0.0800476
+margin_bottom = -0.00499344
+custom_styles/hover = SubResource( 119 )
+custom_styles/pressed = SubResource( 120 )
+custom_styles/normal = SubResource( 121 )
+truck_id = "BOT1807B"
+
+[node name="Arrow11" type="TextureRect" parent="Panel3"]
+anchor_left = 0.103
+anchor_top = 2.384
+anchor_right = 0.417
+anchor_bottom = 2.681
+margin_left = 0.448769
+margin_top = -0.0172424
+margin_right = 0.0110474
+margin_bottom = 0.0175171
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Arrow12" type="TextureRect" parent="Panel3"]
+anchor_left = 0.571
+anchor_top = 2.546
+anchor_right = 0.874
+anchor_bottom = 2.844
+margin_left = -0.337402
+margin_top = 0.00172424
+margin_right = -0.250183
+margin_bottom = -0.000434875
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Panel4" type="Panel" parent="Panel3"]
+anchor_left = 0.16
+anchor_top = 1.976
+anchor_right = 0.16
+anchor_bottom = 2.658
+margin_left = -2.64799
+margin_top = 30.0679
+margin_right = 27.352
+margin_bottom = 3.06397
+rect_rotation = -91.1234
+custom_styles/panel = SubResource( 47 )
+
+[node name="Panel5" type="Panel" parent="Panel3"]
+anchor_left = 0.265
+anchor_top = 1.978
+anchor_right = 0.269
+anchor_bottom = 2.658
+margin_left = 0.176773
+margin_top = 29.9799
+margin_right = 26.3606
+margin_bottom = 4.06397
+rect_rotation = -91.1234
+custom_styles/panel = SubResource( 47 )
+
+[node name="ButtonDown" parent="." instance=ExtResource( 3 )]
+unique_name_in_owner = true
+anchor_left = 0.061
+anchor_top = 0.62
+anchor_right = 0.143
+anchor_bottom = 0.664
+margin_left = -0.341999
+margin_top = 0.380005
+margin_right = -0.146011
+margin_bottom = -0.0640259
+custom_styles/hover = SubResource( 122 )
+custom_styles/pressed = SubResource( 123 )
+custom_styles/normal = SubResource( 124 )
+text = "AA"
+truck_id = "PAL13"

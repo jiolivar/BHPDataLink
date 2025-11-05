@@ -1,0 +1,153 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Control",
+"class": "BaseQuestionPanel",
+"language": "GDScript",
+"path": "res://game/main_screens/question_templates/Elements/base_question_panel.gd"
+}, {
+"base": "BaseQuestionPanel",
+"class": "ContentSlide",
+"language": "GDScript",
+"path": "res://game/main_screens/question_templates/content_slide.gd"
+}, {
+"base": "BaseQuestionPanel",
+"class": "DragImage",
+"language": "GDScript",
+"path": "res://game/main_screens/question_templates/drag_image.gd"
+}, {
+"base": "InteractableElement",
+"class": "DragableElement",
+"language": "GDScript",
+"path": "res://game/main_screens/question_templates/Elements/dragable_element.gd"
+}, {
+"base": "Area2D",
+"class": "DropZone",
+"language": "GDScript",
+"path": "res://game/main_screens/question_templates/Elements/drop_zone.gd"
+}, {
+"base": "Area2D",
+"class": "InteractableElement",
+"language": "GDScript",
+"path": "res://game/main_screens/question_templates/Elements/interactable_element.gd"
+}, {
+"base": "OptionButton",
+"class": "LockableOptionButton",
+"language": "GDScript",
+"path": "res://addons/GodotUITutorial/elements/LockableOptionButton.gd"
+}, {
+"base": "PopupMenu",
+"class": "LockablePopupMenu",
+"language": "GDScript",
+"path": "res://addons/GodotUITutorial/elements/LockablePopupMenu.gd"
+}, {
+"base": "InteractableElement",
+"class": "PairElement",
+"language": "GDScript",
+"path": "res://game/main_screens/question_templates/Elements/pair_element.gd"
+}, {
+"base": "Control",
+"class": "TrueFalseSequence",
+"language": "GDScript",
+"path": "res://game/main_screens/question_templates/true_false_sequence.gd"
+} ]
+_global_script_class_icons={
+"BaseQuestionPanel": "",
+"ContentSlide": "",
+"DragImage": "",
+"DragableElement": "",
+"DropZone": "",
+"InteractableElement": "",
+"LockableOptionButton": "",
+"LockablePopupMenu": "",
+"PairElement": "",
+"TrueFalseSequence": ""
+}
+
+[application]
+
+config/name="BHPTUM"
+run/main_scene="res://game/main_screens/splash/splash.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+UI="*res://UI.gd"
+Global="*res://game/autoloads/Global.gd"
+Main="*res://game/autoloads/main.gd"
+Transition="*res://game/autoloads/transition.tscn"
+ScormWrapper="*res://scorm/ScormWrapper.gd"
+Signals="*res://game/autoloads/signals.gd"
+Exercises="*res://game/autoloads/exercises.gd"
+Date="*res://core/Date.gd"
+JsonReader="*res://core/JSONReader/JSONReader.gd"
+Data="*res://core/Data.gd"
+ElementTracker="*res://addons/GodotUITutorial/autoloads/ElementTracker.tscn"
+
+[display]
+
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+theme/custom="res://themes/windows_10_light/theme.tres"
+
+[input]
+
+clear_sequence={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777252,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+start_stop_track_sequence={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777253,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+next_step={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777254,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+save_sequence={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777255,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+debug_clicks={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777250,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+SAVE={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+LOAD={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":76,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"

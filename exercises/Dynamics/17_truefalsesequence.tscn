@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/true_false_sequence.tscn" type="PackedScene" id=1]
+[ext_resource path="res://exercises/Dynamics/17_truefalsesequence.gd" type="Script" id=2]
+
+[node name="17" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+title = "Escenarios TUM"
+enunc = "Estos enunciados representan situaciones que puedes enfrentar al aplicar TUM. Evalúa si son correctos:"
+
+[node name="PopUp" parent="." index="0"]
+title = "¡Muy Bien!"
+text = " ¡Muy bien! TUM debe reflejar siempre el estado del equipo, incluso ante fallas o incertidumbre. El registro es obligatorio para asegurar la trazabilidad operativa."
+buton_text = "Continuar"
+show_stars = true
+
+[connection signal="button_pressed" from="PopUp" to="." method="_on_PopUp_button_pressed"]

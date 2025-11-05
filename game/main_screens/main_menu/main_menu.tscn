@@ -1,0 +1,288 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://game/assets/ui/theme/button_normal.tres" type="StyleBox" id=1]
+[ext_resource path="res://game/assets/ui/theme/button_pressed.tres" type="StyleBox" id=2]
+[ext_resource path="res://game/assets/ui/theme/button_hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://game/assets/ui/theme/panel_style.tres" type="StyleBox" id=4]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontVeryHuge.tres" type="DynamicFont" id=5]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontBig.tres" type="DynamicFont" id=6]
+[ext_resource path="res://game/main_screens/main_menu/main_menu.gd" type="Script" id=7]
+[ext_resource path="res://game/assets/ui/images/bg-02.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/logos/bhp_logo.png" type="Texture" id=9]
+[ext_resource path="res://game/assets/ui/images/LogoYoy.png" type="Texture" id=10]
+[ext_resource path="res://game/assets/sounds/button.ogg" type="AudioStream" id=11]
+[ext_resource path="res://game/components/overlay/overlay.tscn" type="PackedScene" id=12]
+[ext_resource path="res://game/main_screens/popups/base_popup.tscn" type="PackedScene" id=13]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontHuge.tres" type="DynamicFont" id=14]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+
+[node name="BG" type="Control" parent="."]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="BG"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="ColorRect2" type="ColorRect" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.866667, 0.34902, 0, 1 )
+
+[node name="Bg-02" type="TextureRect" parent="BG"]
+self_modulate = Color( 1, 1, 1, 0.372549 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = -300.0
+margin_right = 180.0
+margin_bottom = 780.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Bg-03" type="TextureRect" parent="BG"]
+self_modulate = Color( 1, 1, 1, 0.372549 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 225.0
+margin_top = 301.0
+margin_right = 630.0
+margin_bottom = 1381.0
+rect_rotation = 180.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+
+[node name="TitleAndMenu" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="TitleAndMenu"]
+margin_left = 396.0
+margin_top = 204.0
+margin_right = 627.0
+margin_bottom = 396.0
+mouse_filter = 2
+size_flags_horizontal = 7
+custom_constants/separation = 10
+
+[node name="Title" type="Label" parent="TitleAndMenu/VBox"]
+margin_right = 231.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 5 )
+text = "Training Games"
+align = 1
+valign = 1
+
+[node name="Panel" type="Panel" parent="TitleAndMenu/VBox"]
+margin_top = 42.0
+margin_right = 231.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 170, 150 )
+mouse_filter = 2
+custom_styles/panel = ExtResource( 4 )
+
+[node name="Margin" type="MarginContainer" parent="TitleAndMenu/VBox/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="TitleAndMenu/VBox/Panel/Margin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 211.0
+margin_bottom = 130.0
+mouse_filter = 2
+custom_constants/separation = 10
+
+[node name="Start" type="Button" parent="TitleAndMenu/VBox/Panel/Margin/VBox"]
+margin_right = 191.0
+margin_bottom = 50.0
+focus_mode = 0
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 6 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 1 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Comenzar"
+
+[node name="LevelSelector" type="Button" parent="TitleAndMenu/VBox/Panel/Margin/VBox"]
+margin_top = 60.0
+margin_right = 191.0
+margin_bottom = 110.0
+focus_mode = 0
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 6 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 1 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Selector de niveles"
+
+[node name="HBox" type="HBoxContainer" parent="TitleAndMenu/VBox"]
+margin_top = 202.0
+margin_right = 231.0
+margin_bottom = 232.0
+rect_min_size = Vector2( 0, 30 )
+alignment = 1
+
+[node name="Advance" type="Label" parent="TitleAndMenu/VBox/HBox"]
+unique_name_in_owner = true
+margin_left = 38.0
+margin_top = 3.0
+margin_right = 192.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 14 )
+text = "0% Completo"
+align = 1
+valign = 1
+
+[node name="HBox2" type="HBoxContainer" parent="TitleAndMenu/VBox"]
+margin_top = 242.0
+margin_right = 231.0
+margin_bottom = 272.0
+rect_min_size = Vector2( 0, 30 )
+alignment = 1
+
+[node name="Approved" type="Label" parent="TitleAndMenu/VBox/HBox2"]
+unique_name_in_owner = true
+margin_left = 50.0
+margin_top = 3.0
+margin_right = 180.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 14 )
+text = "¡Aprobado!"
+align = 1
+valign = 1
+
+[node name="Optalert" type="TextureRect" parent="TitleAndMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -127.0
+margin_top = -290.0
+margin_right = 141.0
+margin_bottom = -45.0001
+mouse_filter = 2
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="LogoYoy" type="TextureRect" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 87.0
+margin_bottom = 45.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+
+[node name="Version" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -57.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 6 )
+text = "v1.4.0"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 11 )
+
+[node name="Overlay" parent="." instance=ExtResource( 12 )]
+
+[node name="FirstTimePopUp" parent="." instance=ExtResource( 13 )]
+title = "¡Bienvenido! "
+text = "Bienvenido al curso de TUM, para aprobar el curso debes obtener una puntuación de al menos {approved_score}%."
+buton_text = "Custom"
+custom_buton_text = "Continuar"
+
+[node name="Button" parent="FirstTimePopUp/Panel" index="0"]
+text = "Continuar"
+
+[node name="Title" parent="FirstTimePopUp/Panel" index="1"]
+text = "¡Bienvenido! "
+
+[node name="Text" parent="FirstTimePopUp/Panel" index="2"]
+text = "Bienvenido al curso de TUM, para aprobar el curso debes obtener una puntuación de al menos {approved_score}%."
+
+[node name="CompletedPopUp" parent="." instance=ExtResource( 13 )]
+title = "¡Felicidades! "
+text = "Aprobaste el curso de TUM con una puntuación de {score}%."
+buton_text = "Custom"
+custom_buton_text = "Continuar"
+
+[node name="Button" parent="CompletedPopUp/Panel" index="0"]
+text = "Continuar"
+
+[node name="Title" parent="CompletedPopUp/Panel" index="1"]
+text = "¡Felicidades! "
+
+[node name="Text" parent="CompletedPopUp/Panel" index="2"]
+text = "Aprobaste el curso de TUM con una puntuación de {score}%."
+
+[node name="RetryPopUp" parent="." instance=ExtResource( 13 )]
+title = "¡Vuelve a intentarlo! "
+text = "Obtuviste {fail_score}%. Para aprobar el curso debes obtener una puntuación de al menos {approved_score}%, vuelve a intentarlo."
+buton_text = "Custom"
+custom_buton_text = "Continuar"
+
+[node name="Button" parent="RetryPopUp/Panel" index="0"]
+text = "Continuar"
+
+[node name="Title" parent="RetryPopUp/Panel" index="1"]
+text = "¡Vuelve a intentarlo! "
+
+[node name="Text" parent="RetryPopUp/Panel" index="2"]
+text = "Obtuviste {fail_score}%. Para aprobar el curso debes obtener una puntuación de al menos {approved_score}%, vuelve a intentarlo."
+
+[connection signal="pressed" from="TitleAndMenu/VBox/Panel/Margin/VBox/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="TitleAndMenu/VBox/Panel/Margin/VBox/LevelSelector" to="." method="_on_LevelSelector_pressed"]
+[connection signal="button_pressed" from="FirstTimePopUp" to="." method="_on_PopUp_button_pressed"]
+[connection signal="button_pressed" from="CompletedPopUp" to="." method="_on_PopUp_button_pressed"]
+[connection signal="button_pressed" from="RetryPopUp" to="." method="_on_PopUp_button_pressed"]
+
+[editable path="FirstTimePopUp"]
+[editable path="CompletedPopUp"]
+[editable path="RetryPopUp"]

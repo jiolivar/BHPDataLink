@@ -1,0 +1,762 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://testing/DispatchWindow.gd" type="Script" id=1]
+[ext_resource path="res://themes/windows_10_light/assets/fonts/Open_Sans/OpenSans-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/ui/fonts/roboto/Roboto-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://addons/GodotUITutorial/elements/LockableOptionButton.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=15]
+size = 14
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 8.0
+bg_color = Color( 0.141176, 0.756863, 0.784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 8.0
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 8.0
+bg_color = Color( 0, 0.890196, 0.0980392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 8.0
+bg_color = Color( 0.435294, 0.901961, 0.47451, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+content_margin_left = 8.0
+bg_color = Color( 0.654902, 0.654902, 0.654902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+content_margin_left = 8.0
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id=9]
+content_margin_left = 8.0
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 14
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.141176, 0.756863, 0.784314, 1 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 14
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+content_margin_left = 8.0
+bg_color = Color( 0.698039, 0.698039, 0.698039, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+content_margin_left = 8.0
+bg_color = Color( 0.141176, 0.756863, 0.784314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+content_margin_left = 8.0
+bg_color = Color( 0.756863, 0.756863, 0.756863, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+shadow_color = Color( 0.215686, 0.215686, 0.215686, 0.741176 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+content_margin_left = 8.0
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+content_margin_left = 8.0
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="Panel" type="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -229.0
+margin_top = -298.0
+margin_right = 267.0
+margin_bottom = 298.0
+rect_min_size = Vector2( 496, 596 )
+script = ExtResource( 1 )
+
+[node name="BackGround" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.008
+margin_left = -2.0
+margin_top = -5.0
+margin_right = 2.0
+margin_bottom = 0.231995
+color = Color( 0.929412, 0.929412, 0.929412, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -241.0
+margin_top = -293.0
+margin_right = 242.0
+margin_bottom = 294.0
+rect_scale = Vector2( 1, 0.997683 )
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 483.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "General"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 483.0
+margin_bottom = 78.0
+rect_pivot_offset = Vector2( -82, 51 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 158.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 158.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Unidad:"
+
+[node name="MachineSearchLineEdit" type="OptionButton" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 24.0
+margin_right = 158.0
+margin_bottom = 54.0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/normal = SubResource( 18 )
+text = "CEX05"
+script = ExtResource( 4 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 162.0
+margin_right = 320.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 158.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Ubicación:"
+
+[node name="OptionButton2" type="OptionButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+margin_top = 24.0
+margin_right = 158.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_constants/arrow_margin = 0
+custom_styles/hover = SubResource( 4 )
+custom_styles/normal = SubResource( 2 )
+text = "SRDC_NORTE"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 324.0
+margin_right = 483.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+margin_right = 159.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Destino:"
+
+[node name="DestinationButton" type="OptionButton" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+margin_top = 24.0
+margin_right = 159.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_constants/arrow_margin = 0
+custom_styles/hover = SubResource( 4 )
+custom_styles/normal = SubResource( 2 )
+text = "CGD05"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 82.0
+margin_right = 483.0
+margin_bottom = 136.0
+rect_pivot_offset = Vector2( -82, 51 )
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 319.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 319.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Estado y razón (15-JUL-25 08:52:35)"
+
+[node name="CodeStateButton" type="OptionButton" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 24.0
+margin_right = 319.0
+margin_bottom = 54.0
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_constants/arrow_margin = 0
+custom_styles/hover = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "2010"
+script = ExtResource( 4 )
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 323.0
+margin_right = 483.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer3"]
+margin_right = 160.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Destino:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer2/VBoxContainer3"]
+margin_top = 24.0
+margin_right = 160.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 3
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_styles/read_only = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "NINGUNA"
+editable = false
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 140.0
+margin_right = 483.0
+margin_bottom = 144.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 148.0
+margin_right = 483.0
+margin_bottom = 202.0
+rect_pivot_offset = Vector2( -82, 51 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3"]
+margin_right = 158.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/VBoxContainer"]
+margin_right = 158.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Cargas:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer3/VBoxContainer"]
+margin_top = 24.0
+margin_right = 158.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 3
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_styles/read_only = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "2"
+editable = false
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 162.0
+margin_right = 320.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/VBoxContainer2"]
+margin_right = 158.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Combustible restante:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer3/VBoxContainer2"]
+margin_top = 24.0
+margin_right = 158.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 3
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_styles/read_only = SubResource( 9 )
+custom_styles/normal = SubResource( 8 )
+text = "2.330"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 324.0
+margin_right = 483.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3/VBoxContainer3"]
+margin_right = 159.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+margin_top = 206.0
+margin_right = 483.0
+margin_bottom = 210.0
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_top = 214.0
+margin_right = 483.0
+margin_bottom = 231.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "Materiales"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 235.0
+margin_right = 483.0
+margin_bottom = 289.0
+rect_pivot_offset = Vector2( -82, 51 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer4"]
+margin_right = 158.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4/VBoxContainer"]
+margin_right = 158.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Material:"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer4/VBoxContainer"]
+margin_top = 24.0
+margin_right = 158.0
+margin_bottom = 54.0
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_constants/arrow_margin = 0
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 2 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer4"]
+margin_left = 162.0
+margin_right = 320.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4/VBoxContainer2"]
+margin_right = 158.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Ley:"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer4/VBoxContainer2"]
+margin_top = 24.0
+margin_right = 158.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_constants/arrow_margin = 0
+custom_styles/hover = SubResource( 4 )
+custom_styles/normal = SubResource( 2 )
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer4"]
+margin_left = 324.0
+margin_right = 483.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4/VBoxContainer3"]
+margin_right = 159.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Carga:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer4/VBoxContainer3"]
+margin_top = 24.0
+margin_right = 159.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 3
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_styles/read_only = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "0"
+editable = false
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+margin_top = 293.0
+margin_right = 483.0
+margin_bottom = 297.0
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+margin_top = 301.0
+margin_right = 483.0
+margin_bottom = 318.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "Operador actual"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 322.0
+margin_right = 483.0
+margin_bottom = 376.0
+rect_pivot_offset = Vector2( -82, 51 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer5"]
+margin_right = 158.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5/VBoxContainer"]
+margin_right = 158.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Operador:"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer5/VBoxContainer"]
+margin_top = 24.0
+margin_right = 158.0
+margin_bottom = 54.0
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_constants/arrow_margin = 0
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 2 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer5"]
+margin_left = 162.0
+margin_right = 320.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5/VBoxContainer2"]
+margin_right = 158.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Nivel de cualificación:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer5/VBoxContainer2"]
+margin_top = 24.0
+margin_right = 158.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 3
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_styles/read_only = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "Calificado"
+editable = false
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer5"]
+margin_left = 324.0
+margin_right = 483.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5/VBoxContainer3"]
+margin_right = 159.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Equipo de trabajo:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer5/VBoxContainer3"]
+margin_top = 24.0
+margin_right = 159.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 3
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_styles/read_only = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "2"
+editable = false
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer"]
+margin_top = 380.0
+margin_right = 483.0
+margin_bottom = 384.0
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+margin_top = 388.0
+margin_right = 483.0
+margin_bottom = 405.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "Acciones"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 409.0
+margin_right = 483.0
+margin_bottom = 463.0
+rect_pivot_offset = Vector2( -82, 51 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer6"]
+margin_right = 128.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer6/VBoxContainer"]
+margin_right = 128.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Unidad:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer6/VBoxContainer"]
+margin_top = 24.0
+margin_right = 128.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 3
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_styles/read_only = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "Asignar"
+editable = false
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer6"]
+margin_left = 132.0
+margin_right = 261.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer6/VBoxContainer2"]
+margin_right = 129.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Ubicación:"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer6/VBoxContainer2"]
+margin_top = 24.0
+margin_right = 129.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_constants/arrow_margin = 0
+custom_styles/hover = SubResource( 4 )
+custom_styles/normal = SubResource( 10 )
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer6"]
+margin_left = 265.0
+margin_right = 483.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer6/VBoxContainer3"]
+margin_right = 218.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Destino:"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer6/VBoxContainer3"]
+margin_top = 24.0
+margin_right = 218.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.439216, 0.439216, 0.439216, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_constants/arrow_margin = 0
+custom_styles/hover = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+text = "Seleccionar acción a ejecutar"
+
+[node name="HSeparator5" type="HSeparator" parent="VBoxContainer"]
+margin_top = 467.0
+margin_right = 483.0
+margin_bottom = 471.0
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+margin_top = 475.0
+margin_right = 483.0
+margin_bottom = 492.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "Etiquetas"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 496.0
+margin_right = 483.0
+margin_bottom = 526.0
+rect_pivot_offset = Vector2( -82, 51 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer7"]
+margin_right = 483.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer7/VBoxContainer"]
+margin_right = 483.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 3
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_styles/read_only = SubResource( 13 )
+custom_styles/normal = SubResource( 14 )
+placeholder_text = "Ingrese etiqueta aquí"
+caret_blink = true
+caret_blink_speed = 0.5

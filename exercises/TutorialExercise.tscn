@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://exercises/tutorial/tutorial_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/GodotUITutorial/Tutorial.tscn" type="PackedScene" id=2]
+[ext_resource path="res://exercises/TutorialExercise.gd" type="Script" id=3]
+
+[node name="MainTutorial1" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="MarginContainer" parent="Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer" index="0"]
+margin_bottom = 130.0
+
+[node name="VBoxContainer" parent="Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/MarginContainer" index="0"]
+margin_bottom = 130.0
+
+[node name="SiteLabel" parent="Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/MarginContainer/VBoxContainer" index="1"]
+margin_bottom = 86.0
+
+[node name="RichTextLabel" parent="Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/MarginContainer/VBoxContainer" index="2"]
+margin_top = 90.0
+margin_bottom = 130.0
+
+[node name="ActivityGraphContainer" parent="Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer" index="1"]
+margin_top = 134.0
+margin_bottom = 344.0
+
+[node name="CategoryContainer" parent="Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer" index="2"]
+margin_top = 348.0
+margin_bottom = 500.0
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="." index="2"]
+
+[node name="Tutorial" parent="CanvasLayer3" index="0" instance=ExtResource( 2 )]
+main_panel_path = NodePath("../../Tutorial_1/Pages")
+
+[connection signal="before_more_info_pressed" from="." to="." method="_on_MainTutorial1_before_more_info_pressed"]
+[connection signal="tutorial_end" from="CanvasLayer3/Tutorial" to="." method="_on_Tutorial_tutorial_end"]
+
+[editable path="CanvasLayer2/Overlay"]

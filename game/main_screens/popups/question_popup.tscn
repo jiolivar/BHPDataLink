@@ -1,0 +1,160 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://game/main_screens/popups/Star.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontHuge.tres" type="DynamicFont" id=2]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontBig.tres" type="DynamicFont" id=3]
+[ext_resource path="res://game/main_screens/popups/question_popup.gd" type="Script" id=4]
+[ext_resource path="res://game/assets/ui/theme/button_normal.tres" type="StyleBox" id=5]
+[ext_resource path="res://game/assets/ui/theme/button_pressed.tres" type="StyleBox" id=6]
+[ext_resource path="res://game/assets/ui/theme/button_hover.tres" type="StyleBox" id=7]
+[ext_resource path="res://game/assets/ui/theme/panel_style.tres" type="StyleBox" id=8]
+[ext_resource path="res://game/assets/sounds/button.ogg" type="AudioStream" id=9]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.392157 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="PopUp" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+custom_buton_text2 = "Button2"
+
+[node name="BG" type="Panel" parent="."]
+unique_name_in_owner = true
+modulate = Color( 0, 0, 0, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -564.0
+margin_top = -262.0
+margin_right = 564.0
+margin_bottom = 262.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -199.0
+margin_top = -109.0
+margin_right = 199.0
+margin_bottom = 109.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+rect_pivot_offset = Vector2( 199, 109 )
+custom_styles/panel = ExtResource( 8 )
+
+[node name="Button" type="Button" parent="Panel"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -172.0
+margin_top = -59.0
+margin_right = -27.0
+margin_bottom = -19.0
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+text = "Comenzar"
+
+[node name="Button2" type="Button" parent="Panel"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 26.0
+margin_top = -59.0
+margin_right = 171.0
+margin_bottom = -19.0
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+text = "Comenzar"
+
+[node name="Button3" type="Button" parent="Panel"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 168.0
+margin_top = -223.0
+margin_right = 204.0
+margin_bottom = -189.0
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+text = "X"
+
+[node name="Title" type="Label" parent="Panel"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -182.0
+margin_top = 5.0
+margin_right = 182.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 2 )
+align = 1
+valign = 1
+
+[node name="Text" type="Label" parent="Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 17.0
+margin_top = 49.0
+margin_right = -17.0
+margin_bottom = -74.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Stars" type="Control" parent="Panel"]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 40.0
+
+[node name="Star1" parent="Panel/Stars" instance=ExtResource( 1 )]
+margin_left = -87.0
+margin_top = -69.0
+margin_right = -27.0
+margin_bottom = -9.0
+
+[node name="Star2" parent="Panel/Stars" instance=ExtResource( 1 )]
+margin_left = 27.0
+margin_top = -69.0
+margin_right = 87.0
+margin_bottom = -9.0
+
+[node name="Star3" parent="Panel/Stars" instance=ExtResource( 1 )]
+margin_top = -101.0
+margin_bottom = -11.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 9 )
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Panel/Button3" to="." method="_on_Button3_pressed"]

@@ -1,0 +1,188 @@
+{
+	"eval1": [
+		{
+			"title": "Ahora haremos una evaluación. Para iniciar selecciona el primer usuario para verificar si la gráfica presenta signos de un mal funcionamiento del sistema Optalert.",
+			"trigger": {
+				"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer/Tabs/Page_0/IrisButton_0/Control/Button",
+				"flag": 0
+			}
+		},
+		{
+			"title": "¿La gráfica representa un funcionamiento normal?",
+			"question": "",
+			"alternatives": [
+				"La gráfica se ve normal",
+				"La gráfica presenta signos de mal funcionamiento"
+			],
+			"correct_alternative": 0,
+			"feedback" : [
+				"Asi es, la gráfica presenta valores que varían de forma esperada.",
+				"¡Incorrecto! La gráfica presenta valores que varían de forma esperada."
+			]
+		},
+		{
+			"title": "Selecciona el segundo usuario para verificar si la gráfica es correcta.",
+			"trigger": {
+				"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer/Tabs/Page_0/IrisButton_1/Control/Button",
+				"flag": 0
+			}
+		},
+		{
+			"title": "¿La gráfica es correcta?",
+			"question": "",
+			"alternatives": [
+				"La gráfica se ve normal",
+				"La gráfica presenta signos de mal funcionamiento"
+			],
+			"correct_alternative": 1,
+			"feedback" : [
+				"Asi es, la gráfica presenta signos de mal funcionamiento.",
+				"Incorrecto! la gráfica presenta signos de mal funcionamiento."
+			]
+		},
+		{
+			"title": "¿Que esta mal en esta gráfica?",
+			"question": "",
+			"alternatives": [
+				"No hay variacion en la gráfica.",
+				"La gráfica presenta una alta frecuencia de alarmas."
+			],
+			"correct_alternative": 1,
+			"feedback" : [
+				"Asi es, la gráfica presenta una alta frecuencia de alarmas, lo cual indica una alta sensibilidad generando marcaciones erroneas.",
+				"Incorrecto! la gráfica presenta una alta frecuencia de alarmas, lo cual indica una alta sensibilidad generando marcaciones erroneas."
+			]
+		},
+		{
+			"title": "¿Como se debe proceder en estos casos?",
+			"question": "",
+			"alternatives": [
+				"Se avisa al operador para que el mismo realize la calibración del lente.",
+				"Se debe coordinar la calibración del lente con el operador y personal de tecnologías mina."
+			],
+			"correct_alternative": 1,
+			"feedback" : [
+				"Asi es, se debe coordinar la calibración del lente con el operador y personal de tecnologías mina.",
+				"Incorrecto! se debe coordinar la calibración del lente con el operador y personal de tecnologías mina."
+			]
+		},
+		{
+			"title": "Selecciona el tercer usuario para verificar si la gráfica es correcta.",
+			"trigger": {
+				"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer/Tabs/Page_0/IrisButton_2/Control/Button",
+				"flag": 0
+			}
+		},
+		{
+			"title": "¿La gráfica es correcta?",
+			"question": "",
+			"alternatives": [
+				"La gráfica se ve normal",
+				"La gráfica presenta signos de mal funcionamiento"
+			],
+			"correct_alternative": 0,
+			"feedback" : [
+				"Asi es, la gráfica se ve normal.",
+				"Incorrecto! La gráfica se ve normal."
+			]
+		},
+		{
+			"title": "Selecciona el cuarto usuario para verificar si la gráfica es correcta.",
+			"trigger": {
+				"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer/Tabs/Page_0/IrisButton_3/Control/Button",
+				"flag": 0
+			}
+		},
+		{
+			"title": "¿La gráfica es correcta?",
+			"question": "",
+			"alternatives": [
+				"La gráfica se ve normal",
+				"La gráfica presenta signos de mal funcionamiento"
+			],
+			"correct_alternative": 1,
+			"feedback" : [
+				"Asi es, la gráfica presenta signos de mal funcionamiento.",
+				"Incorrecto! la gráfica presenta signos de mal funcionamiento."
+			]
+		},
+		{
+			"title": "¿Que esta mal en esta gráfica?",
+			"question": "",
+			"alternatives": [
+				"No hay variacion en la gráfica.",
+				"La gráfica presenta una alta frecuencia de alarmas."
+			],
+			"correct_alternative": 0,
+			"feedback" : [
+				"Asi es, la gráfica es plana y sin puntuación.",
+				"Incorrecto! la gráfica es plana y sin puntuación."
+			]
+		},
+		{
+			"title": "¿Como se debe proceder en estos casos?",
+			"question": "",
+			"alternatives": [
+				"Se avisa al operador para que el mismo realize la calibración del lente.",
+				"Se coordina con el operador y personal de tecnologia mina, el chequeo y calibración del lente."
+			],
+			"correct_alternative": 1,
+			"feedback" : [
+				"Asi es, se debe coordinar con el operador y personal de tecnologia mina, el chequeo y calibración del lente.",
+				"Incorrecto! se debe coordinar con el operador y personal de tecnologia mina, el chequeo y calibración del lente."
+			]
+		},
+		{
+			"title": "Selecciona el quinto usuario para verificar si la gráfica es correcta.",
+			"trigger": {
+				"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/IrisButtonContainer/ColorRect/CenterContainer/Tabs/Page_0/IrisButton_4/Control/Button",
+				"flag": 0
+			}
+		},
+		{
+			"title": "¿La gráfica es correcta?",
+			"question": "",
+			"alternatives": [
+				"La gráfica se ve normal",
+				"La gráfica presenta signos de mal funcionamiento"
+			],
+			"correct_alternative": 0,
+			"feedback" : [
+				"Asi es, la gráfica se ve normal.",
+				"Incorrecto! La gráfica se ve normal."
+			]
+		},
+		{
+			"title": "Ahora abre la ventana de Resumen de Riesgo",
+			"trigger": {
+				"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/Header/HBoxContainer/Options/OptionsPopupMenu",
+            	"flag": 1
+			}
+		},
+		{
+			"title": "Coloca el horario de inicio: '00:00:00' para mostrar los eventos",
+			"trigger": {
+				"element": "/root/MainTutorial1",
+				"flag": "",
+				"hook": "TimeBox"
+			}
+		},
+		{
+			"title": "Selecciona el usuario que posee riesgos de nivel Alto",
+			"trigger": {
+				"element": "/root/MainTutorial1/Tutorial_1/Tutorial_4_Container/Tutorial_4/MarginContainer/Control/VBoxContainer/MarginContainer/Panel2/MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer2/RiskSummaryRowScrollContainer/MarginContainer/RiskSummaryRowContainer/risk_summary_row_0/Panel/CenterContainer/UserName",
+            	"flag": 0
+			}
+		},
+		{
+			"title": "Finalmente registra el contacto con el operador.",
+			"trigger": {
+				"element": "/root/MainTutorial1",
+				"flag": 0,
+				"hook": "AddRecord"
+			}
+		},
+	]
+}
+
+

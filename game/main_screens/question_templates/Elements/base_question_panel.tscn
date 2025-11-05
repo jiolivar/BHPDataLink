@@ -1,0 +1,153 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://game/assets/ui/theme/panel_style.tres" type="StyleBox" id=1]
+[ext_resource path="res://game/assets/sounds/correct.ogg" type="AudioStream" id=2]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontVeryHuge.tres" type="DynamicFont" id=3]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontHuge.tres" type="DynamicFont" id=4]
+[ext_resource path="res://game/main_screens/question_templates/Elements/base_question_panel.gd" type="Script" id=5]
+[ext_resource path="res://game/assets/ui/images/bg-02.png" type="Texture" id=6]
+[ext_resource path="res://game/assets/sounds/wrong.ogg" type="AudioStream" id=7]
+[ext_resource path="res://game/assets/sounds/swipe.ogg" type="AudioStream" id=8]
+[ext_resource path="res://game/components/overlay/overlay.tscn" type="PackedScene" id=9]
+[ext_resource path="res://game/assets/sounds/quiz-game-music.ogg" type="AudioStream" id=10]
+
+[node name="BaseQuestionPanel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+title = "Titulo"
+question = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BG" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.866667, 0.34902, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bg-02" type="TextureRect" parent="CanvasLayer/BG"]
+modulate = Color( 1, 1, 1, 0.372549 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = -300.0
+margin_right = 180.0
+margin_bottom = 780.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bg-03" type="TextureRect" parent="CanvasLayer/BG"]
+modulate = Color( 1, 1, 1, 0.372549 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 225.0
+margin_top = 301.0
+margin_right = 630.0
+margin_bottom = 1381.0
+rect_rotation = 180.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Overlay" parent="CanvasLayer" instance=ExtResource( 9 )]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -466.0
+margin_top = -257.0
+margin_right = 466.0
+margin_bottom = 257.0
+mouse_filter = 2
+custom_styles/panel = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="Label" parent="Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+margin_bottom = 49.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Titulo"
+align = 1
+valign = 1
+
+[node name="Enunc" type="Label" parent="Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 51.0
+margin_right = -40.0
+margin_bottom = -355.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+autowrap = true
+
+[node name="Question" type="Label" parent="Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 53.0
+margin_top = 80.0
+margin_right = -37.0
+margin_bottom = -261.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+align = 1
+autowrap = true
+
+[node name="CorrectAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 2 )
+
+[node name="WrongAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 7 )
+
+[node name="SwipeAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 8 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -10.0
+autoplay = true

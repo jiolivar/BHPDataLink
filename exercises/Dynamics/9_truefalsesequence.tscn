@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/true_false_sequence.tscn" type="PackedScene" id=1]
+[ext_resource path="res://exercises/Dynamics/9_truefalsesequence.gd" type="Script" id=2]
+
+[node name="9" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+title = "Parámetros de confiabilidad"
+enunc = "Identifica cuáles de estas afirmaciones representan correctamente los parámetros de confiabilidad y productividad:"
+
+[node name="PopUp" parent="." index="0"]
+title = "¡Muy Bien!"
+text = " ¡Correcto! Estos indicadores permiten conocer no solo cuánto produce un equipo, sino también qué tan confiable y disponible está para operar eficientemente.
+"
+buton_text = "Continuar"
+show_stars = true
+
+[connection signal="button_pressed" from="PopUp" to="." method="_on_PopUp_button_pressed"]

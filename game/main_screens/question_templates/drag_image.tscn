@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/drag_image.gd" type="Script" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/base_question_panel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/main_screens/popups/base_popup.tscn" type="PackedScene" id=4]
+
+[node name="DragImage" instance=ExtResource( 2 )]
+margin_right = -6.10352e-05
+script = ExtResource( 1 )
+title = "Arrastra los elementos correctos a la zona"
+
+[node name="Title" parent="Panel" index="0"]
+text = "Arrastra los elementos correctos a la zona"
+
+[node name="Zones" type="Control" parent="." index="4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+mouse_filter = 2
+
+[node name="CorrectElements" type="Control" parent="." index="5"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+mouse_filter = 2
+
+[node name="IncorrectElements" type="Control" parent="." index="6"]
+unique_name_in_owner = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+mouse_filter = 2
+
+[node name="PopUp" parent="." index="7" instance=ExtResource( 4 )]
+unique_name_in_owner = true
+title = "¡Correcto!"
+text = "Lorem ipsummmmmmmm"
+buton_text = "Continuar"
+show_stars = true
+
+[connection signal="button_pressed" from="PopUp" to="." method="_on_PopUp_button_pressed"]

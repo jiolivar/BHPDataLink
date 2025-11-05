@@ -1,0 +1,122 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/ui/fonts/roboto/Roboto_Condensed_Regular_2.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.95, 0.95, 0.95, 1 )
+
+[sub_resource type="Theme" id=9]
+PopupMenu/colors/font_color = Color( 0, 0, 0, 1 )
+PopupMenu/colors/font_color_hover = Color( 1, 0.682353, 0.188235, 1 )
+PopupMenu/fonts/font = ExtResource( 1 )
+PopupMenu/styles/hover = SubResource( 10 )
+PopupMenu/styles/panel = SubResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.658824, 0.662745, 0.678431, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+
+[node name="Header" type="ColorRect"]
+margin_right = 1024.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 21 )
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 2
+
+[node name="Options" type="Button" parent="HBoxContainer"]
+margin_left = 464.0
+margin_right = 554.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 90, 0 )
+theme = SubResource( 9 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 2 )
+text = "Perfiles >>"
+
+[node name="Help" type="Button" parent="HBoxContainer"]
+margin_left = 558.0
+margin_right = 628.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 70, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
+text = "Ayuda >>"
+
+[node name="Exit" type="Button" parent="HBoxContainer"]
+margin_left = 632.0
+margin_right = 672.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 40, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
+text = "Salir"
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_left = 676.0
+margin_top = 2.0
+margin_right = 816.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 140, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Buscar por Conductor"
+align = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 820.0
+margin_right = 1024.0
+margin_bottom = 21.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/MarginContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 202.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 200, 0 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
+caret_blink = true

@@ -1,0 +1,36 @@
+{
+	"eval1": [
+		{
+			"title": "Atento Central Operador, se necesita asignar cambio de turno para CEX07, codigo de estado 2000.",
+			"trigger": {
+				"element": "/root/Control/Node2D",
+				"flag": 1,
+				"hook": "machine_id",
+				"machine_id": "CEX07",
+				"status_pressed": 2000
+			}
+		},
+		{
+			"title": "Atento central Operador, puedo realizar cambio de sitio para PAL02, se necesita estado 4010",
+			"trigger": {
+				"element": "/root/Control/Node2D",
+				"flag": 1,
+				"hook": "machine_id",
+				"machine_id": "PAL02",
+				"status_pressed": 4010
+			}
+		},
+		{
+			"title": "Atento despacho Mecanico, Regador 01 se encuentra en condiciones de operar, asignar a REG01 el estado 1000",
+			"trigger": {
+				"element": "/root/Control/Node2D",
+				"flag": 2,
+				"hook": "machine_id",
+				"machine_id": "REG01",
+				"status_pressed": 1000
+			}
+		}
+	]
+}
+
+

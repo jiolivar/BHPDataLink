@@ -1,0 +1,181 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://addons/GodotUITutorial/fonts/OpenSans.tres" type="DynamicFont" id=1]
+[ext_resource path="res://game/assets/ui/icons/checkbox_checked.png" type="Texture" id=2]
+[ext_resource path="res://testing/CodeButton.gd" type="Script" id=3]
+[ext_resource path="res://assets/ui/fonts/roboto/Roboto-Bold.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.811765, 0.296471, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.911765, 0.396471, 0.1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.631373, 0.230588, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.901961, 0.329412, 0, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 12
+use_mipmaps = true
+font_data = ExtResource( 4 )
+
+[node name="Button" type="Button"]
+anchor_right = 0.157
+anchor_bottom = 0.265
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 0.231995
+margin_bottom = -1.52588e-05
+rect_min_size = Vector2( 150, 150 )
+rect_pivot_offset = Vector2( -176, 100 )
+custom_colors/font_color_disabled = Color( 0.901961, 0.329412, 0, 1 )
+custom_colors/font_color_focus = Color( 0.901961, 0.329412, 0, 1 )
+custom_colors/font_color = Color( 0.901961, 0.329412, 0, 1 )
+custom_colors/font_color_hover = Color( 0.901961, 0.329412, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.901961, 0.329412, 0, 1 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+script = ExtResource( 3 )
+texto_popup = "Texto por defecto para este botón."
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 0.996
+anchor_bottom = 0.992
+margin_left = -2.0
+margin_right = 1.64
+margin_bottom = -58.72
+rect_min_size = Vector2( 150, 100 )
+mouse_filter = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+margin_right = 163.0
+margin_bottom = 9.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.43
+
+[node name="Control4" type="Control" parent="VBoxContainer"]
+margin_top = 13.0
+margin_right = 163.0
+margin_bottom = 22.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.43
+
+[node name="Control5" type="Control" parent="VBoxContainer"]
+margin_top = 26.0
+margin_right = 163.0
+margin_bottom = 36.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.43
+
+[node name="Control6" type="Control" parent="VBoxContainer"]
+margin_top = 40.0
+margin_right = 163.0
+margin_bottom = 49.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.43
+
+[node name="Control7" type="Control" parent="VBoxContainer"]
+margin_top = 53.0
+margin_right = 163.0
+margin_bottom = 63.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.43
+
+[node name="Control3" type="Control" parent="VBoxContainer"]
+margin_top = 67.0
+margin_right = 163.0
+margin_bottom = 67.0
+size_flags_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+margin_top = 73.0
+margin_right = 163.0
+margin_bottom = 73.0
+stretch_mode = 4
+
+[node name="Control2" type="Control" parent="VBoxContainer"]
+margin_top = 77.0
+margin_right = 163.0
+margin_bottom = 77.0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.26
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 81.0
+margin_right = 163.0
+margin_bottom = 99.0
+mouse_filter = 2
+size_flags_vertical = 0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
+margin_bottom = 4.0
+rect_clip_content = true
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer"]
+margin_top = 14.0
+margin_right = 163.0
+margin_bottom = 18.0
+rect_clip_content = true
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 1 )
+valign = 2
+autowrap = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_left = 0.1
+anchor_top = 0.569
+anchor_right = 0.907
+anchor_bottom = 1.0
+margin_top = -3.03999
+margin_right = -8.12
+margin_bottom = -0.999969
+rect_min_size = Vector2( 120, 70 )
+mouse_filter = 2
+size_flags_stretch_ratio = 1.27
+custom_constants/separation = -1
+alignment = 2
+
+[node name="Code" type="Label" parent="VBoxContainer2"]
+margin_bottom = 15.0
+grow_horizontal = 0
+rect_clip_content = true
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+
+[node name="Title" type="Label" parent="VBoxContainer2"]
+margin_top = 14.0
+margin_right = 121.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 0, 15 )
+rect_clip_content = true
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.972549, 0.713726, 0.2, 1 )
+custom_constants/line_spacing = -3
+custom_fonts/font = SubResource( 5 )
+valign = 2
+autowrap = true
+
+[node name="TextureButton" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.756
+anchor_top = 0.006
+anchor_right = 1.006
+anchor_bottom = 0.256
+margin_left = 0.0399933
+margin_top = 0.0400002
+margin_right = 0.0399933
+margin_bottom = 0.0400047
+texture = ExtResource( 2 )

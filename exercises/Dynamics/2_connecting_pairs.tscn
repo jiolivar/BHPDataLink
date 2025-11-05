@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/connect_pairs.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/pair_element.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+
+[node name="FatigaSomnolencia" instance=ExtResource( 1 )]
+margin_right = 0.0
+title = "Objetivo del TUM"
+question = "Relaciona cada objetivo con el beneficio que entrega el TUM."
+
+[node name="Title" parent="Panel" index="0"]
+margin_top = 21.0
+margin_bottom = 70.0
+text = "Objetivo del TUM"
+
+[node name="Enunc" parent="Panel" index="1"]
+margin_left = 45.0
+margin_top = 56.0
+margin_right = -45.0
+margin_bottom = -381.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel" index="2"]
+margin_left = 361.0
+margin_top = 150.0
+margin_right = 561.0
+margin_bottom = 270.0
+mouse_filter = 2
+expand = true
+stretch_mode = 5
+
+[node name="HighLite" type="Panel" parent="Panel/TextureRect" index="0"]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="Question" parent="Panel" index="3"]
+margin_left = 47.0
+margin_top = 112.0
+margin_right = -43.0
+margin_bottom = -229.0
+text = "Relaciona cada objetivo con el beneficio que entrega el TUM."
+
+[node name="Elements" parent="." index="4"]
+margin_left = -31.0
+margin_right = 9.0
+
+[node name="PairElement" parent="Elements" index="0" instance=ExtResource( 2 )]
+position = Vector2( -336, 151 )
+text = "Monitorear tiempos de equipos"
+
+[node name="PairElement3" parent="Elements" index="1" instance=ExtResource( 2 )]
+position = Vector2( -335, 74 )
+id = 2
+text = "Apoyo a la gestión operacional"
+
+[node name="PairElement2" parent="Elements" index="2" instance=ExtResource( 2 )]
+position = Vector2( -324, -14 )
+id = 1
+text = " Estándar común de registro"
+
+[node name="PairElement5" parent="Elements" index="3" instance=ExtResource( 2 )]
+position = Vector2( 145, 67 )
+id = 1
+text = "Garantiza coherencia entre áreas"
+
+[node name="PairElement9" parent="Elements" index="4" instance=ExtResource( 2 )]
+position = Vector2( 136, 147 )
+id = 2
+text = " Ayuda a tomar mejores decisiones"
+
+[node name="PairElement6" parent="Elements" index="5" instance=ExtResource( 2 )]
+position = Vector2( 124, -14 )
+text = "Permite identificar pérdidas de tiempo"
+
+[node name="PopUp" parent="." index="5"]
+text = "¡Excelente! El TUM no solo organiza la información, también la convierte en un lenguaje común para toda la operación, facilitando la mejora continua"
+
+[node name="CursorHelp" parent="." index="7" instance=ExtResource( 3 )]
+margin_left = -210.0
+margin_top = -39.0
+margin_right = -149.0
+margin_bottom = 25.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 376.0
+margin_top = -7.0
+margin_right = 416.0
+margin_bottom = 33.0
+
+[editable path="CursorHelp"]

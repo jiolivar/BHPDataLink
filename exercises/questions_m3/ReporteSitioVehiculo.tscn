@@ -1,0 +1,290 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/Elements/dragable_element.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/drag_image.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/main_screens/question_templates/Elements/drop_zone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/images/summary_graph.png" type="Texture" id=4]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=14]
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 237.5, 80 )
+
+[sub_resource type="RectangleShape2D" id=17]
+resource_local_to_scene = true
+extents = Vector2( 245, 21 )
+
+[sub_resource type="Shader" id=15]
+code = "shader_type canvas_item;
+uniform float width = 2.0;
+uniform vec4 color: hint_color;
+
+void vertex() {
+	VERTEX += (UV * 2.0 - 1.0) * width;
+}
+
+void fragment(){
+	vec2 uv = UV;
+    vec4 col;
+	
+	vec2 texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(width * 2.0));
+	uv = (uv - texture_pixel_size * width) * TEXTURE_PIXEL_SIZE / texture_pixel_size;
+	if (uv != clamp(uv, vec2(0.0), vec2(1.0))) {
+		COLOR.a = 0.0;
+	} else {
+		col = texture(TEXTURE, uv);
+	}
+	
+	
+    vec2 ps = TEXTURE_PIXEL_SIZE * width; // multiply only once instead of eight times.
+    float a;
+    float maxa = col.a;
+    float mina = col.a;
+
+    // Use 8-way kernel for smoothness
+    //------------------//
+    //    X   X   X     //
+    //      \\ | /       //
+    //    X - O - X     //
+    //      / | \\       //
+    //    X   X   X     //
+    //------------------//
+
+    for(float y = -1.0; y <= 1.0; y++) {
+        for(float x = -1.0; x <= 1.0; x++) {
+            if(vec2(x,y) == vec2(0.0)) {
+                continue; // ignore the center of kernel
+            }
+
+            a = texture(TEXTURE, UV + vec2(x,y)*ps).a;
+            maxa = max(a, maxa); 
+            mina = min(a, mina);
+        }
+    }
+
+    // Fill transparent pixels only, don't overlap texture
+    if(col.a == 0.0) {
+        COLOR = mix(col, color, maxa-mina);
+    } else {
+        // Note on old code: if the last mix value is always 0, why even use it?
+        COLOR = col;
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+resource_local_to_scene = true
+shader = SubResource( 15 )
+shader_param/width = 2.0
+shader_param/color = null
+
+[sub_resource type="RectangleShape2D" id=18]
+resource_local_to_scene = true
+extents = Vector2( 226.5, 29.5 )
+
+[sub_resource type="RectangleShape2D" id=20]
+resource_local_to_scene = true
+extents = Vector2( 258.5, 29.5 )
+
+[sub_resource type="RectangleShape2D" id=19]
+resource_local_to_scene = true
+extents = Vector2( 183, 29.5 )
+
+[node name="EPP" instance=ExtResource( 2 )]
+margin_right = -74.3486
+title = "Reporte diario | Sitio - por vehículo"
+question = "Este reporte grafica hora a hora las alertas recibidas y el tiempo de uso de lentes dentro de un período de 24 hrs por un vehículo en particular. Arrastre las afirmaciones que correspondan a una conclusión correcta de este gráfico."
+
+[node name="Panel" parent="." index="1"]
+margin_left = -428.826
+margin_right = 503.174
+
+[node name="Title" parent="Panel" index="0"]
+text = "Reporte diario | Sitio - por vehículo"
+
+[node name="Question" parent="Panel" index="1"]
+margin_left = 5.0
+margin_top = 70.0
+margin_right = 223.0
+margin_bottom = -211.0
+rect_scale = Vector2( 0.8, 0.8 )
+text = "Este reporte grafica hora a hora las alertas recibidas y el tiempo de uso de lentes dentro de un período de 24 hrs por un vehículo en particular. Arrastre las afirmaciones que correspondan a una conclusión correcta de este gráfico."
+
+[node name="TextureRect" type="TextureRect" parent="Panel" index="2"]
+margin_left = 6.00031
+margin_top = 175.0
+margin_right = 441.0
+margin_bottom = 443.0
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="HighLite" type="Panel" parent="Panel/TextureRect" index="0"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 16 )
+
+[node name="Zones" parent="." index="4"]
+unique_name_in_owner = true
+margin_left = 142.0
+margin_top = 224.0
+margin_right = 182.0
+margin_bottom = 264.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zones" index="0"]
+position = Vector2( 114.674, -60 )
+shape = SubResource( 12 )
+
+[node name="DropZone" parent="Zones/CollisionShape2D" index="0" instance=ExtResource( 3 )]
+position = Vector2( -0.999692, -48.75 )
+id = 1
+
+[node name="DropZone2" parent="Zones/CollisionShape2D" index="1" instance=ExtResource( 3 )]
+position = Vector2( -0.999692, 1.25 )
+id = 2
+
+[node name="DropZone3" parent="Zones/CollisionShape2D" index="2" instance=ExtResource( 3 )]
+position = Vector2( -0.999692, 57.25 )
+id = 3
+
+[node name="DragableElement3" parent="CorrectElements" index="0" instance=ExtResource( 1 )]
+position = Vector2( 276.174, -79 )
+scale = Vector2( 0.98, 1 )
+id = 1
+text = "Entre 4 y 5 am se produjeron la mayor cantidad de alertas"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement3" index="0"]
+shape = SubResource( 17 )
+
+[node name="Label" parent="CorrectElements/DragableElement3" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -225.0
+margin_right = 225.0
+text = "Entre 4 y 5 am se produjeron la mayor cantidad de alertas"
+
+[node name="Icon" parent="CorrectElements/DragableElement3" index="2"]
+material = SubResource( 8 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement3" index="6"]
+margin_left = -245.0
+margin_right = 245.0
+
+[node name="DragableElement4" parent="CorrectElements" index="1" instance=ExtResource( 1 )]
+position = Vector2( 276.174, 19 )
+id = 2
+text = "Que la línea gris y verde estén siempre muy cercanas
+es un buen indicador del % de uso de los lentes"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement4" index="0"]
+shape = SubResource( 18 )
+
+[node name="Label" parent="CorrectElements/DragableElement4" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -206.5
+margin_top = -19.5
+margin_right = 206.5
+margin_bottom = 19.5
+text = "Que la línea gris y verde estén siempre muy cercanas
+es un buen indicador del % de uso de los lentes"
+
+[node name="Icon" parent="CorrectElements/DragableElement4" index="2"]
+material = SubResource( 8 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement4" index="6"]
+margin_left = -226.5
+margin_top = -29.5
+margin_right = 226.5
+margin_bottom = 29.5
+
+[node name="DragableElement6" parent="CorrectElements" index="2" instance=ExtResource( 1 )]
+position = Vector2( 280.174, 71 )
+scale = Vector2( 0.92, 1 )
+id = 3
+text = "La diferencia de tiempo entre la líneas negra y gris representa
+que el vehículo estuvo encendido pero estacionado"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement6" index="0"]
+shape = SubResource( 20 )
+
+[node name="Label" parent="CorrectElements/DragableElement6" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -238.5
+margin_top = -19.5
+margin_right = 238.5
+margin_bottom = 19.5
+text = "La diferencia de tiempo entre la líneas negra y gris representa
+que el vehículo estuvo encendido pero estacionado"
+
+[node name="Icon" parent="CorrectElements/DragableElement6" index="2"]
+material = SubResource( 8 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement6" index="6"]
+margin_left = -258.5
+margin_top = -29.5
+margin_right = 258.5
+margin_bottom = 29.5
+
+[node name="DragableElement5" parent="IncorrectElements" index="0" instance=ExtResource( 1 )]
+position = Vector2( 279.174, -33 )
+id = -1
+text = "La línea negra representa el tiempo que el
+vehículo estuvo completamente apagado"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="IncorrectElements/DragableElement5" index="0"]
+shape = SubResource( 19 )
+
+[node name="Label" parent="IncorrectElements/DragableElement5" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -163.0
+margin_top = -19.5
+margin_right = 163.0
+margin_bottom = 19.5
+text = "La línea negra representa el tiempo que el
+vehículo estuvo completamente apagado"
+
+[node name="Icon" parent="IncorrectElements/DragableElement5" index="2"]
+material = SubResource( 8 )
+
+[node name="HighLite" parent="IncorrectElements/DragableElement5" index="6"]
+margin_left = -183.0
+margin_top = -29.5
+margin_right = 183.0
+margin_bottom = 29.5
+
+[node name="PopUp" parent="." index="7"]
+text = "Así es, cuando el vehículo está completamente apagado el sistema Optalert también lo estará por lo tanto ese tiempo no será registrado."
+
+[node name="CursorHelp" parent="." index="9" instance=ExtResource( 14 )]
+margin_left = 27.1743
+margin_top = -101.0
+margin_right = 88.1743
+margin_bottom = -37.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 83.5
+margin_top = -10.0
+margin_right = 123.5
+margin_bottom = 30.0
+
+[editable path="CorrectElements/DragableElement3"]
+[editable path="CorrectElements/DragableElement4"]
+[editable path="CorrectElements/DragableElement6"]
+[editable path="IncorrectElements/DragableElement5"]
+[editable path="CursorHelp"]

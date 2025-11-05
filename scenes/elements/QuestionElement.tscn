@@ -1,0 +1,128 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://addons/GodotUITutorial/sounds/achievement_bell.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/ui/fonts/BaseFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/ui/styles/GreenButtonPressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/ui/styles/GreenButtonNormal.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/ui/styles/GreenButtonHover.tres" type="StyleBox" id=5]
+[ext_resource path="res://assets/ui/fonts/BaseFontMid.tres" type="DynamicFont" id=6]
+[ext_resource path="res://scenes/elements/QuestionElement.gd" type="Script" id=7]
+[ext_resource path="res://assets/ui/fonts/DejaVuSans.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = -2
+extra_spacing_bottom = -2
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = -2
+extra_spacing_bottom = -2
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="QuestionElement" type="VBoxContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1270.0
+margin_bottom = 710.0
+custom_constants/separation = 10
+script = ExtResource( 7 )
+
+[node name="Title" type="Label" parent="."]
+unique_name_in_owner = true
+margin_right = 1260.0
+margin_bottom = 11.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "Titulo"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Question" type="Label" parent="."]
+unique_name_in_owner = true
+margin_top = 21.0
+margin_right = 1260.0
+margin_bottom = 30.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Pregunta"
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+margin_top = 40.0
+margin_right = 1260.0
+margin_bottom = 700.0
+size_flags_vertical = 3
+
+[node name="AnswerContainer" type="HBoxContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+margin_right = 1156.0
+margin_bottom = 660.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FeedbackContainer" type="HBoxContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+margin_left = 580.0
+margin_right = 1156.0
+margin_bottom = 660.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="HBoxContainer/FeedbackContainer"]
+margin_right = 100.0
+margin_bottom = 660.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="Feedback" type="Label" parent="HBoxContainer/FeedbackContainer"]
+unique_name_in_owner = true
+margin_left = 104.0
+margin_right = 576.0
+margin_bottom = 660.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Pregunta"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Control" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 1160.0
+margin_right = 1260.0
+margin_bottom = 660.0
+rect_min_size = Vector2( 100, 0 )
+alignment = 1
+
+[node name="NextButton" type="Button" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
+margin_top = 310.0
+margin_right = 100.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 0, 40 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+disabled = true
+text = "Siguiente"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HBoxContainer/Control/NextButton"]
+unique_name_in_owner = true
+stream = ExtResource( 1 )
+volume_db = -20.0
+
+[connection signal="pressed" from="HBoxContainer/Control/NextButton" to="." method="_on_NextButton_pressed"]

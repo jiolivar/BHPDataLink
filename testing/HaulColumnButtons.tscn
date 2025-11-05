@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://testing/HaulColumnButtons.gd" type="Script" id=2]
+[ext_resource path="res://addons/GodotUITutorial/fonts/OpenSans.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="StyleBoxFlat" id=4]
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+[node name="Seguimiento" type="Panel"]
+anchor_right = 0.139
+anchor_bottom = 0.085
+margin_right = -0.336014
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.843
+margin_right = 3.0
+margin_bottom = -28.969
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
+flat = true
+align = 0
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="Button"]
+anchor_left = 0.021
+anchor_top = 0.885
+anchor_right = 0.959
+anchor_bottom = 1.654
+margin_left = -0.0449998
+margin_top = 3.99
+margin_right = -0.0549927
+margin_bottom = -0.00400162
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+align = 1

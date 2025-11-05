@@ -1,0 +1,14 @@
+{
+	"tut1": [
+        {
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/MarginContainer/VBoxContainer/SiteLabel",
+			"flag": 0,
+			"text": "Vamos a identificar los elementos del Sistema Optalert. En esta sección, podemos ver el nombre del sitio."
+		},
+		{
+			"element": "/root/MainTutorial1/Tutorial_1/Pages/Tutorial_1/Control/VBoxContainer/Header",
+			"flag": 0,
+			"text": "Este es el menú de acción, que nos permite acceder a opciones como exportación de datos, visualización de operadores, documentos de ayuda, entre otras funciones."
+		}
+	]
+}

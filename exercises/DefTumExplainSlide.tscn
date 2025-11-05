@@ -1,0 +1,131 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://game/assets/ui/fonts/BaseFontVeryHuge.tres" type="DynamicFont" id=1]
+[ext_resource path="res://testing/TUMDef.tscn" type="PackedScene" id=2]
+[ext_resource path="res://exercises/DefTumExplainSlide.gd" type="Script" id=3]
+[ext_resource path="res://testing/PopupTumDef.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/assets/ui/theme/panel_style.tres" type="StyleBox" id=5]
+[ext_resource path="res://game/assets/sounds/quiz-game-music.ogg" type="AudioStream" id=6]
+[ext_resource path="res://game/assets/ui/images/bg-02.png" type="Texture" id=7]
+[ext_resource path="res://game/components/overlay/overlay.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontHuge.tres" type="DynamicFont" id=9]
+
+[node name="Control" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.870588, 0.721569, 0.431373, 1 )
+script = ExtResource( 3 )
+
+[node name="BG" type="Control" parent="."]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.866667, 0.34902, 0, 1 )
+
+[node name="Bg-02" type="TextureRect" parent="BG"]
+modulate = Color( 1, 1, 1, 0.372549 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = -300.0
+margin_right = 180.0
+margin_bottom = 780.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bg-03" type="TextureRect" parent="BG"]
+modulate = Color( 1, 1, 1, 0.372549 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 225.0
+margin_top = 301.0
+margin_right = 630.0
+margin_bottom = 1381.0
+rect_rotation = 180.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -466.0
+margin_top = -257.0
+margin_right = 483.0
+margin_bottom = 262.0
+mouse_filter = 2
+custom_styles/panel = ExtResource( 5 )
+
+[node name="Title" type="Label" parent="Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 0.095
+margin_left = 2.0
+margin_top = 11.0
+margin_right = 2.0
+margin_bottom = 11.17
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Definiciones de TUM"
+align = 1
+valign = 1
+
+[node name="Enunc" type="Label" parent="Panel"]
+unique_name_in_owner = true
+anchor_left = 0.047
+anchor_top = 0.123
+anchor_right = 1.0
+anchor_bottom = 0.192
+margin_left = 0.396999
+margin_top = -0.0190048
+margin_right = -45.0
+margin_bottom = -0.176003
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 9 )
+text = "Haga click en cada concepto para leer su explicación"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TUMDef" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 0.62
+anchor_right = 0.5
+anchor_bottom = 0.62
+margin_left = -450.5
+margin_top = -214.5
+margin_right = 450.5
+margin_bottom = 214.5
+
+[node name="Popup" parent="." instance=ExtResource( 4 )]
+visible = false
+margin_left = -404.0
+margin_top = -108.0
+margin_right = 404.0
+margin_bottom = 108.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+autoplay = true
+
+[node name="Overlay" parent="." instance=ExtResource( 8 )]

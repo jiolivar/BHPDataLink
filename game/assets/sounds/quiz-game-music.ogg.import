@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/quiz-game-music.ogg-b0979260ce7f19042ef35e4c920d4dce.oggstr"
+
+[deps]
+
+source_file="res://game/assets/sounds/quiz-game-music.ogg"
+dest_files=[ "res://.import/quiz-game-music.ogg-b0979260ce7f19042ef35e4c920d4dce.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

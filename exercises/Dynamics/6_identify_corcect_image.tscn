@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/dragable_element.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/main_screens/question_templates/drag_image.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/main_screens/question_templates/Elements/drop_zone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/images/DynamicImages/6_4.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/DynamicImages/6_3.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/DynamicImages/6_2.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/DynamicImages/6_1.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 126, 104.75 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="SistemaEagle" instance=ExtResource( 3 )]
+title = "¿Cuál es la imagen correcta?"
+question = "Revisa estas imágenes de estados de equipos y marca el que muestra un equipo claramente detenido."
+
+[node name="Title" parent="Panel" index="0"]
+text = "¿Cuál es la imagen correcta?"
+
+[node name="Question" parent="Panel" index="2"]
+text = "Revisa estas imágenes de estados de equipos y marca el que muestra un equipo claramente detenido."
+
+[node name="Zones" parent="." index="4"]
+anchor_right = 0.508
+margin_top = -1.0
+margin_right = 28.808
+margin_bottom = 46.0
+
+[node name="DropZone" parent="Zones" index="0" instance=ExtResource( 4 )]
+position = Vector2( 285, 67 )
+id = 1
+text = "Equipo detenido"
+
+[node name="CollisionShape2D" parent="Zones/DropZone" index="0"]
+position = Vector2( -1, 1 )
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone" index="1"]
+margin_left = -126.0
+margin_top = -104.75
+margin_right = 126.0
+margin_bottom = 104.75
+custom_styles/panel = SubResource( 2 )
+
+[node name="Label" parent="Zones/DropZone/HighLite" index="0"]
+text = "Equipo detenido"
+
+[node name="CorrectElements" parent="." index="5"]
+margin_top = 12.0
+margin_bottom = 52.0
+
+[node name="DragableElement2" parent="CorrectElements" index="0" instance=ExtResource( 2 )]
+position = Vector2( -273, 131 )
+id = 1
+text = "2100"
+image = ExtResource( 7 )
+image_scale = 0.12
+
+[node name="DragableElement10" parent="IncorrectElements" index="0" instance=ExtResource( 2 )]
+position = Vector2( -268, -1 )
+id = 2
+text = "2010"
+image = ExtResource( 6 )
+image_scale = 0.48
+
+[node name="DragableElement11" parent="IncorrectElements" index="1" instance=ExtResource( 2 )]
+position = Vector2( -4.99997, -1 )
+id = 2
+text = "3000"
+image = ExtResource( 8 )
+image_scale = 0.12
+
+[node name="DragableElement12" parent="IncorrectElements" index="2" instance=ExtResource( 2 )]
+position = Vector2( -7.99997, 163 )
+id = 2
+text = "6000"
+image = ExtResource( 5 )
+image_scale = 0.4
+
+[node name="PopUp" parent="." index="7"]
+text = "¡Muy bien! Un equipo detenido debe reflejarse correctamente en TUM con un código adecuado de inactividad. Esto permite distinguir entre tiempos productivos y no productivos en los reportes."
+
+[node name="CursorHelp" parent="." index="9" instance=ExtResource( 1 )]
+margin_left = -281.0
+margin_top = -23.0
+margin_right = -220.0
+margin_bottom = 41.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 524.0
+margin_top = 75.0
+margin_right = 564.0
+margin_bottom = 115.0
+
+[editable path="Zones/DropZone"]
+[editable path="CursorHelp"]

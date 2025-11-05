@@ -1,0 +1,380 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/Elements/dragable_element.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/drop_zone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/main_screens/question_templates/drag_image.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/images/portada.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 100, 20 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=22]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=23]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=24]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="RectangleShape2D" id=8]
+resource_local_to_scene = true
+extents = Vector2( 96, 21 )
+
+[sub_resource type="Shader" id=13]
+code = "shader_type canvas_item;
+uniform float width = 2.0;
+uniform vec4 color: hint_color;
+
+void vertex() {
+	VERTEX += (UV * 2.0 - 1.0) * width;
+}
+
+void fragment(){
+	vec2 uv = UV;
+    vec4 col;
+	
+	vec2 texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(width * 2.0));
+	uv = (uv - texture_pixel_size * width) * TEXTURE_PIXEL_SIZE / texture_pixel_size;
+	if (uv != clamp(uv, vec2(0.0), vec2(1.0))) {
+		COLOR.a = 0.0;
+	} else {
+		col = texture(TEXTURE, uv);
+	}
+	
+	
+    vec2 ps = TEXTURE_PIXEL_SIZE * width; // multiply only once instead of eight times.
+    float a;
+    float maxa = col.a;
+    float mina = col.a;
+
+    // Use 8-way kernel for smoothness
+    //------------------//
+    //    X   X   X     //
+    //      \\ | /       //
+    //    X - O - X     //
+    //      / | \\       //
+    //    X   X   X     //
+    //------------------//
+
+    for(float y = -1.0; y <= 1.0; y++) {
+        for(float x = -1.0; x <= 1.0; x++) {
+            if(vec2(x,y) == vec2(0.0)) {
+                continue; // ignore the center of kernel
+            }
+
+            a = texture(TEXTURE, UV + vec2(x,y)*ps).a;
+            maxa = max(a, maxa); 
+            mina = min(a, mina);
+        }
+    }
+
+    // Fill transparent pixels only, don't overlap texture
+    if(col.a == 0.0) {
+        COLOR = mix(col, color, maxa-mina);
+    } else {
+        // Note on old code: if the last mix value is always 0, why even use it?
+        COLOR = col;
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id=7]
+resource_local_to_scene = true
+shader = SubResource( 13 )
+shader_param/width = 2.0
+shader_param/color = null
+
+[sub_resource type="RectangleShape2D" id=18]
+resource_local_to_scene = true
+extents = Vector2( 121.5, 21 )
+
+[sub_resource type="RectangleShape2D" id=19]
+resource_local_to_scene = true
+extents = Vector2( 136.5, 24 )
+
+[sub_resource type="RectangleShape2D" id=20]
+resource_local_to_scene = true
+extents = Vector2( 116, 24 )
+
+[node name="NivelesDefensa" instance=ExtResource( 3 )]
+margin_left = 34.5391
+margin_right = 34.5391
+title = "Reporte | Características de la página inicial"
+question = "La portada resume información relevante sobre cada reporte. Arrastre los textos que representan cada elemento de la página inicial de un reporte Optalert"
+
+[node name="Title" parent="Panel" index="0"]
+text = "Reporte | Características de la página inicial"
+
+[node name="Question" parent="Panel" index="1"]
+text = "La portada resume información relevante sobre cada reporte. Arrastre los textos que representan cada elemento de la página inicial de un reporte Optalert"
+
+[node name="TextureRect" type="TextureRect" parent="Panel" index="2"]
+margin_left = 16.0
+margin_top = 171.0
+margin_right = 471.0
+margin_bottom = 496.0
+mouse_filter = 2
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="DropZone" parent="Zones" index="0" instance=ExtResource( 2 )]
+position = Vector2( 127, 71 )
+id = 1
+
+[node name="CollisionShape2D" parent="Zones/DropZone" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone" index="1"]
+margin_left = -100.0
+margin_top = -20.0
+margin_right = 100.0
+margin_bottom = 20.0
+custom_styles/panel = SubResource( 21 )
+
+[node name="Label" parent="Zones/DropZone/HighLite" index="0"]
+margin_left = -85.0
+margin_right = 85.0
+margin_bottom = 34.0
+
+[node name="DropZone15" parent="Zones" index="1" instance=ExtResource( 2 )]
+position = Vector2( 127, 116 )
+id = 2
+
+[node name="CollisionShape2D" parent="Zones/DropZone15" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone15" index="1"]
+margin_left = -100.0
+margin_top = -20.0
+margin_right = 100.0
+margin_bottom = 20.0
+custom_styles/panel = SubResource( 22 )
+
+[node name="Label" parent="Zones/DropZone15/HighLite" index="0"]
+margin_left = -78.0
+margin_right = 78.0
+margin_bottom = 34.0
+
+[node name="DropZone16" parent="Zones" index="2" instance=ExtResource( 2 )]
+position = Vector2( 127, 158 )
+id = 3
+
+[node name="CollisionShape2D" parent="Zones/DropZone16" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone16" index="1"]
+margin_left = -100.0
+margin_top = -20.0
+margin_right = 100.0
+margin_bottom = 20.0
+custom_styles/panel = SubResource( 23 )
+
+[node name="Label" parent="Zones/DropZone16/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+
+[node name="DropZone17" parent="Zones" index="3" instance=ExtResource( 2 )]
+position = Vector2( 127, 222 )
+id = 4
+
+[node name="CollisionShape2D" parent="Zones/DropZone17" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone17" index="1"]
+margin_left = -100.0
+margin_top = -20.0
+margin_right = 100.0
+margin_bottom = 20.0
+custom_styles/panel = SubResource( 24 )
+
+[node name="Label" parent="Zones/DropZone17/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+
+[node name="DragableElement2" parent="CorrectElements" index="0" instance=ExtResource( 1 )]
+position = Vector2( 359, 48 )
+id = 1
+text = "Nombre del reporte"
+image_scale = 0.27
+custom_collision_transform = true
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement2" index="0"]
+shape = SubResource( 8 )
+
+[node name="Label" parent="CorrectElements/DragableElement2" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -76.0
+margin_right = 76.0
+text = "Nombre del reporte"
+
+[node name="Icon" parent="CorrectElements/DragableElement2" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement2" index="6"]
+margin_left = -94.0
+margin_top = -24.0
+margin_right = 98.0
+margin_bottom = 18.0
+
+[node name="DragableElement3" parent="CorrectElements" index="1" instance=ExtResource( 1 )]
+position = Vector2( 360, 169 )
+scale = Vector2( 0.8, 1 )
+id = 2
+text = "Frecuencia de distribución"
+image_scale = 0.27
+custom_collision_transform = true
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement3" index="0"]
+shape = SubResource( 18 )
+
+[node name="Label" parent="CorrectElements/DragableElement3" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -101.5
+margin_right = 101.5
+text = "Frecuencia de distribución"
+
+[node name="Icon" parent="CorrectElements/DragableElement3" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement3" index="6"]
+margin_left = -119.0
+margin_top = -25.0
+margin_right = 124.0
+margin_bottom = 17.0
+
+[node name="DragableElement4" parent="CorrectElements" index="2" instance=ExtResource( 1 )]
+position = Vector2( 358, 107 )
+scale = Vector2( 0.8, 1 )
+id = 3
+text = "Período de cobertura de datos"
+image_scale = 0.27
+custom_collision_transform = true
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement4" index="0"]
+shape = SubResource( 19 )
+
+[node name="Label" parent="CorrectElements/DragableElement4" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -116.5
+margin_top = -14.0
+margin_right = 116.5
+margin_bottom = 14.0
+text = "Período de cobertura de datos"
+
+[node name="Icon" parent="CorrectElements/DragableElement4" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement4" index="6"]
+margin_left = -135.0
+margin_top = -25.0
+margin_right = 138.0
+margin_bottom = 23.0
+
+[node name="DragableElement5" parent="CorrectElements" index="3" instance=ExtResource( 1 )]
+position = Vector2( 360, 229 )
+id = 4
+text = "Data de producción"
+image_scale = 0.27
+custom_collision_transform = true
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement5" index="0"]
+shape = SubResource( 20 )
+
+[node name="Label" parent="CorrectElements/DragableElement5" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -96.0
+margin_top = -14.0
+margin_right = 96.0
+margin_bottom = 14.0
+text = "Data de producción"
+
+[node name="Icon" parent="CorrectElements/DragableElement5" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement5" index="6"]
+margin_left = -117.0
+margin_top = -24.0
+margin_right = 115.0
+margin_bottom = 24.0
+
+[node name="PopUp" parent="." index="7"]
+text = "¡Muy bien! Todos los reportes tienen una portada que detalla esta información."
+
+[node name="CursorHelp" parent="." index="9" instance=ExtResource( 4 )]
+margin_left = 255.0
+margin_top = 24.0
+margin_right = 316.0
+margin_bottom = 88.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = -76.0
+margin_top = 63.0
+margin_right = -36.0
+margin_bottom = 103.0
+
+[connection signal="dragged" from="CorrectElements/DragableElement2" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement3" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement4" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement5" to="." method="_on_DragableElement2_dragged"]
+
+[editable path="Zones/DropZone"]
+[editable path="Zones/DropZone15"]
+[editable path="Zones/DropZone16"]
+[editable path="Zones/DropZone17"]
+[editable path="CorrectElements/DragableElement2"]
+[editable path="CorrectElements/DragableElement3"]
+[editable path="CorrectElements/DragableElement4"]
+[editable path="CorrectElements/DragableElement5"]
+[editable path="CursorHelp"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/true_false_sequence.tscn" type="PackedScene" id=1]
+[ext_resource path="res://exercises/questions_m3/ReportesProgramados1.gd" type="Script" id=2]
+
+[node name="7" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+title = "Reportes Programados"
+
+[node name="PopUp" parent="." index="0"]
+title = "¡Muy Bien!"
+text = "¡Así es! Los reportes que elabora Optalert permiten optimizar diseños para cambios de turno por lo tanto entregan toda la información necesaria para tomar decisiones, incluyendo a los conductores."
+buton_text = "Continuar"
+show_stars = true
+
+[connection signal="button_pressed" from="PopUp" to="." method="_on_PopUp_button_pressed"]

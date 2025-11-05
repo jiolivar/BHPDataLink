@@ -1,0 +1,335 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://themes/windows_10_light/assets/fonts/segoeUI/segoe_ui_regular_14.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ui/fonts/roboto/Roboto_Condensed_Regular_2.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/images/IconsHaulRoute/img5.png" type="Texture" id=3]
+[ext_resource path="res://themes/windows_10_light/assets/fonts/segoeUI/segoe_ui_regular_15.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/images/IconsHaulRoute/img1.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/IconsHaulRoute/img3.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/IconsHaulRoute/img6.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/IconsHaulRoute/img2.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/IconsHaulRoute/img4.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/IconsHaulRoute/img7.png" type="Texture" id=10]
+[ext_resource path="res://modular/HeaderHaul.gd" type="Script" id=11]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.658824, 0.662745, 0.678431, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.658824, 0.662745, 0.678431, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 1, 1, 1 )
+
+[node name="Header" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 0.067
+margin_bottom = 32.8
+rect_min_size = Vector2( 0, 21 )
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+script = ExtResource( 11 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 516.0
+margin_bottom = 34.0
+alignment = 2
+
+[node name="Archivo" type="Button" parent="HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
+text = "Archivo"
+
+[node name="Editar" type="Button" parent="HBoxContainer"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
+text = "Editar"
+
+[node name="Ver" type="Button" parent="HBoxContainer"]
+margin_left = 208.0
+margin_right = 308.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
+text = "Ver"
+
+[node name="Herramientas" type="Button" parent="HBoxContainer"]
+margin_left = 312.0
+margin_right = 412.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
+text = "Herramientas"
+
+[node name="Ayuda" type="Button" parent="HBoxContainer"]
+margin_left = 416.0
+margin_right = 516.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
+text = "Ayuda"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchor_top = 0.493
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 0.0109978
+margin_right = -422.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 0
+
+[node name="EraseAll" type="Button" parent="HBoxContainer2"]
+margin_right = 50.0
+margin_bottom = 37.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 50, 0 )
+size_flags_horizontal = 0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_constants/hseparation = 0
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 5 )
+icon_align = 1
+expand_icon = true
+
+[node name="EraseAll2" type="Button" parent="HBoxContainer2"]
+margin_left = 50.0
+margin_right = 100.0
+margin_bottom = 37.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 50, 0 )
+size_flags_horizontal = 0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 8 )
+icon_align = 1
+expand_icon = true
+
+[node name="EraseAll3" type="Button" parent="HBoxContainer2"]
+margin_left = 100.0
+margin_right = 150.0
+margin_bottom = 37.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 50, 0 )
+size_flags_horizontal = 0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 6 )
+icon_align = 1
+expand_icon = true
+
+[node name="EraseAll4" type="Button" parent="HBoxContainer2"]
+margin_left = 150.0
+margin_right = 200.0
+margin_bottom = 37.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 50, 0 )
+size_flags_horizontal = 0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 9 )
+icon_align = 1
+expand_icon = true
+
+[node name="ButtonCaex" type="Button" parent="HBoxContainer2"]
+unique_name_in_owner = true
+margin_left = 200.0
+margin_right = 250.0
+margin_bottom = 37.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 50, 0 )
+size_flags_horizontal = 0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 3 )
+icon_align = 1
+expand_icon = true
+
+[node name="ButtonPal" type="Button" parent="HBoxContainer2"]
+unique_name_in_owner = true
+margin_left = 250.0
+margin_right = 300.0
+margin_bottom = 37.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 50, 0 )
+size_flags_horizontal = 0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 10 )
+icon_align = 1
+expand_icon = true
+
+[node name="ButtonBull" type="Button" parent="HBoxContainer2"]
+unique_name_in_owner = true
+margin_left = 300.0
+margin_right = 350.0
+margin_bottom = 37.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 50, 0 )
+size_flags_horizontal = 0
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+icon = ExtResource( 7 )
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+margin_left = 350.0
+margin_top = 7.0
+margin_right = 470.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 120, 0 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+text = "Ejecutar FORM:"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer2"]
+margin_left = 470.0
+margin_right = 594.0
+margin_bottom = 37.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer2/MarginContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 122.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 120, 0 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+caret_blink = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+anchor_top = 0.493
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 658.0
+margin_top = 0.0109978
+margin_right = 2.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer3"]
+margin_top = 8.0
+margin_right = 330.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Equipo de trabajo: 2 Minera: 13397 Estéril 10536 "

@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://modular/IrisButtonContainer.gd" type="Script" id=1]
+[ext_resource path="res://modular/UserInfo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://modular/NextButton.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="IrisButtonContainer" type="HBoxContainer"]
+margin_right = 610.0
+margin_bottom = 100.0
+custom_constants/separation = 0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 510.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 510, 0 )
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Tabs" type="TabContainer" parent="ColorRect/CenterContainer"]
+unique_name_in_owner = true
+margin_left = 255.0
+margin_top = 50.0
+margin_right = 255.0
+margin_bottom = 50.0
+custom_styles/panel = SubResource( 1 )
+tabs_visible = false
+
+[node name="UserInfo" parent="ColorRect/CenterContainer" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+visible = false
+margin_left = 165.0
+margin_top = -30.0
+margin_right = 345.0
+margin_bottom = 130.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 510.0
+margin_right = 635.0
+margin_bottom = 100.0
+custom_constants/separation = 0
+
+[node name="TabsButtonContainer" type="VBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+margin_right = 125.0
+rect_min_size = Vector2( 125, 0 )
+size_flags_vertical = 3
+
+[node name="MoreInfoButton" parent="VBoxContainer" instance=ExtResource( 3 )]
+button_text = "MAS
+INFORMACION"
+
+[connection signal="pressed" from="VBoxContainer/MoreInfoButton" to="." method="_on_MoreInfoButton_pressed"]

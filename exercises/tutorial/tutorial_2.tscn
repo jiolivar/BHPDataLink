@@ -1,0 +1,176 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://modular/NextButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/images/grafico_2.png" type="Texture" id=2]
+[ext_resource path="res://modular/Header2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://modular/Footer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/ui/fonts/roboto/Roboto_Condensed_Regular_4B.tres" type="DynamicFont" id=10]
+[ext_resource path="res://exercises/tutorial/tutorial_2.gd" type="Script" id=11]
+[ext_resource path="res://assets/ui/logos/optalert-logo.png" type="Texture" id=13]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.54902, 0.54902, 0.552941, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.54902, 0.54902, 0.552941, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Tutorial2" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 11 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Header" parent="Control/VBoxContainer" instance=ExtResource( 3 )]
+margin_bottom = 21.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+margin_top = 25.0
+margin_right = 1024.0
+margin_bottom = 362.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Control" type="HBoxContainer" parent="Control/VBoxContainer/HBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 337.0
+size_flags_horizontal = 3
+
+[node name="Control2" type="Control" parent="Control/VBoxContainer/HBoxContainer/Control"]
+margin_right = 10.0
+margin_bottom = 337.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/HBoxContainer/Control"]
+margin_left = 14.0
+margin_right = 214.0
+margin_bottom = 337.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Control/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 200, 64 )
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer/Control/VBoxContainer"]
+margin_top = 68.0
+margin_right = 200.0
+margin_bottom = 90.0
+custom_colors/font_color = Color( 0.454902, 0.454902, 0.458824, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "Múltiples Sitios"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer/Control/VBoxContainer"]
+margin_top = 94.0
+margin_right = 200.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 0, 40 )
+custom_fonts/bold_font = ExtResource( 10 )
+custom_fonts/normal_font = ExtResource( 10 )
+bbcode_enabled = true
+bbcode_text = "[color=#003368]Datos del conductor[/color] "
+text = "Datos del conductor "
+scroll_active = false
+
+[node name="BackButton" parent="Control/VBoxContainer/HBoxContainer/Control/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 138.0
+margin_bottom = 238.0
+size_flags_horizontal = 0
+button_text = "REGRESAR A IRIS"
+is_back = true
+
+[node name="Control" type="Control" parent="Control/VBoxContainer/HBoxContainer/Control"]
+visible = false
+margin_left = 218.0
+margin_right = 1020.0
+margin_bottom = 512.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/HBoxContainer/Control"]
+margin_left = 218.0
+margin_right = 1024.0
+margin_bottom = 337.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 5
+
+[node name="Panel" type="Panel" parent="Control/VBoxContainer/HBoxContainer/Control/MarginContainer"]
+margin_right = 801.0
+margin_bottom = 337.0
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="graphB" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/Control/MarginContainer/Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_right = -34.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer"]
+margin_top = 366.0
+margin_right = 1024.0
+margin_bottom = 536.0
+rect_min_size = Vector2( 0, 170 )
+size_flags_horizontal = 3
+custom_constants/margin_right = 5
+custom_constants/margin_left = 5
+
+[node name="Panel" type="Panel" parent="Control/VBoxContainer/MarginContainer"]
+margin_left = 5.0
+margin_right = 1019.0
+margin_bottom = 170.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer/MarginContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="UserInfoContainer" type="HBoxContainer" parent="Control/VBoxContainer/MarginContainer/Panel/MarginContainer"]
+unique_name_in_owner = true
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 1009.0
+margin_bottom = 165.0
+
+[node name="Footer" parent="Control/VBoxContainer" instance=ExtResource( 6 )]
+
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/Control/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

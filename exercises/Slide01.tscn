@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/Elements/base_question_panel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://exercises/Slide01.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/chrome_ilyTZ4YVJJ.png" type="Texture" id=3]
+[ext_resource path="res://game/assets/ui/fonts/DejaVuSans.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://game/assets/ui/theme/button_normal.tres" type="StyleBox" id=5]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontBig.tres" type="DynamicFont" id=6]
+[ext_resource path="res://game/assets/ui/theme/button_hover.tres" type="StyleBox" id=7]
+[ext_resource path="res://game/assets/ui/theme/button_pressed.tres" type="StyleBox" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+extra_spacing_top = -2
+extra_spacing_bottom = -2
+font_data = ExtResource( 4 )
+
+[node name="Slide01" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+title = "Optalert"
+question = ""
+
+[node name="Title" parent="Panel" index="0"]
+text = "Optalert"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" index="2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = 80.0
+margin_right = -45.0
+margin_bottom = -13.0
+
+[node name="Text" type="Label" parent="Panel/VBoxContainer" index="0"]
+margin_right = 842.0
+margin_bottom = 181.0
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+text = "Optalert es un sistema de monitoreo en tiempo real que evalúa la fatiga y somnolencia de los operadores mineros mediante sensores que analizan el movimiento ocular y el parpadeo. Su objetivo es detectar signos tempranos de cansancio para prevenir accidentes.
+
+Este sistema es clave para la administración de un control crítico del riesgo de choque, colisión y volcamiento en mina, pila botadero y stock. Su implementación mejora la seguridad y reduce incidentes operacionales en entornos de alto riesgo."
+align = 1
+autowrap = true
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer" index="1"]
+margin_top = 185.0
+margin_right = 842.0
+margin_bottom = 195.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" index="2"]
+margin_top = 199.0
+margin_right = 842.0
+margin_bottom = 363.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer" index="0"]
+margin_right = 842.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Control2" type="Control" parent="Panel/VBoxContainer" index="3"]
+margin_top = 367.0
+margin_right = 842.0
+margin_bottom = 377.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer" index="4"]
+margin_top = 381.0
+margin_right = 842.0
+margin_bottom = 421.0
+size_flags_horizontal = 3
+
+[node name="NextButton" type="Button" parent="Panel/VBoxContainer/CenterContainer" index="0"]
+margin_left = 331.0
+margin_right = 511.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 180, 40 )
+focus_mode = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 6 )
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 5 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "Continuar"
+
+[node name="Question" parent="Panel" index="3"]
+text = ""
+
+[connection signal="pressed" from="Panel/VBoxContainer/CenterContainer/NextButton" to="." method="_on_NextButton_pressed"]

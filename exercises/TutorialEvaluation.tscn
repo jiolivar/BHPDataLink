@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://exercises/tutorial/tutorial_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/EvaluationPanel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://exercises/TutorialEvaluation.gd" type="Script" id=3]
+[ext_resource path="res://game/main_screens/popups/base_popup.tscn" type="PackedScene" id=4]
+
+[node name="Main" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Tutorial_1" parent="." index="0"]
+scale = Vector2( 1, 0.98 )
+transform = Transform2D( 1, 0, 0, 0.98, 0, 0 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="2"]
+
+[node name="EvaluationPanel" parent="CanvasLayer" index="0" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+margin_top = 523.0
+
+[node name="PopUp" parent="CanvasLayer" index="1" instance=ExtResource( 4 )]
+unique_name_in_owner = true
+title = "¡Correcto!"
+text = "¡Completaste la evaluacion del Tutorial!"
+buton_text = "Continuar"
+show_stars = true
+
+[node name="PopUp2" parent="CanvasLayer" index="2" instance=ExtResource( 4 )]
+unique_name_in_owner = true
+title = "¡No puedes hacer eso!"
+text = "Debes completar los pasos en la  ventana actual."
+buton_text = "Continuar"
+
+[connection signal="hook_start" from="." to="." method="_on_Main_hook_start"]
+[connection signal="evaluation_ended" from="CanvasLayer/EvaluationPanel" to="." method="_on_EvaluationPanel_evaluation_ended"]
+[connection signal="button_pressed" from="CanvasLayer/PopUp" to="." method="_on_PopUp_button_pressed"]
+
+[editable path="CanvasLayer2/Overlay"]

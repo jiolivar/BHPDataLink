@@ -1,0 +1,438 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/content_slide.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontHuge.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/images/operator.jpg" type="Texture" id=3]
+[ext_resource path="res://exercises/SlideIntro01Save.gd" type="Script" id=4]
+[ext_resource path="res://assets/images/glasses2.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/bg2.1.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/chrome_ilyTZ4YVJJ.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/eagle1.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/img96.jpg" type="Texture" id=9]
+[ext_resource path="res://assets/images/img98.jpg" type="Texture" id=10]
+[ext_resource path="res://assets/images/img94.jpg" type="Texture" id=11]
+[ext_resource path="res://assets/images/bg2.2.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/seq4.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/seq2.png" type="Texture" id=14]
+
+[node name="SlideIntro01" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+
+[node name="Question" parent="Panel" index="1"]
+visible = false
+
+[node name="SlideContent" parent="Panel" index="2"]
+margin_left = 16.0
+margin_right = -16.0
+
+[node name="Unit1" type="Control" parent="Panel/SlideContent/ContentContainer" index="0"]
+visible = false
+margin_right = 900.0
+margin_bottom = 406.0
+rect_min_size = Vector2( 900, 0 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Panel/SlideContent/ContentContainer/Unit1" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = 20.0
+margin_right = -45.0
+margin_bottom = -119.0
+custom_fonts/font = ExtResource( 2 )
+text = "La fatiga es un estado de disminución de la capacidad física y/o mental que afecta el desempeño laboral. Se caracteriza por la reducción de la atención, disminución de la memoria y mayor probabilidad de cometer errores.
+
+Las causas comunes de estos errores, en Minería y Transporte, son los turnos prolongados, trabajo, nocturno, carga física y condiciones extremas, las cuales tiene como consecuencia un aumento de accidentes, reducción de productividad y deterioro de salud.
+"
+align = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit1" index="1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = -131.0
+margin_right = 150.0
+rect_min_size = Vector2( 300, 0 )
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Unit2" type="Control" parent="Panel/SlideContent/ContentContainer" index="1"]
+visible = false
+margin_right = 900.0
+margin_bottom = 406.0
+rect_min_size = Vector2( 900, 0 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Panel/SlideContent/ContentContainer/Unit2" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = 20.0
+margin_right = -45.0
+margin_bottom = -119.0
+custom_fonts/font = ExtResource( 2 )
+text = "¿Qué es Optalert?
+
+Es un sistema avanzado de monitoreo ocular basado en sensores infrarrojos que mide la fatiga a través de los movimientos oculares.
+Funciona mediante lentes inteligentes, donde los sensores infrarrojos analizan patrones de parpadeo, proporciona una puntuación de somnolencia llamada JDS (Escala de Johns Drowsiness Scale) que se actualiza en tiempo real."
+align = 1
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit2" index="1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -152.0
+margin_right = 200.0
+rect_min_size = Vector2( 400, 0 )
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="Unit3" type="Control" parent="Panel/SlideContent/ContentContainer" index="2"]
+visible = false
+margin_right = 900.0
+margin_bottom = 406.0
+rect_min_size = Vector2( 900, 0 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Panel/SlideContent/ContentContainer/Unit3" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = 20.0
+margin_right = -45.0
+margin_bottom = -119.0
+custom_fonts/font = ExtResource( 2 )
+text = "•	 Prevenir accidentes por fatiga mediante la detección temprana de somnolencia.
+
+•	 Monitorear en tiempo real el estado de alerta de operadores de alto riesgo.
+
+•	 Proveer información útil para decisiones operativas y de seguridad."
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit3" index="1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -147.0
+margin_right = 200.0
+rect_min_size = Vector2( 400, 0 )
+mouse_filter = 2
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="Unit4" type="Control" parent="Panel/SlideContent/ContentContainer" index="3"]
+margin_right = 900.0
+margin_bottom = 406.0
+rect_min_size = Vector2( 900, 0 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Panel/SlideContent/ContentContainer/Unit4" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = 20.0
+margin_right = -388.0
+margin_bottom = -18.0
+custom_fonts/font = ExtResource( 2 )
+text = "1.  Lentes Inteligentes: sensores infrarrojos cómodos y no invasivos, capturando datos del parpadeo.
+
+2. Unidad de Procesamiento y control: recoge y procesa datos en tiempo real.
+
+3.  Software de monitoreo: muestra los niveles de alerta y genera reportes.
+
+4.  Plataforma de Reportabilidad: almacena y organiza la información recolectada."
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit4" index="1"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -345.0
+margin_top = -181.0
+margin_right = -166.0
+margin_bottom = -99.0
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit4" index="2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -194.0
+margin_top = -102.0
+margin_right = 6.0
+margin_bottom = 5.0
+mouse_filter = 2
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit4" index="3"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -361.0
+margin_top = -16.0
+margin_right = -152.0
+margin_bottom = 83.0
+mouse_filter = 2
+texture = ExtResource( 14 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit4" index="4"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -201.0
+margin_top = 65.0
+margin_bottom = 173.0
+mouse_filter = 2
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 6
+
+[node name="Unit5" type="Control" parent="Panel/SlideContent/ContentContainer" index="4"]
+visible = false
+margin_right = 900.0
+margin_bottom = 406.0
+rect_min_size = Vector2( 900, 0 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Panel/SlideContent/ContentContainer/Unit5" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = 20.0
+margin_right = -45.0
+margin_bottom = -119.0
+custom_fonts/font = ExtResource( 2 )
+text = "•	 Colocación y Calibración: ajuste correcto de lentes y confirmación de conexión.
+
+•	 Inicio de Jornada: encendido del dispositivo y monitoreo activo.
+
+•	 Interpretación de Niveles de Alerta: Verde (normal), Amarillo (precaución), Rojo (alto riesgo).
+
+•	 Protocolo ante Alerta Crítica: detener operación, reportar, aplicar descanso."
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit5" index="1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -126.0
+margin_right = 200.0
+rect_min_size = Vector2( 400, 0 )
+mouse_filter = 2
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Unit6" type="Control" parent="Panel/SlideContent/ContentContainer" index="5"]
+visible = false
+margin_right = 900.0
+margin_bottom = 406.0
+rect_min_size = Vector2( 900, 0 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Panel/SlideContent/ContentContainer/Unit6" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = 20.0
+margin_right = -45.0
+margin_bottom = -119.0
+custom_fonts/font = ExtResource( 2 )
+text = "•	 0-3.4: Estado normal (Verde).
+
+•	 3.5-4.5: Alerta (Amarillo). Fatiga incipiente.
+
+•	 Más de 4.5: Crítico (Rojo). Alto riesgo de somnolencia.
+
+•	 El sistema activa alertas visuales y auditivas ante valores críticos."
+autowrap = true
+
+[node name="TextureRect" type="HBoxContainer" parent="Panel/SlideContent/ContentContainer/Unit6" index="1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -244.0
+margin_top = -160.0
+margin_right = 244.0
+rect_min_size = Vector2( 400, 0 )
+mouse_filter = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit6/TextureRect" index="0"]
+margin_right = 160.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+mouse_filter = 2
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit6/TextureRect" index="1"]
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+mouse_filter = 2
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit6/TextureRect" index="2"]
+margin_left = 328.0
+margin_right = 488.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+mouse_filter = 2
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="Unit7" type="Control" parent="Panel/SlideContent/ContentContainer" index="6"]
+visible = false
+margin_right = 900.0
+margin_bottom = 406.0
+rect_min_size = Vector2( 900, 0 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Panel/SlideContent/ContentContainer/Unit7" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = 20.0
+margin_right = -45.0
+margin_bottom = -119.0
+custom_fonts/font = ExtResource( 2 )
+text = "•	 Alerta amarilla: pausa preventiva y monitoreo del operador.
+
+•	 Alerta roja: detención inmediata y activación del protocolo de descanso.
+
+•	 El evento debe registrarse y notificarse al supervisor responsable."
+autowrap = true
+
+[node name="TextureRect" type="HBoxContainer" parent="Panel/SlideContent/ContentContainer/Unit7" index="1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -244.0
+margin_top = -160.0
+margin_right = 244.0
+rect_min_size = Vector2( 400, 0 )
+mouse_filter = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit7/TextureRect" index="0"]
+margin_right = 160.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+mouse_filter = 2
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit7/TextureRect" index="1"]
+margin_left = 164.0
+margin_right = 324.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+mouse_filter = 2
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit7/TextureRect" index="2"]
+margin_left = 328.0
+margin_right = 488.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 160, 160 )
+mouse_filter = 2
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="Unit8" type="Control" parent="Panel/SlideContent/ContentContainer" index="7"]
+visible = false
+margin_right = 900.0
+margin_bottom = 406.0
+rect_min_size = Vector2( 900, 0 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Panel/SlideContent/ContentContainer/Unit8" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = 20.0
+margin_right = -45.0
+margin_bottom = -119.0
+custom_fonts/font = ExtResource( 2 )
+text = "•	 Usar siempre el equipo durante el turno completo.
+
+•	 Realizar calibraciones periódicas.
+
+•	 Reportar cualquier falla técnica.
+
+•	 Participar en capacitaciones y simulacros de fatiga."
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/SlideContent/ContentContainer/Unit8" index="1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -182.0
+margin_right = 200.0
+rect_min_size = Vector2( 400, 0 )
+mouse_filter = 2
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+
+[node name="PrevArrow" parent="Panel" index="3"]
+mouse_filter = 2
+
+[node name="NextArrow" parent="Panel" index="4"]
+mouse_filter = 2
+
+[connection signal="slides_completed" from="." to="." method="_on_SlideIntro01_slides_completed"]

@@ -1,0 +1,157 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://game/assets/ui/fonts/BaseFontHuge.tres" type="DynamicFont" id=1]
+[ext_resource path="res://game/assets/ui/theme/panel_style.tres" type="StyleBox" id=2]
+[ext_resource path="res://game/assets/ui/fonts/BaseFontVeryHuge.tres" type="DynamicFont" id=3]
+[ext_resource path="res://game/assets/ui/images/bg-02.png" type="Texture" id=4]
+[ext_resource path="res://game/assets/sounds/wrong.ogg" type="AudioStream" id=5]
+[ext_resource path="res://game/assets/sounds/correct.ogg" type="AudioStream" id=6]
+[ext_resource path="res://game/assets/sounds/swipe.ogg" type="AudioStream" id=7]
+[ext_resource path="res://game/main_screens/question_templates/Elements/dragable_element.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/components/overlay/overlay.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 57, 30.5 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BG" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.866667, 0.34902, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bg-02" type="TextureRect" parent="CanvasLayer/BG"]
+modulate = Color( 1, 1, 1, 0.372549 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = -300.0
+margin_right = 180.0
+margin_bottom = 780.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bg-03" type="TextureRect" parent="CanvasLayer/BG"]
+modulate = Color( 1, 1, 1, 0.372549 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 225.0
+margin_top = 301.0
+margin_right = 630.0
+margin_bottom = 1381.0
+rect_rotation = 180.0
+rect_scale = Vector2( 0.557, 0.557 )
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Overlay" parent="CanvasLayer" instance=ExtResource( 9 )]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -428.826
+margin_top = -257.0
+margin_right = 503.174
+margin_bottom = 257.0
+mouse_filter = 2
+custom_styles/panel = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="Label" parent="Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+margin_bottom = 80.0
+custom_fonts/font = ExtResource( 3 )
+text = "Test de drag and release"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Question" type="Label" parent="Panel"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = 85.0
+margin_right = -45.0
+margin_bottom = -196.0
+custom_fonts/font = ExtResource( 1 )
+text = "Testing 2 la venganza"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CorrectElements" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="DragableElement" parent="CorrectElements" instance=ExtResource( 8 )]
+position = Vector2( 335, 316 )
+
+[node name="CorrectAudio2" type="AudioStreamPlayer" parent="CorrectElements/DragableElement"]
+unique_name_in_owner = true
+stream = ExtResource( 6 )
+
+[node name="WrongAudio2" type="AudioStreamPlayer" parent="CorrectElements/DragableElement"]
+unique_name_in_owner = true
+stream = ExtResource( 5 )
+
+[node name="ReturnAudio2" type="AudioStreamPlayer" parent="CorrectElements/DragableElement"]
+unique_name_in_owner = true
+stream = ExtResource( 7 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CorrectElements/DragableElement"]
+shape = SubResource( 1 )
+
+[node name="Label2" type="Label" parent="CorrectElements/DragableElement"]
+margin_left = -33.0
+margin_top = 38.0
+margin_right = 43.0
+margin_bottom = 52.0
+text = "Descripcion"
+
+[node name="Icon2" type="Sprite" parent="CorrectElements/DragableElement"]
+
+[node name="IncorrectElements" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0

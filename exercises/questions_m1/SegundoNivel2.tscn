@@ -1,0 +1,335 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/drag_image.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/drop_zone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/main_screens/question_templates/Elements/dragable_element.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/images/register_window.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 110, 55 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=15]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=16]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="RectangleShape2D" id=8]
+resource_local_to_scene = true
+extents = Vector2( 94.5, 25.5 )
+
+[sub_resource type="Shader" id=13]
+code = "shader_type canvas_item;
+uniform float width = 2.0;
+uniform vec4 color: hint_color;
+
+void vertex() {
+	VERTEX += (UV * 2.0 - 1.0) * width;
+}
+
+void fragment(){
+	vec2 uv = UV;
+    vec4 col;
+	
+	vec2 texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(width * 2.0));
+	uv = (uv - texture_pixel_size * width) * TEXTURE_PIXEL_SIZE / texture_pixel_size;
+	if (uv != clamp(uv, vec2(0.0), vec2(1.0))) {
+		COLOR.a = 0.0;
+	} else {
+		col = texture(TEXTURE, uv);
+	}
+	
+	
+    vec2 ps = TEXTURE_PIXEL_SIZE * width; // multiply only once instead of eight times.
+    float a;
+    float maxa = col.a;
+    float mina = col.a;
+
+    // Use 8-way kernel for smoothness
+    //------------------//
+    //    X   X   X     //
+    //      \\ | /       //
+    //    X - O - X     //
+    //      / | \\       //
+    //    X   X   X     //
+    //------------------//
+
+    for(float y = -1.0; y <= 1.0; y++) {
+        for(float x = -1.0; x <= 1.0; x++) {
+            if(vec2(x,y) == vec2(0.0)) {
+                continue; // ignore the center of kernel
+            }
+
+            a = texture(TEXTURE, UV + vec2(x,y)*ps).a;
+            maxa = max(a, maxa); 
+            mina = min(a, mina);
+        }
+    }
+
+    // Fill transparent pixels only, don't overlap texture
+    if(col.a == 0.0) {
+        COLOR = mix(col, color, maxa-mina);
+    } else {
+        // Note on old code: if the last mix value is always 0, why even use it?
+        COLOR = col;
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id=7]
+resource_local_to_scene = true
+shader = SubResource( 13 )
+shader_param/width = 2.0
+shader_param/color = null
+
+[sub_resource type="RectangleShape2D" id=5]
+resource_local_to_scene = true
+extents = Vector2( 116, 42.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+resource_local_to_scene = true
+extents = Vector2( 116, 51 )
+
+[node name="NivelesDefensa" instance=ExtResource( 1 )]
+title = "Segundo nivel"
+question = "¿Que debe hacer el personal de monitoreo cuando se ha detectado un riesgo? Ordene la secuencia en el orden correcto"
+
+[node name="Title" parent="Panel" index="0"]
+text = "Segundo nivel"
+
+[node name="Question" parent="Panel" index="1"]
+text = "¿Que debe hacer el personal de monitoreo cuando se ha detectado un riesgo? Ordene la secuencia en el orden correcto"
+
+[node name="TextureRect" type="TextureRect" parent="Panel" index="2"]
+margin_left = 367.0
+margin_top = 141.0
+margin_right = 577.0
+margin_bottom = 261.0
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="DropZone" parent="Zones" index="0" instance=ExtResource( 2 )]
+position = Vector2( -223, 196 )
+id = 1
+text = "1"
+
+[node name="CollisionShape2D" parent="Zones/DropZone" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone" index="1"]
+margin_left = -110.0
+margin_top = -55.0
+margin_right = 110.0
+margin_bottom = 55.0
+custom_styles/panel = SubResource( 14 )
+
+[node name="Label" parent="Zones/DropZone/HighLite" index="0"]
+margin_left = -85.0
+margin_right = 85.0
+margin_bottom = 34.0
+text = "1"
+
+[node name="DropZone15" parent="Zones" index="1" instance=ExtResource( 2 )]
+position = Vector2( 280, 196 )
+id = 3
+text = "3"
+
+[node name="CollisionShape2D" parent="Zones/DropZone15" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone15" index="1"]
+margin_left = -110.0
+margin_top = -55.0
+margin_right = 110.0
+margin_bottom = 55.0
+custom_styles/panel = SubResource( 15 )
+
+[node name="Label" parent="Zones/DropZone15/HighLite" index="0"]
+margin_left = -78.0
+margin_right = 78.0
+margin_bottom = 34.0
+text = "3"
+
+[node name="DropZone16" parent="Zones" index="2" instance=ExtResource( 2 )]
+position = Vector2( 29, 196 )
+id = 2
+text = "2"
+
+[node name="CollisionShape2D" parent="Zones/DropZone16" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone16" index="1"]
+margin_left = -110.0
+margin_top = -55.0
+margin_right = 110.0
+margin_bottom = 55.0
+custom_styles/panel = SubResource( 16 )
+
+[node name="Label" parent="Zones/DropZone16/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+text = "2"
+
+[node name="DragableElement2" parent="CorrectElements" index="0" instance=ExtResource( 3 )]
+position = Vector2( 282, 79 )
+id = 1
+text = "Ir a la pantalla de
+Registro de Riesgos"
+image_scale = 0.27
+custom_collision_transform = true
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement2" index="0"]
+shape = SubResource( 8 )
+
+[node name="Label" parent="CorrectElements/DragableElement2" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -74.5
+margin_top = -15.5
+margin_right = 74.5
+margin_bottom = 15.5
+text = "Ir a la pantalla de
+Registro de Riesgos"
+
+[node name="Icon" parent="CorrectElements/DragableElement2" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement2" index="6"]
+margin_left = -94.0
+margin_top = -24.0
+margin_right = 95.0
+margin_bottom = 27.0
+
+[node name="DragableElement3" parent="CorrectElements" index="1" instance=ExtResource( 3 )]
+position = Vector2( -225, 79 )
+id = 2
+text = "Entrar en contacto con
+el operador y registrar la 
+acción por medio del
+Registro de Riesgos"
+image_scale = 0.27
+custom_collision_transform = true
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement3" index="0"]
+shape = SubResource( 5 )
+
+[node name="Label" parent="CorrectElements/DragableElement3" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -96.0
+margin_top = -32.5
+margin_right = 96.0
+margin_bottom = 32.5
+text = "Entrar en contacto con
+el operador y registrar la 
+acción por medio del
+Registro de Riesgos"
+
+[node name="Icon" parent="CorrectElements/DragableElement3" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement3" index="6"]
+margin_left = -116.0
+margin_top = -42.0
+margin_right = 116.0
+margin_bottom = 43.0
+
+[node name="DragableElement4" parent="CorrectElements" index="2" instance=ExtResource( 3 )]
+position = Vector2( 36, 79 )
+id = 3
+text = "El sistema acciona al
+supervisor a través
+de envío de SMS y/o
+notificación email
+automáticamente."
+image_scale = 0.27
+custom_collision_transform = true
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement4" index="0"]
+shape = SubResource( 9 )
+
+[node name="Label" parent="CorrectElements/DragableElement4" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -96.0
+margin_top = -41.0
+margin_right = 96.0
+margin_bottom = 41.0
+text = "El sistema acciona al
+supervisor a través
+de envío de SMS y/o
+notificación email
+automáticamente."
+
+[node name="Icon" parent="CorrectElements/DragableElement4" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement4" index="6"]
+margin_left = -115.0
+margin_top = -49.0
+margin_right = 117.0
+margin_bottom = 53.0
+
+[node name="PopUp" parent="." index="7"]
+text = "Es importante que el personal de monitoreo utilice la pantalla de Registro de Riesgos para registrar los riesgos detectados y notificar al operador y al supervisor."
+
+[node name="CursorHelp" parent="." index="9" instance=ExtResource( 4 )]
+margin_left = -158.0
+margin_top = 66.0
+margin_right = -96.9998
+margin_bottom = 130.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = -45.0
+margin_top = 98.0
+margin_right = -4.99997
+margin_bottom = 138.0
+
+[connection signal="dragged" from="CorrectElements/DragableElement2" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement3" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement4" to="." method="_on_DragableElement2_dragged"]
+
+[editable path="Zones/DropZone"]
+[editable path="Zones/DropZone15"]
+[editable path="Zones/DropZone16"]
+[editable path="CorrectElements/DragableElement2"]
+[editable path="CorrectElements/DragableElement3"]
+[editable path="CorrectElements/DragableElement4"]
+[editable path="CursorHelp"]

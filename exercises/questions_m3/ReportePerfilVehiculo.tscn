@@ -1,0 +1,590 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/Elements/dragable_element.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/drop_zone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/main_screens/question_templates/drag_image.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/images/perfil_vehiculo.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/arrow.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 110, 26 )
+
+[sub_resource type="StyleBoxFlat" id=29]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=30]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=31]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=32]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=33]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=34]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="RectangleShape2D" id=8]
+resource_local_to_scene = true
+extents = Vector2( 94.5, 21 )
+
+[sub_resource type="Shader" id=13]
+code = "shader_type canvas_item;
+uniform float width = 2.0;
+uniform vec4 color: hint_color;
+
+void vertex() {
+	VERTEX += (UV * 2.0 - 1.0) * width;
+}
+
+void fragment(){
+	vec2 uv = UV;
+    vec4 col;
+	
+	vec2 texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(width * 2.0));
+	uv = (uv - texture_pixel_size * width) * TEXTURE_PIXEL_SIZE / texture_pixel_size;
+	if (uv != clamp(uv, vec2(0.0), vec2(1.0))) {
+		COLOR.a = 0.0;
+	} else {
+		col = texture(TEXTURE, uv);
+	}
+	
+	
+    vec2 ps = TEXTURE_PIXEL_SIZE * width; // multiply only once instead of eight times.
+    float a;
+    float maxa = col.a;
+    float mina = col.a;
+
+    // Use 8-way kernel for smoothness
+    //------------------//
+    //    X   X   X     //
+    //      \\ | /       //
+    //    X - O - X     //
+    //      / | \\       //
+    //    X   X   X     //
+    //------------------//
+
+    for(float y = -1.0; y <= 1.0; y++) {
+        for(float x = -1.0; x <= 1.0; x++) {
+            if(vec2(x,y) == vec2(0.0)) {
+                continue; // ignore the center of kernel
+            }
+
+            a = texture(TEXTURE, UV + vec2(x,y)*ps).a;
+            maxa = max(a, maxa); 
+            mina = min(a, mina);
+        }
+    }
+
+    // Fill transparent pixels only, don't overlap texture
+    if(col.a == 0.0) {
+        COLOR = mix(col, color, maxa-mina);
+    } else {
+        // Note on old code: if the last mix value is always 0, why even use it?
+        COLOR = col;
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id=7]
+resource_local_to_scene = true
+shader = SubResource( 13 )
+shader_param/width = 2.0
+shader_param/color = null
+
+[sub_resource type="RectangleShape2D" id=18]
+resource_local_to_scene = true
+extents = Vector2( 99.5, 38 )
+
+[sub_resource type="RectangleShape2D" id=19]
+resource_local_to_scene = true
+extents = Vector2( 88.5, 29.5 )
+
+[sub_resource type="RectangleShape2D" id=20]
+resource_local_to_scene = true
+extents = Vector2( 112.5, 38 )
+
+[sub_resource type="RectangleShape2D" id=27]
+resource_local_to_scene = true
+extents = Vector2( 94, 38 )
+
+[sub_resource type="RectangleShape2D" id=28]
+resource_local_to_scene = true
+extents = Vector2( 84.5, 21.5 )
+
+[node name="NivelesDefensa" instance=ExtResource( 3 )]
+title = "Reporte diario | Perfil por vehículo"
+question = "Este reporte diario muestra un análisis de todo lo ocurrido en un vehículo en una jornada de 24 hrs, considerando todos los operadores que utilizaron este vehículo en esta jornada. Arrastre los textos que representan cada elemento de la página inicial de un reporte de perfil por vehículo."
+
+[node name="Title" parent="Panel" index="0"]
+text = "Reporte diario | Perfil por vehículo"
+
+[node name="Question" parent="Panel" index="1"]
+margin_left = 30.0
+margin_top = 75.0
+margin_right = 198.0
+margin_bottom = -206.0
+rect_scale = Vector2( 0.8, 0.8 )
+text = "Este reporte diario muestra un análisis de todo lo ocurrido en un vehículo en una jornada de 24 hrs, considerando todos los operadores que utilizaron este vehículo en esta jornada. Arrastre los textos que representan cada elemento de la página inicial de un reporte de perfil por vehículo."
+
+[node name="TextureRect" type="TextureRect" parent="Panel" index="2"]
+margin_left = 16.0
+margin_top = 154.0
+margin_right = 471.0
+margin_bottom = 496.0
+mouse_filter = 2
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 6
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel" index="3"]
+modulate = Color( 0.227451, 0.878431, 1, 1 )
+margin_left = 400.0
+margin_top = 186.0
+margin_right = 685.0
+margin_bottom = 276.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+patch_margin_left = 31
+patch_margin_right = 219
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Panel" index="4"]
+modulate = Color( 0.227451, 0.878431, 1, 1 )
+margin_left = 303.0
+margin_top = 252.0
+margin_right = 1073.0
+margin_bottom = 332.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+patch_margin_left = 31
+patch_margin_right = 219
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="Panel" index="5"]
+modulate = Color( 0.227451, 0.878431, 1, 1 )
+margin_left = 367.0
+margin_top = 299.0
+margin_right = 822.0
+margin_bottom = 389.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+patch_margin_left = 31
+patch_margin_right = 219
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="Panel" index="6"]
+modulate = Color( 0.227451, 0.878431, 1, 1 )
+margin_left = 390.0
+margin_top = 375.0
+margin_right = 730.0
+margin_bottom = 465.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+patch_margin_left = 31
+patch_margin_right = 219
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="Panel" index="7"]
+modulate = Color( 0.227451, 0.878431, 1, 1 )
+margin_left = 391.0
+margin_top = 399.0
+margin_right = 731.0
+margin_bottom = 489.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+patch_margin_left = 31
+patch_margin_right = 219
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="Panel" index="8"]
+modulate = Color( 0.227451, 0.878431, 1, 1 )
+margin_left = 238.0
+margin_top = 479.0
+margin_right = 1338.0
+margin_bottom = 569.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 7 )
+patch_margin_left = 31
+patch_margin_right = 219
+
+[node name="DropZone" parent="Zones" index="0" instance=ExtResource( 2 )]
+position = Vector2( 124, -50 )
+id = 1
+
+[node name="CollisionShape2D" parent="Zones/DropZone" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone" index="1"]
+margin_left = -110.0
+margin_top = -26.0
+margin_right = 110.0
+margin_bottom = 26.0
+custom_styles/panel = SubResource( 29 )
+
+[node name="Label" parent="Zones/DropZone/HighLite" index="0"]
+margin_left = -85.0
+margin_right = 85.0
+margin_bottom = 34.0
+
+[node name="DropZone15" parent="Zones" index="1" instance=ExtResource( 2 )]
+position = Vector2( 124, 11 )
+id = 2
+
+[node name="CollisionShape2D" parent="Zones/DropZone15" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone15" index="1"]
+margin_left = -110.0
+margin_top = -26.0
+margin_right = 110.0
+margin_bottom = 26.0
+custom_styles/panel = SubResource( 30 )
+
+[node name="Label" parent="Zones/DropZone15/HighLite" index="0"]
+margin_left = -78.0
+margin_right = 78.0
+margin_bottom = 34.0
+
+[node name="DropZone16" parent="Zones" index="2" instance=ExtResource( 2 )]
+position = Vector2( 124, 65 )
+id = 3
+
+[node name="CollisionShape2D" parent="Zones/DropZone16" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone16" index="1"]
+margin_left = -110.0
+margin_top = -26.0
+margin_right = 110.0
+margin_bottom = 26.0
+custom_styles/panel = SubResource( 31 )
+
+[node name="Label" parent="Zones/DropZone16/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+
+[node name="DropZone17" parent="Zones" index="3" instance=ExtResource( 2 )]
+position = Vector2( 124, 129 )
+id = 4
+
+[node name="CollisionShape2D" parent="Zones/DropZone17" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone17" index="1"]
+margin_left = -110.0
+margin_top = -26.0
+margin_right = 110.0
+margin_bottom = 26.0
+custom_styles/panel = SubResource( 32 )
+
+[node name="Label" parent="Zones/DropZone17/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+
+[node name="DropZone18" parent="Zones" index="4" instance=ExtResource( 2 )]
+position = Vector2( 124, 184 )
+id = 5
+
+[node name="CollisionShape2D" parent="Zones/DropZone18" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone18" index="1"]
+margin_left = -110.0
+margin_top = -26.0
+margin_right = 110.0
+margin_bottom = 26.0
+custom_styles/panel = SubResource( 33 )
+
+[node name="Label" parent="Zones/DropZone18/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+
+[node name="DropZone19" parent="Zones" index="5" instance=ExtResource( 2 )]
+position = Vector2( 124, 240 )
+id = 6
+
+[node name="CollisionShape2D" parent="Zones/DropZone19" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone19" index="1"]
+margin_left = -110.0
+margin_top = -26.0
+margin_right = 110.0
+margin_bottom = 26.0
+custom_styles/panel = SubResource( 34 )
+
+[node name="Label" parent="Zones/DropZone19/HighLite" index="0"]
+margin_left = -82.0
+margin_right = 82.0
+margin_bottom = 34.0
+
+[node name="DragableElement2" parent="CorrectElements" index="0" instance=ExtResource( 1 )]
+position = Vector2( 364, 63 )
+id = 1
+text = "Matricula vehículo"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement2" index="0"]
+shape = SubResource( 8 )
+
+[node name="Label" parent="CorrectElements/DragableElement2" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -74.5
+margin_right = 74.5
+text = "Matricula vehículo"
+
+[node name="Icon" parent="CorrectElements/DragableElement2" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement2" index="6"]
+margin_left = -94.5
+margin_right = 94.5
+
+[node name="DragableElement3" parent="CorrectElements" index="1" instance=ExtResource( 1 )]
+position = Vector2( 364, -48 )
+id = 2
+text = "Punto en el tiempo
+donde se recibe una
+alerta"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement3" index="0"]
+shape = SubResource( 18 )
+
+[node name="Label" parent="CorrectElements/DragableElement3" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -79.5
+margin_top = -28.0
+margin_right = 79.5
+margin_bottom = 28.0
+text = "Punto en el tiempo
+donde se recibe una
+alerta"
+
+[node name="Icon" parent="CorrectElements/DragableElement3" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement3" index="6"]
+margin_left = -99.5
+margin_top = -38.0
+margin_right = 99.5
+margin_bottom = 38.0
+
+[node name="DragableElement4" parent="CorrectElements" index="2" instance=ExtResource( 1 )]
+position = Vector2( 364, 14 )
+id = 3
+text = "Puntuaciones JDS
+minuto a minuto"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement4" index="0"]
+shape = SubResource( 19 )
+
+[node name="Label" parent="CorrectElements/DragableElement4" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -68.5
+margin_top = -19.5
+margin_right = 68.5
+margin_bottom = 19.5
+text = "Puntuaciones JDS
+minuto a minuto"
+
+[node name="Icon" parent="CorrectElements/DragableElement4" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement4" index="6"]
+margin_left = -88.5
+margin_top = -29.5
+margin_right = 88.5
+margin_bottom = 29.5
+
+[node name="DragableElement5" parent="CorrectElements" index="3" instance=ExtResource( 1 )]
+position = Vector2( 365, 120 )
+id = 4
+text = "Promedio de uso de
+lentes por todos los
+operadores en 24 horas"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement5" index="0"]
+shape = SubResource( 20 )
+
+[node name="Label" parent="CorrectElements/DragableElement5" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -92.5
+margin_top = -28.0
+margin_right = 92.5
+margin_bottom = 28.0
+text = "Promedio de uso de
+lentes por todos los
+operadores en 24 horas"
+
+[node name="Icon" parent="CorrectElements/DragableElement5" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement5" index="6"]
+margin_left = -112.5
+margin_top = -38.0
+margin_right = 112.5
+margin_bottom = 38.0
+
+[node name="DragableElement6" parent="CorrectElements" index="4" instance=ExtResource( 1 )]
+position = Vector2( 365, 238 )
+id = 5
+text = "Período de uso de
+lentes y encendido
+en 24 horas"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement6" index="0"]
+shape = SubResource( 27 )
+
+[node name="Label" parent="CorrectElements/DragableElement6" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -74.0
+margin_top = -28.0
+margin_right = 74.0
+margin_bottom = 28.0
+text = "Período de uso de
+lentes y encendido
+en 24 horas"
+
+[node name="Icon" parent="CorrectElements/DragableElement6" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement6" index="6"]
+margin_left = -94.0
+margin_top = -38.0
+margin_right = 94.0
+margin_bottom = 38.0
+
+[node name="DragableElement7" parent="CorrectElements" index="5" instance=ExtResource( 1 )]
+position = Vector2( 365, 179 )
+id = 6
+text = "Alertas recibidas"
+image_scale = 0.27
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement7" index="0"]
+shape = SubResource( 28 )
+
+[node name="Label" parent="CorrectElements/DragableElement7" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -64.5
+margin_top = -11.5
+margin_right = 64.5
+margin_bottom = 11.5
+text = "Alertas recibidas"
+
+[node name="Icon" parent="CorrectElements/DragableElement7" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement7" index="6"]
+margin_left = -84.5
+margin_top = -21.5
+margin_right = 84.5
+margin_bottom = 21.5
+
+[node name="PopUp" parent="." index="7"]
+text = "¡Excelente! Es importante notar que es normal que los puntajes JDS tengan esas variaciones, si fuesen siempre 0 quiere decir que hay algún problema en el sistema."
+
+[node name="CursorHelp" parent="." index="9" instance=ExtResource( 4 )]
+margin_left = 267.0
+margin_top = -78.0
+margin_right = 328.0
+margin_bottom = -14.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = -76.0
+margin_top = 63.0
+margin_right = -36.0
+margin_bottom = 103.0
+
+[connection signal="dragged" from="CorrectElements/DragableElement2" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement3" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement4" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement5" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement6" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement7" to="." method="_on_DragableElement2_dragged"]
+
+[editable path="Zones/DropZone"]
+[editable path="Zones/DropZone15"]
+[editable path="Zones/DropZone16"]
+[editable path="Zones/DropZone17"]
+[editable path="Zones/DropZone18"]
+[editable path="Zones/DropZone19"]
+[editable path="CorrectElements/DragableElement2"]
+[editable path="CorrectElements/DragableElement3"]
+[editable path="CorrectElements/DragableElement4"]
+[editable path="CorrectElements/DragableElement5"]
+[editable path="CorrectElements/DragableElement6"]
+[editable path="CorrectElements/DragableElement7"]
+[editable path="CursorHelp"]

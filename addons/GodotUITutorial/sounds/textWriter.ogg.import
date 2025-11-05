@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/textWriter.ogg-9f717d618e2850f04d8e9799c0db0f34.oggstr"
+
+[deps]
+
+source_file="res://addons/GodotUITutorial/sounds/textWriter.ogg"
+dest_files=[ "res://.import/textWriter.ogg-9f717d618e2850f04d8e9799c0db0f34.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

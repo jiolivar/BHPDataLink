@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/achievement_bell.ogg-7215d1f32bdb3c7d3758690e71d47861.oggstr"
+
+[deps]
+
+source_file="res://game/assets/sounds/achievement_bell.ogg"
+dest_files=[ "res://.import/achievement_bell.ogg-7215d1f32bdb3c7d3758690e71d47861.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

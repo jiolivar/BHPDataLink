@@ -1,0 +1,586 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://game/assets/ui/fonts/DejaVuSans.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/images/diagramaFlujoAlphaEdited.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/register_window.png" type="Texture" id=3]
+[ext_resource path="res://game/main_screens/question_templates/drag_image.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/main_screens/question_templates/Elements/drop_zone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/main_screens/question_templates/Elements/dragable_element.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=7]
+
+[sub_resource type="DynamicFont" id=28]
+size = 10
+extra_spacing_top = -2
+extra_spacing_bottom = -2
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 14
+extra_spacing_top = -2
+extra_spacing_bottom = -2
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 90, 35 )
+
+[sub_resource type="StyleBoxFlat" id=30]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=31]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=32]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=33]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=34]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="RectangleShape2D" id=8]
+resource_local_to_scene = true
+extents = Vector2( 105.5, 33.5 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 12
+extra_spacing_top = -2
+extra_spacing_bottom = -2
+font_data = ExtResource( 1 )
+
+[sub_resource type="Shader" id=13]
+code = "shader_type canvas_item;
+uniform float width = 2.0;
+uniform vec4 color: hint_color;
+
+void vertex() {
+	VERTEX += (UV * 2.0 - 1.0) * width;
+}
+
+void fragment(){
+	vec2 uv = UV;
+    vec4 col;
+	
+	vec2 texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(width * 2.0));
+	uv = (uv - texture_pixel_size * width) * TEXTURE_PIXEL_SIZE / texture_pixel_size;
+	if (uv != clamp(uv, vec2(0.0), vec2(1.0))) {
+		COLOR.a = 0.0;
+	} else {
+		col = texture(TEXTURE, uv);
+	}
+	
+	
+    vec2 ps = TEXTURE_PIXEL_SIZE * width; // multiply only once instead of eight times.
+    float a;
+    float maxa = col.a;
+    float mina = col.a;
+
+    // Use 8-way kernel for smoothness
+    //------------------//
+    //    X   X   X     //
+    //      \\ | /       //
+    //    X - O - X     //
+    //      / | \\       //
+    //    X   X   X     //
+    //------------------//
+
+    for(float y = -1.0; y <= 1.0; y++) {
+        for(float x = -1.0; x <= 1.0; x++) {
+            if(vec2(x,y) == vec2(0.0)) {
+                continue; // ignore the center of kernel
+            }
+
+            a = texture(TEXTURE, UV + vec2(x,y)*ps).a;
+            maxa = max(a, maxa); 
+            mina = min(a, mina);
+        }
+    }
+
+    // Fill transparent pixels only, don't overlap texture
+    if(col.a == 0.0) {
+        COLOR = mix(col, color, maxa-mina);
+    } else {
+        // Note on old code: if the last mix value is always 0, why even use it?
+        COLOR = col;
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id=7]
+resource_local_to_scene = true
+shader = SubResource( 13 )
+shader_param/width = 2.0
+shader_param/color = null
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="RectangleShape2D" id=21]
+resource_local_to_scene = true
+extents = Vector2( 96, 40.5 )
+
+[sub_resource type="RectangleShape2D" id=17]
+resource_local_to_scene = true
+extents = Vector2( 107, 45 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 11
+extra_spacing_top = -2
+extra_spacing_bottom = -2
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=22]
+resource_local_to_scene = true
+extents = Vector2( 96.5, 40.5 )
+
+[sub_resource type="RectangleShape2D" id=23]
+resource_local_to_scene = true
+extents = Vector2( 104, 26.5 )
+
+[node name="NivelesDefensa" instance=ExtResource( 4 )]
+title = "Flujograma para falla en sistema Optalert"
+question = "Cuando se produce una falla en el sistema Optalert desde el punto de vista del Especialista despacho Tecnológico se debe proceder mediante el siguiente flujo. Arrastre los textos correspondientes a cada sección del flujograma."
+
+[node name="Title" parent="Panel" index="0"]
+text = "Flujograma para falla en sistema Optalert"
+
+[node name="Question" parent="Panel" index="1"]
+margin_left = 8.0
+margin_top = 70.0
+margin_right = 296.0
+margin_bottom = -211.0
+rect_scale = Vector2( 0.75, 0.75 )
+text = "Cuando se produce una falla en el sistema Optalert desde el punto de vista del Especialista despacho Tecnológico se debe proceder mediante el siguiente flujo. Arrastre los textos correspondientes a cada sección del flujograma."
+
+[node name="TextureRect" type="TextureRect" parent="Panel" index="2"]
+visible = false
+margin_left = 367.0
+margin_top = 141.0
+margin_right = 577.0
+margin_bottom = 261.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="Panel" index="3"]
+margin_left = 22.0
+margin_top = 114.0
+margin_right = 666.0
+margin_bottom = 518.0
+mouse_filter = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="Panel/TextureRect2" index="0"]
+visible = false
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Panel/TextureRect2" index="1"]
+margin_left = 58.0
+margin_top = 26.0
+margin_right = 186.0
+margin_bottom = 71.0
+custom_fonts/font = SubResource( 28 )
+text = "Flujo de
+contingencias Optalert en
+camiones de extracción
+y regadores tripulados."
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="Panel/TextureRect2" index="2"]
+margin_left = 270.0
+margin_top = 158.0
+margin_right = 379.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 29 )
+text = "¿Falla resuelta?"
+align = 1
+valign = 1
+
+[node name="DropZone" parent="Zones" index="0" instance=ExtResource( 5 )]
+position = Vector2( -100, -70 )
+id = 1
+text = "1"
+
+[node name="CollisionShape2D" parent="Zones/DropZone" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone" index="1"]
+visible = false
+margin_left = -90.0
+margin_top = -35.0
+margin_right = 90.0
+margin_bottom = 35.0
+custom_styles/panel = SubResource( 30 )
+
+[node name="Label" parent="Zones/DropZone/HighLite" index="0"]
+margin_left = -85.0
+margin_right = 85.0
+margin_bottom = 34.0
+text = "1"
+
+[node name="DropZone2" parent="Zones" index="1" instance=ExtResource( 5 )]
+position = Vector2( -309, 41 )
+id = 2
+text = "1"
+
+[node name="CollisionShape2D" parent="Zones/DropZone2" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone2" index="1"]
+visible = false
+margin_left = -90.0
+margin_top = -35.0
+margin_right = 90.0
+margin_bottom = 35.0
+custom_styles/panel = SubResource( 31 )
+
+[node name="Label" parent="Zones/DropZone2/HighLite" index="0"]
+margin_left = -85.0
+margin_right = 85.0
+margin_bottom = 34.0
+text = "1"
+
+[node name="DropZone3" parent="Zones" index="2" instance=ExtResource( 5 )]
+position = Vector2( -309, 137 )
+id = 3
+text = "1"
+
+[node name="CollisionShape2D" parent="Zones/DropZone3" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone3" index="1"]
+visible = false
+margin_left = -90.0
+margin_top = -35.0
+margin_right = 90.0
+margin_bottom = 35.0
+custom_styles/panel = SubResource( 32 )
+
+[node name="Label" parent="Zones/DropZone3/HighLite" index="0"]
+margin_left = -85.0
+margin_right = 85.0
+margin_bottom = 34.0
+text = "1"
+
+[node name="DropZone4" parent="Zones" index="3" instance=ExtResource( 5 )]
+position = Vector2( -308, 235 )
+id = 4
+text = "1"
+
+[node name="CollisionShape2D" parent="Zones/DropZone4" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone4" index="1"]
+visible = false
+margin_left = -90.0
+margin_top = -35.0
+margin_right = 90.0
+margin_bottom = 35.0
+custom_styles/panel = SubResource( 33 )
+
+[node name="Label" parent="Zones/DropZone4/HighLite" index="0"]
+margin_left = -85.0
+margin_right = 85.0
+margin_bottom = 34.0
+text = "1"
+
+[node name="DropZone5" parent="Zones" index="4" instance=ExtResource( 5 )]
+position = Vector2( 103, 41 )
+id = 5
+text = "1"
+
+[node name="CollisionShape2D" parent="Zones/DropZone5" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone5" index="1"]
+visible = false
+margin_left = -90.0
+margin_top = -35.0
+margin_right = 90.0
+margin_bottom = 35.0
+custom_styles/panel = SubResource( 34 )
+
+[node name="Label" parent="Zones/DropZone5/HighLite" index="0"]
+margin_left = -85.0
+margin_right = 85.0
+margin_bottom = 34.0
+text = "1"
+
+[node name="DragableElement2" parent="CorrectElements" index="0" instance=ExtResource( 6 )]
+position = Vector2( 340, 234 )
+id = 1
+text = "Si la visualización falla,
+verifique conexión móvil,
+cierre y reabra Iris Optalert."
+image_scale = 0.27
+custom_collision_transform = true
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement2" index="0"]
+shape = SubResource( 8 )
+
+[node name="Label" parent="CorrectElements/DragableElement2" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -85.5
+margin_top = -23.5
+margin_right = 85.5
+margin_bottom = 23.5
+custom_fonts/font = SubResource( 20 )
+text = "Si la visualización falla,
+verifique conexión móvil,
+cierre y reabra Iris Optalert."
+
+[node name="Icon" parent="CorrectElements/DragableElement2" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement2" index="6"]
+show_behind_parent = true
+margin_left = -102.0
+margin_top = -29.6667
+margin_right = 109.0
+margin_bottom = 37.3333
+custom_styles/panel = SubResource( 15 )
+
+[node name="DragableElement3" parent="CorrectElements" index="1" instance=ExtResource( 6 )]
+position = Vector2( 340, 22 )
+id = 2
+text = "Si no, informe a PSS,
+genere ticket y notifique
+a Supervisor CAS y
+despacho mina."
+image_scale = 0.27
+custom_collision_transform = true
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement3" index="0"]
+shape = SubResource( 21 )
+
+[node name="Label" parent="CorrectElements/DragableElement3" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -76.0
+margin_top = -30.5
+margin_right = 76.0
+margin_bottom = 30.5
+custom_fonts/font = SubResource( 20 )
+text = "Si no, informe a PSS,
+genere ticket y notifique
+a Supervisor CAS y
+despacho mina."
+
+[node name="Icon" parent="CorrectElements/DragableElement3" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement3" index="6"]
+show_behind_parent = true
+margin_left = -94.0
+margin_top = -36.6667
+margin_right = 98.0
+margin_bottom = 44.3333
+custom_styles/panel = SubResource( 15 )
+
+[node name="DragableElement5" parent="CorrectElements" index="2" instance=ExtResource( 6 )]
+position = Vector2( 342, -64 )
+id = 3
+text = "Informe a líder de Mina y por
+canal 1 a operaciones para
+activar protocolo vigente y
+redistribuir 2 operadores por
+equipo hasta resolver la falla."
+image_scale = 0.27
+custom_collision_transform = true
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement5" index="0"]
+shape = SubResource( 17 )
+
+[node name="Label" parent="CorrectElements/DragableElement5" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -87.0
+margin_top = -35.0
+margin_right = 87.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 19 )
+text = "Informe a líder de Mina y por
+canal 1 a operaciones para
+activar protocolo vigente y
+redistribuir 2 operadores por
+equipo hasta resolver la falla."
+
+[node name="Icon" parent="CorrectElements/DragableElement5" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement5" index="6"]
+show_behind_parent = true
+margin_left = -105.118
+margin_top = -40.3138
+margin_right = 108.882
+margin_bottom = 49.6862
+custom_styles/panel = SubResource( 15 )
+
+[node name="DragableElement4" parent="CorrectElements" index="3" instance=ExtResource( 6 )]
+position = Vector2( 340, 158 )
+id = 4
+text = "Al restablecer sistema,
+informe para volver a
+operación normal
+(1 operador por equipo)."
+image_scale = 0.27
+custom_collision_transform = true
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement4" index="0"]
+shape = SubResource( 22 )
+
+[node name="Label" parent="CorrectElements/DragableElement4" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -76.5
+margin_top = -30.5
+margin_right = 76.5
+margin_bottom = 30.5
+custom_fonts/font = SubResource( 20 )
+text = "Al restablecer sistema,
+informe para volver a
+operación normal
+(1 operador por equipo)."
+
+[node name="Icon" parent="CorrectElements/DragableElement4" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement4" index="6"]
+show_behind_parent = true
+margin_left = -94.0
+margin_top = -36.6667
+margin_right = 99.0
+margin_bottom = 44.3333
+custom_styles/panel = SubResource( 15 )
+
+[node name="DragableElement6" parent="CorrectElements" index="4" instance=ExtResource( 6 )]
+position = Vector2( 339, 89 )
+id = 5
+text = "Continuar con el monitoreo
+normal de Optalert."
+image_scale = 0.27
+custom_collision_transform = true
+
+[node name="CollisionShape2D" parent="CorrectElements/DragableElement6" index="0"]
+shape = SubResource( 23 )
+
+[node name="Label" parent="CorrectElements/DragableElement6" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -84.0
+margin_top = -16.5
+margin_right = 84.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 20 )
+text = "Continuar con el monitoreo
+normal de Optalert."
+
+[node name="Icon" parent="CorrectElements/DragableElement6" index="2"]
+material = SubResource( 7 )
+
+[node name="HighLite" parent="CorrectElements/DragableElement6" index="6"]
+show_behind_parent = true
+margin_left = -102.0
+margin_top = -22.6667
+margin_right = 106.0
+margin_bottom = 30.3333
+custom_styles/panel = SubResource( 15 )
+
+[node name="PopUp" parent="." index="7"]
+text = "¡Muy bien! Recuerda la importancia de seguir este flujo en caso de fallas con el sistema de monitoreo."
+
+[node name="CursorHelp" parent="." index="9" instance=ExtResource( 7 )]
+margin_left = 281.0
+margin_top = -7.0
+margin_right = 342.0
+margin_bottom = 57.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = -174.0
+margin_top = 32.0
+margin_right = -134.0
+margin_bottom = 72.0
+
+[connection signal="dragged" from="CorrectElements/DragableElement2" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement3" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement5" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement4" to="." method="_on_DragableElement2_dragged"]
+[connection signal="dragged" from="CorrectElements/DragableElement6" to="." method="_on_DragableElement2_dragged"]
+
+[editable path="Zones/DropZone"]
+[editable path="Zones/DropZone2"]
+[editable path="Zones/DropZone3"]
+[editable path="Zones/DropZone4"]
+[editable path="Zones/DropZone5"]
+[editable path="CorrectElements/DragableElement2"]
+[editable path="CorrectElements/DragableElement3"]
+[editable path="CorrectElements/DragableElement5"]
+[editable path="CorrectElements/DragableElement4"]
+[editable path="CorrectElements/DragableElement6"]
+[editable path="CursorHelp"]

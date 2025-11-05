@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/ui/fonts/BaseFont.tres" type="DynamicFont" id=1]
+
+[node name="Alternative" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CheckBox" type="CheckBox" parent="."]
+unique_name_in_owner = true
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CheckBox"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 29.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+valign = 1
+autowrap = true

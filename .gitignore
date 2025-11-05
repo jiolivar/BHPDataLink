@@ -1,0 +1,16 @@
+# Godot-specific ignores
+.import/
+
+# Ignorar la configuracion de export:
+# export.cfg
+# export_presets.cfg
+
+# Fichero de configuración, debe crearse manualmente
+# un archivo Config.gd que contenga los datos requeridos
+# en ExampleConfig.gd
+
+ConfigWS.gd
+HTTPSKeys/*
+
+# kate
+*.kate-swp

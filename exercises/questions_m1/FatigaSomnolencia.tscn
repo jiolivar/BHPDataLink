@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/connect_pairs.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/pair_element.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/images/operator.jpg" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+
+[node name="FatigaSomnolencia" instance=ExtResource( 1 )]
+margin_right = 0.0
+title = "Fatiga y somnolencia"
+question = "Asocie los conceptos de fatiga y somnolencia haciendo click en los elementos de una columna y arrastrando hacia la otra."
+
+[node name="Title" parent="Panel" index="0"]
+text = "Fatiga y somnolencia"
+
+[node name="TextureRect" type="TextureRect" parent="Panel" index="2"]
+margin_left = 361.0
+margin_top = 150.0
+margin_right = 561.0
+margin_bottom = 270.0
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="HighLite" type="Panel" parent="Panel/TextureRect" index="0"]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="Question" parent="Panel" index="3"]
+text = "Asocie los conceptos de fatiga y somnolencia haciendo click en los elementos de una columna y arrastrando hacia la otra."
+
+[node name="PairElement" parent="Elements" index="0" instance=ExtResource( 2 )]
+position = Vector2( -242, 91 )
+text = "Fatiga"
+
+[node name="PairElement2" parent="Elements" index="1" instance=ExtResource( 2 )]
+position = Vector2( -268, 184 )
+id = 1
+text = "Sonmolencia"
+
+[node name="PairElement5" parent="Elements" index="2" instance=ExtResource( 2 )]
+position = Vector2( 118, 177 )
+text = "Sensación de cansancio o agotamiento
+ físico o mental"
+
+[node name="PairElement6" parent="Elements" index="3" instance=ExtResource( 2 )]
+position = Vector2( 129, 95 )
+id = 1
+text = "Necesidad de dormir o la dificultad
+ para mantenerse despierto"
+
+[node name="PopUp" parent="." index="5"]
+text = "¡Efectivamente! La fatiga no siempre implica sueño y la única forma de superar la somnolencia es dormir."
+
+[node name="CursorHelp" parent="." index="7" instance=ExtResource( 3 )]
+margin_left = -208.0
+margin_top = 74.0
+margin_right = -147.0
+margin_bottom = 138.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 325.0
+margin_top = 19.0
+margin_right = 365.0
+margin_bottom = 59.0
+
+[editable path="CursorHelp"]

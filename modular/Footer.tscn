@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/ui/fonts/roboto/Roboto_Regular_6B.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/ui/fonts/roboto/Roboto_Condensed_Regular_4.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/ui/fonts/roboto/Roboto_Condensed_Regular_3.tres" type="DynamicFont" id=3]
+[ext_resource path="res://modular/Footer.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0.2, 0.407843, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0235294, 0.168627, 0.329412, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Footer" type="MarginContainer"]
+margin_top = 540.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 60 )
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+script = ExtResource( 4 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 1019.0
+margin_bottom = 55.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 4
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+margin_left = 8.0
+margin_top = 4.0
+margin_right = 1006.0
+margin_bottom = 48.0
+
+[node name="Label2" type="Label" parent="Panel/MarginContainer/HBoxContainer"]
+margin_right = 66.0
+margin_bottom = 44.0
+size_flags_vertical = 7
+custom_colors/font_color = Color( 0.85098, 0.368627, 0.211765, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "FRP"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="Panel/MarginContainer/HBoxContainer"]
+margin_left = 70.0
+margin_right = 255.0
+margin_bottom = 44.0
+size_flags_vertical = 7
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Perfil de Riesgo de Fatiga"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="Panel/MarginContainer/HBoxContainer"]
+margin_left = 259.0
+margin_right = 735.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer"]
+margin_left = 739.0
+margin_right = 998.0
+margin_bottom = 44.0
+
+[node name="Label3" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 259.0
+margin_bottom = 18.0
+size_flags_vertical = 7
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Segundos para volver a cargar:   0"
+align = 2
+valign = 1
+
+[node name="CurrentDate" type="Label" parent="Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 22.0
+margin_right = 259.0
+margin_bottom = 44.0
+size_flags_vertical = 7
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Martes, 24 de diciembre 2019 09:38"
+align = 1
+valign = 1

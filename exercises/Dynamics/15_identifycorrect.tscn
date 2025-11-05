@@ -1,0 +1,188 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/drag_image.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/main_screens/question_templates/Elements/drop_zone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/main_screens/question_templates/Elements/dragable_element.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/assets/ui/icons/check.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 59, 58 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="17" instance=ExtResource( 2 )]
+title = "Tiempo medio para reparación"
+question = "Identifica la fórmula correcta para calcular cuánto tarda, en promedio, reparar una falla del equipo."
+
+[node name="Title" parent="Panel" index="0"]
+text = "Tiempo medio para reparación"
+
+[node name="Question" parent="Panel" index="2"]
+text = "Identifica la fórmula correcta para calcular cuánto tarda, en promedio, reparar una falla del equipo."
+
+[node name="DropZone3" parent="Zones" index="0" instance=ExtResource( 4 )]
+position = Vector2( -299, 113 )
+id = 2
+text = "Inactividad / fallas"
+
+[node name="CollisionShape2D" parent="Zones/DropZone3" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone3" index="1"]
+margin_left = -59.0
+margin_top = -58.0
+margin_right = 59.0
+margin_bottom = 58.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="Label" parent="Zones/DropZone3/HighLite" index="0"]
+margin_left = -79.0
+margin_top = 4.0
+margin_right = 79.0
+margin_bottom = 90.0
+text = "Inactividad / fallas"
+
+[node name="DropZone4" parent="Zones" index="1" instance=ExtResource( 4 )]
+position = Vector2( -99, 113 )
+id = 1
+text = "Producción / requerido"
+
+[node name="CollisionShape2D" parent="Zones/DropZone4" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone4" index="1"]
+margin_left = -59.0
+margin_top = -58.0
+margin_right = 59.0
+margin_bottom = 58.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="Label" parent="Zones/DropZone4/HighLite" index="0"]
+margin_left = -79.0
+margin_top = 4.0
+margin_right = 79.0
+margin_bottom = 90.0
+text = "Producción / requerido"
+
+[node name="DropZone6" parent="Zones" index="2" instance=ExtResource( 4 )]
+position = Vector2( 345, 113 )
+id = 1
+text = "Fallas / calendario"
+
+[node name="CollisionShape2D" parent="Zones/DropZone6" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone6" index="1"]
+margin_left = -59.0
+margin_top = -58.0
+margin_right = 59.0
+margin_bottom = 58.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="Label" parent="Zones/DropZone6/HighLite" index="0"]
+margin_left = -79.0
+margin_top = 4.0
+margin_right = 79.0
+margin_bottom = 90.0
+text = "Fallas / calendario"
+
+[node name="DropZone5" parent="Zones" index="3" instance=ExtResource( 4 )]
+position = Vector2( 139, 113 )
+id = 1
+text = "Disponible / calendario"
+
+[node name="CollisionShape2D" parent="Zones/DropZone5" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone5" index="1"]
+margin_left = -59.0
+margin_top = -58.0
+margin_right = 59.0
+margin_bottom = 58.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="Label" parent="Zones/DropZone5/HighLite" index="0"]
+margin_left = -79.0
+margin_top = 4.0
+margin_right = 79.0
+margin_bottom = 90.0
+text = "Disponible / calendario"
+
+[node name="DragableElement" parent="CorrectElements" index="0" instance=ExtResource( 5 )]
+position = Vector2( 30, -45 )
+id = 2
+image = ExtResource( 7 )
+image_scale = 0.327
+
+[node name="PopUp" parent="." index="7"]
+text = "¡Efectivamente! Esta métrica permite prever recursos técnicos y tiempos de detención futuros, lo que es clave para una buena planificación del mantenimiento."
+
+[node name="CursorHelp" parent="." index="9" instance=ExtResource( 3 )]
+margin_left = 7.00003
+margin_top = -57.0
+margin_right = 68.0
+margin_bottom = 7.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = -136.0
+margin_top = 138.0
+margin_right = -96.0
+margin_bottom = 178.0
+
+[editable path="Zones/DropZone3"]
+[editable path="Zones/DropZone4"]
+[editable path="Zones/DropZone6"]
+[editable path="Zones/DropZone5"]
+[editable path="CursorHelp"]
