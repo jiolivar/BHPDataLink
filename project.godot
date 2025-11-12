@@ -74,7 +74,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="BHPTUM"
+config/name="BHPDataLink"
 run/main_scene="res://game/main_screens/splash/splash.tscn"
 config/icon="res://icon.png"
 
