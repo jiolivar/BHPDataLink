@@ -10,6 +10,8 @@ script = ExtResource( 1 )
 title = "Arrastra los elementos correctos a la zona"
 
 [node name="Title" parent="Panel" index="0"]
+margin_top = 15.0
+margin_bottom = 64.0
 text = "Arrastra los elementos correctos a la zona"
 
 [node name="Zones" type="Control" parent="." index="4"]

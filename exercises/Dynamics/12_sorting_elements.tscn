@@ -75,11 +75,11 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="NivelesDefensa" instance=ExtResource( 3 )]
-title = "Flujo básico de uso"
-question = "Ordena los pasos para consultar datos de PI en Excel."
+title = "Secuencia para buscar TAGs"
+question = "Ordena los pasos correctos para encontrar un TAG en PI."
 
 [node name="Title" parent="Panel" index="0"]
-text = "Flujo básico de uso"
+text = "Secuencia para buscar TAGs"
 
 [node name="Enunc" parent="Panel" index="1"]
 margin_top = 76.0
@@ -96,7 +96,7 @@ stretch_mode = 6
 
 [node name="Question" parent="Panel" index="3"]
 margin_bottom = -404.0
-text = "Ordena los pasos para consultar datos de PI en Excel."
+text = "Ordena los pasos correctos para encontrar un TAG en PI."
 
 [node name="Zones" parent="." index="4"]
 margin_left = -32.9999
@@ -214,23 +214,23 @@ text = "Conectar al servidor "
 
 [node name="DragableElement2" parent="CorrectElements" index="1" instance=ExtResource( 4 )]
 position = Vector2( -191.721, 181.24 )
-id = 2
-text = "Buscar TAG"
+id = 5
+text = "Definit ámbito"
 
 [node name="DragableElement5" parent="CorrectElements" index="2" instance=ExtResource( 4 )]
 position = Vector2( -189.748, -63.7538 )
-id = 3
-text = "Seleccionar función"
+id = 2
+text = "Abrir herramienta de búsqueda"
 
 [node name="DragableElement3" parent="CorrectElements" index="3" instance=ExtResource( 4 )]
 position = Vector2( -191.475, 119.241 )
 id = 4
-text = "Definir celdas de salida"
+text = "Ajustar longitud"
 
 [node name="DragableElement4" parent="CorrectElements" index="4" instance=ExtResource( 4 )]
 position = Vector2( -195.991, -2.77805 )
 id = 5
-text = "Aplicar"
+text = "Seleccionar resultados"
 
 [node name="IncorrectElements" parent="." index="6"]
 margin_left = -32.9999
@@ -240,7 +240,7 @@ margin_bottom = 26.0
 rect_rotation = -0.227449
 
 [node name="PopUp" parent="." index="7"]
-text = "¡Perfecto! Este flujo es la base para generar hojas dinámicas con información del sistema PI."
+text = "¡Perfecto! Este orden garantiza búsquedas precisas y eficientes dentro de PI System."
 
 [node name="CursorHelp" parent="." index="9" instance=ExtResource( 1 )]
 margin_left = -207.0

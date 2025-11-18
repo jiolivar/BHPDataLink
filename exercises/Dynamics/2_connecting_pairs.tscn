@@ -14,13 +14,13 @@ border_color = Color( 0.227451, 0.878431, 1, 1 )
 
 [node name="FatigaSomnolencia" instance=ExtResource( 1 )]
 margin_right = 0.0
-title = "Objetivo del TUM"
-question = "Relaciona cada objetivo con el beneficio que entrega el TUM."
+title = "Tipos de datos en PI DataLink"
+question = "Relaciona cada tipo de dato con su descripción."
 
 [node name="Title" parent="Panel" index="0"]
 margin_top = 21.0
 margin_bottom = 70.0
-text = "Objetivo del TUM"
+text = "Tipos de datos en PI DataLink"
 
 [node name="Enunc" parent="Panel" index="1"]
 margin_left = 45.0
@@ -49,54 +49,94 @@ custom_styles/panel = SubResource( 1 )
 margin_left = 47.0
 margin_top = 112.0
 margin_right = -43.0
-margin_bottom = -229.0
-text = "Relaciona cada objetivo con el beneficio que entrega el TUM."
+margin_bottom = -375.0
+text = "Relaciona cada tipo de dato con su descripción."
 
 [node name="Elements" parent="." index="4"]
-margin_left = -31.0
-margin_right = 9.0
+margin_left = -51.0
+margin_right = -11.0
 
 [node name="PairElement" parent="Elements" index="0" instance=ExtResource( 2 )]
-position = Vector2( -336, 151 )
-text = "Monitorear tiempos de equipos"
+position = Vector2( -191, 119 )
+text = "Digital "
 
 [node name="PairElement3" parent="Elements" index="1" instance=ExtResource( 2 )]
-position = Vector2( -335, 74 )
+position = Vector2( -192, 5 )
 id = 2
-text = "Apoyo a la gestión operacional"
+text = "Flotante"
 
-[node name="PairElement2" parent="Elements" index="2" instance=ExtResource( 2 )]
-position = Vector2( -324, -14 )
+[node name="PairElement4" parent="Elements" index="2" instance=ExtResource( 2 )]
+position = Vector2( -192, 172 )
+id = 3
+text = "Cadena"
+
+[node name="PairElement8" parent="Elements" index="3" instance=ExtResource( 2 )]
+position = Vector2( -226, 63 )
+id = 4
+text = "Marca de tiempo"
+
+[node name="PairElement2" parent="Elements" index="4" instance=ExtResource( 2 )]
+position = Vector2( -188, -49 )
 id = 1
-text = " Estándar común de registro"
+text = "Entero"
 
-[node name="PairElement5" parent="Elements" index="3" instance=ExtResource( 2 )]
-position = Vector2( 145, 67 )
+[node name="PairElement5" parent="Elements" index="5" instance=ExtResource( 2 )]
+position = Vector2( 147, 5 )
 id = 1
-text = "Garantiza coherencia entre áreas"
+text = "Números sin decimales"
 
-[node name="PairElement9" parent="Elements" index="4" instance=ExtResource( 2 )]
-position = Vector2( 136, 147 )
+[node name="PairElement9" parent="Elements" index="6" instance=ExtResource( 2 )]
+position = Vector2( 169, 63 )
 id = 2
-text = " Ayuda a tomar mejores decisiones"
+text = "Valores decimales"
 
-[node name="PairElement6" parent="Elements" index="5" instance=ExtResource( 2 )]
-position = Vector2( 124, -14 )
-text = "Permite identificar pérdidas de tiempo"
+[node name="PairElement6" parent="Elements" index="7" instance=ExtResource( 2 )]
+position = Vector2( 170, -49 )
+text = "Estados definidos "
+
+[node name="PairElement7" parent="Elements" index="8" instance=ExtResource( 2 )]
+position = Vector2( 220, 119 )
+id = 3
+text = "Texto "
+
+[node name="PairElement10" parent="Elements" index="9" instance=ExtResource( 2 )]
+position = Vector2( 153, 172 )
+id = 4
+text = "Fecha u hora del registro"
 
 [node name="PopUp" parent="." index="5"]
-text = "¡Excelente! El TUM no solo organiza la información, también la convierte en un lenguaje común para toda la operación, facilitando la mejora continua"
+text = "¡Muy bien! Comprender los tipos de datos permite seleccionar correctamente las funciones y evitar errores en consultas."
 
 [node name="CursorHelp" parent="." index="7" instance=ExtResource( 3 )]
-margin_left = -210.0
-margin_top = -39.0
-margin_right = -149.0
-margin_bottom = 25.0
+margin_left = -166.0
+margin_top = -3.99997
+margin_right = -105.0
+margin_bottom = 60.0
+
+[node name="Panel" parent="CursorHelp/ClickEffect" index="0"]
+margin_left = -4.0
+margin_right = 22.0
+
+[node name="Panel3" parent="CursorHelp/ClickEffect" index="1"]
+margin_left = -4.0
+margin_right = 22.0
+
+[node name="Panel4" parent="CursorHelp/ClickEffect" index="2"]
+margin_left = -4.0
+margin_right = 22.0
+
+[node name="Panel5" parent="CursorHelp/ClickEffect" index="3"]
+margin_left = -4.0
+margin_right = 22.0
+
+[node name="Panel6" parent="CursorHelp/ClickEffect" index="4"]
+margin_left = -4.0
+margin_right = 22.0
 
 [node name="Target" parent="CursorHelp" index="2"]
-margin_left = 376.0
-margin_top = -7.0
-margin_right = 416.0
-margin_bottom = 33.0
+margin_left = 303.0
+margin_top = -14.0
+margin_right = 343.0
+margin_bottom = 26.0
 
 [editable path="CursorHelp"]

@@ -1,52 +1,111 @@
-extends Control
+extends Control # O el nodo que tengas de raíz
 
-export var num_rows := 20
-export var num_cols := 10
+# --- 1. Definiciones ---
+onready var grid = $Grid # Asegúrate que tu GridContainer se llame "Grid"
 
-onready var grid = $"%Grid"
-onready var header_rows = $"%HeaderRows"
-onready var header_columns = $"%HeaderColumns"
+# Pre-cargamos las escenas que instanciareremos
+var cell_scene = preload("res://DataLinkAssets/Cell.tscn")
+var header_scene = preload("res://DataLinkAssets/HeaderCell.tscn")
 
+# Definimos el tamaño de nuestra *plantilla de datos*
+const DATA_ROWS = 10
+const DATA_COLS = 5
+
+# El modelo de datos (como vimos en la Parte 1)
+var sheet_data = []
+
+# Guardamos la celda seleccionada
+var selected_cell = null
+var selected_coords = Vector2(-1, -1)
+
+# --- 2. Inicialización ---
 func _ready():
-	generate_headers()
-	generate_row_numbers()
-	generate_grid()
+	# A. Ajustamos el GridContainer
+	# Columnas totales = 5 de datos + 1 de índices de fila
+	grid.columns = DATA_COLS + 1
+	
+	# B. Inicializamos la matriz de datos (vacía)
+	# (Esto es para los datos, no para la UI)
+	for r in DATA_ROWS:
+		var row_data = []
+		for c in DATA_COLS:
+			row_data.append( {"value": "", "formula": ""} )
+		sheet_data.append(row_data)
+		
+	# C. Llamamos a la función que "dibuja" el grid
+	draw_grid()
 
-func generate_headers():
-	for i in range(num_cols):
-		var label = Label.new()
-		label.text = String(char(65 + i))  # 65 = A
-		label.rect_min_size = Vector2(80, 24)
-		label.align = Label.ALIGN_CENTER
-		header_columns.add_child(label)
+# --- 3. El Armador de la UI ---
+func draw_grid():
+	
+	# Filas totales = 10 de datos + 1 de índices de columna
+	for r in DATA_ROWS + 1:
+		
+		# Columnas totales = 5 de datos + 1 de índices de fila
+		for c in DATA_COLS + 1:
+			
+			# --- Lógica de qué celda poner ---
+			
+			# Caso 1: Esquina superior izquierda (0,0)
+			if r == 0 and c == 0:
+				var corner = Control.new()
+				corner.rect_min_size = Vector2(100, 25) # Mismo tamaño
+				grid.add_child(corner)
+			
+			# Caso 2: Fila de Headers (A, B, C...)
+			elif r == 0:
+				var header = header_scene.instance()
+				# chr(65) es "A". chr(65 + 1) es "B"...
+				header.set_text( char(64 + c) ) 
+				grid.add_child(header)
+				
+			# Caso 3: Columna de Headers (1, 2, 3...)
+			elif c == 0:
+				var header = header_scene.instance()
+				header.set_text( str(r) )
+				grid.add_child(header)
+				
+			# Caso 4: ¡Una celda de datos!
+			else:
+				var cell = cell_scene.instance()
+				
+				# Le pasamos el diccionario de datos (ahora están vacíos)
+				# Ojo: r y c vienen de la UI (empiezan en 1),
+				# pero 'sheet_data' empieza en 0.
+				cell.set_data( sheet_data[r-1][c-1] )
+				
+				# CONECTAMOS LA SEÑAL "pressed" (Sintaxis Godot 3)
+				# Cuando se presione esta celda, llamará a NUESTRA función
+				# Le "pasamos" la celda y sus coordenadas de *datos* (r-1, c-1)
+				cell.connect("pressed", self, "_on_cell_selected", [cell, Vector2(c-1, r-1)])
+				
+				grid.add_child(cell)
 
-func generate_grid():
-	grid.columns = num_cols
-	for r in range(num_rows):
-		for c in range(num_cols):
-			var cell = LineEdit.new()
-			cell.name = "R%dC%d" % [r+1, c+1]
-			cell.text = ""
-			cell.rect_min_size = Vector2(80, 24)
-			cell.align = LineEdit.ALIGN_CENTER
-			cell.expand_to_text_length = false
-			cell.add_color_override("font_color", Color(0,0,0))
-			cell.add_color_override("caret_color", Color(0,0,0))
-			var style = StyleBoxFlat.new()
-			style.bg_color = Color(1, 1, 1)
-			style.border_color = Color(0.8, 0.8, 0.8)
-			style.set_border_width(MARGIN_LEFT, 1)
-			style.set_border_width(MARGIN_TOP, 1)
-			style.set_border_width(MARGIN_RIGHT, 1)
-			style.set_border_width(MARGIN_BOTTOM, 1)
-			cell.add_stylebox_override("normal", style)
-			grid.add_child(cell)
+# --- 4. Lógica de Selección y Edición ---
 
+# Esta es la función que conectamos arriba
+func _on_cell_selected(cell_node, coords):
+	# Guardamos la celda y sus coordenadas
+	selected_cell = cell_node
+	selected_coords = coords
+	print("Celda seleccionada: ", coords)
+	
+	# Le damos foco para que se vea el borde azul
+	cell_node.grab_focus()
 
-func generate_row_numbers():
-	for i in range(num_rows):
-		var label = Label.new()
-		label.text = str(i + 1)
-		label.rect_min_size = Vector2(40, 24)
-		label.align = Label.ALIGN_CENTER
-		header_rows.add_child(label)
+# Esta función se llama en CADA frame (para inputs)
+func _unhandled_input(event):
+	# Si tenemos una celda seleccionada Y
+	# el usuario presiona Enter (o F2, o Doble Clic...)
+	
+	# Chequeamos Doble Clic
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and event.doubleclick:
+			if selected_cell:
+				# ¡Le damos la orden de editar al obrero!
+				selected_cell.start_editing()
+				
+	# Chequeamos Teclado (F2 es clásico de Excel)
+	if event.is_action_pressed("ui_accept"): # (Enter)
+		if selected_cell:
+			selected_cell.start_editing()

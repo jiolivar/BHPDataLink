@@ -3,16 +3,20 @@ extends TrueFalseSequence
 func _ready():
 	questions = {
 		0 : {
-			"Question" : "Utilización es igual a disponibilidad.",
+			"Question" : " PI DataLink admite tipo blob .",
 			"Answer" : false
 		},
 		1 : {
-			"Question" : "Tiempo medio entre fallas mide confiabilidad.",
+			"Question" : "Se puede usar con datos de PI AF.",
 			"Answer" : true
 		},
 		2 : {
-			"Question" : " Tasa de producción se mide por hora.",
+			"Question" : "Los valores de atributo pueden ser fecha y hora.",
 			"Answer" : true
+		},
+		3 : {
+			"Question" : "No admite valores booleanos.",
+			"Answer" : false
 		}
 	}
 

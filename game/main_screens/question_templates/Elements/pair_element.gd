@@ -10,6 +10,7 @@ var current_other_pair_elements = []
 var initial_line_point : Vector2
 var end_line_point : Vector2
 
+var original_label_size := Vector2()
 
 func _ready():
 	#make sure its unique, local to scene sometimes doesn't work
@@ -19,6 +20,8 @@ func _ready():
 	$"%Line2D".visible = false
 	$"%MouseArea".visible = false
 	is_on_left_side = global_position.x < 0
+	#save original size
+	original_label_size = $"%Label".rect_size
 	._ready()
 
 func _on_viewport_size_changed():
@@ -39,6 +42,18 @@ func _process(delta):
 
 func _apply_settings():
 	._apply_settings()
+	
+	var label = $"%Label"
+	var border = $"%Border"
+	
+	if label.text.strip_edges().length() == 0:
+		# Back to original size
+		label.rect_size = original_label_size
+		border.rect_size = original_label_size + Vector2(40, 20)
+	else:
+		# Normal dynamic size
+		border.rect_size = label.rect_size + Vector2(40, 20)
+	
 	if image:
 		$"%Border".visible = false
 		$"%Line2D".points[0].y = 0

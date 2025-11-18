@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://game/main_screens/question_templates/drag_image.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=3]
@@ -49,20 +49,33 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="17" instance=ExtResource( 2 )]
-title = "¿Qué es PI DataLink?"
-question = "Selecciona la definición correcta que describe PI DataLink."
+[sub_resource type="StyleBoxFlat" id=5]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="13" instance=ExtResource( 2 )]
+title = "Forzar actualización a una matriz de función"
+question = "Si los datos de una matriz PI DataLink no se actualizan, ¿cuál es la acción correcta para forzar el recálculo?"
 
 [node name="Title" parent="Panel" index="0"]
-text = "¿Qué es PI DataLink?"
+text = "Forzar actualización a una matriz de función"
 
 [node name="Question" parent="Panel" index="2"]
-text = "Selecciona la definición correcta que describe PI DataLink."
+text = "Si los datos de una matriz PI DataLink no se actualizan, ¿cuál es la acción correcta para forzar el recálculo?"
 
 [node name="DropZone4" parent="Zones" index="0" instance=ExtResource( 4 )]
-position = Vector2( -206, 133 )
-id = 1
-text = "Aplicación para crear gráficos 3D"
+position = Vector2( -288, 133 )
+id = 2
+text = "Copiar los valores y pegarlos en otra hoja"
 
 [node name="CollisionShape2D" parent="Zones/DropZone4" index="0"]
 shape = SubResource( 1 )
@@ -79,12 +92,12 @@ margin_left = -79.0
 margin_top = 4.0
 margin_right = 79.0
 margin_bottom = 90.0
-text = "Aplicación para crear gráficos 3D"
+text = "Copiar los valores y pegarlos en otra hoja"
 
 [node name="DropZone6" parent="Zones" index="1" instance=ExtResource( 4 )]
-position = Vector2( 231, 133 )
+position = Vector2( 328, 132 )
 id = 1
-text = "Software para análisis estadístico"
+text = "Hacer clic derecho y elegir Recalcular (Redimensionar) función"
 
 [node name="CollisionShape2D" parent="Zones/DropZone6" index="0"]
 shape = SubResource( 1 )
@@ -101,12 +114,12 @@ margin_left = -79.0
 margin_top = 4.0
 margin_right = 79.0
 margin_bottom = 90.0
-text = "Software para análisis estadístico"
+text = "Hacer clic derecho y elegir Recalcular (Redimensionar) función"
 
 [node name="DropZone5" parent="Zones" index="2" instance=ExtResource( 4 )]
-position = Vector2( 19, 132 )
+position = Vector2( -71, 132 )
 id = 2
-text = "Complemento de Excel que conecta con PI System"
+text = "Abrir un nuevo libro de Excel"
 
 [node name="CollisionShape2D" parent="Zones/DropZone5" index="0"]
 shape = SubResource( 1 )
@@ -123,16 +136,38 @@ margin_left = -79.0
 margin_top = 4.0
 margin_right = 79.0
 margin_bottom = 90.0
-text = "Complemento de Excel que conecta con PI System"
+text = "Abrir un nuevo libro de Excel"
+
+[node name="DropZone7" parent="Zones" index="3" instance=ExtResource( 4 )]
+position = Vector2( 130, 132 )
+id = 2
+text = "Cambiar el formato de celdas"
+
+[node name="CollisionShape2D" parent="Zones/DropZone7" index="0"]
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone7" index="1"]
+margin_left = -59.0
+margin_top = -58.0
+margin_right = 59.0
+margin_bottom = 58.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="Label" parent="Zones/DropZone7/HighLite" index="0"]
+margin_left = -79.0
+margin_top = 4.0
+margin_right = 79.0
+margin_bottom = 90.0
+text = "Cambiar el formato de celdas"
 
 [node name="DragableElement" parent="CorrectElements" index="0" instance=ExtResource( 5 )]
 position = Vector2( 20, -42 )
-id = 2
+id = 1
 image = ExtResource( 7 )
 image_scale = 0.327
 
 [node name="PopUp" parent="." index="7"]
-text = "¡Efectivamente! PI DataLink permite acceder, visualizar y analizar datos del sistema PI directamente desde Excel."
+text = "¡Exacto! Este comando permite a PI DataLink volver a consultar el servidor y actualizar correctamente la matriz sin alterar la configuración del libro."
 
 [node name="CursorHelp" parent="." index="9" instance=ExtResource( 3 )]
 margin_left = 1.00003
@@ -149,4 +184,5 @@ margin_bottom = 200.0
 [editable path="Zones/DropZone4"]
 [editable path="Zones/DropZone6"]
 [editable path="Zones/DropZone5"]
+[editable path="Zones/DropZone7"]
 [editable path="CursorHelp"]

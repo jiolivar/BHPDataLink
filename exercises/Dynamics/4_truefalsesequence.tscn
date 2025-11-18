@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://exercises/Dynamics/4_truefalsesequence.gd" type="Script" id=1]
+[ext_resource path="res://game/main_screens/question_templates/true_false_sequence.tscn" type="PackedScene" id=2]
+
+[node name="4" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+title = "Importancia del TUM"
+enunc = "PI Data Link trabaja con diversos tipos de datos. Marca verdadero o falso según corresponda."
+
+[node name="PopUp" parent="." index="0"]
+title = "¡Muy Bien!"
+text = "¡Así es! Conocer los tipos admitidos evita errores al configurar consultas o fórmulas en Excel."
+buton_text = "Continuar"
+show_stars = true
+
+[connection signal="button_pressed" from="PopUp" to="." method="_on_PopUp_button_pressed"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/true_false_sequence.tscn" type="PackedScene" id=1]
+[ext_resource path="res://exercises/Dynamics/10_truefalsesequence.gd" type="Script" id=2]
+
+[node name="7" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+title = "Campos de entrada"
+enunc = "Determina si las siguientes afirmaciones son verdaderas o falsas."
+
+[node name="PopUp" parent="." index="0"]
+title = "¡Muy Bien!"
+text = "¡Muy bien! Comprender cómo funcionan los campos de entrada facilita la parametrización de funciones en Excel."
+buton_text = "Continuar"
+show_stars = true
+
+[connection signal="button_pressed" from="PopUp" to="." method="_on_PopUp_button_pressed"]
