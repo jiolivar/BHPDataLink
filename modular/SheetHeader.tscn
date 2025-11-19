@@ -1,0 +1,284 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/images/Icons/icono1.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/Icons/icono2.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/Icons/icono3.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/Icons/icono4.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/Icons/icono5.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=10]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0.760784, 0.760784, 0.760784, 1 )
+border_width_bottom = 5
+border_color = Color( 0.0117647, 0.309804, 0.0313726, 1 )
+
+[node name="Header" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 0.067
+margin_bottom = 101.8
+rect_min_size = Vector2( 0, 21 )
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 32.0
+custom_constants/separation = 0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_right = 39.0
+margin_bottom = 32.0
+text = "File"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+margin_left = 39.0
+margin_right = 94.0
+margin_bottom = 32.0
+text = "Home"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+margin_left = 94.0
+margin_right = 149.0
+margin_bottom = 32.0
+text = "Insert"
+
+[node name="Button4" type="Button" parent="HBoxContainer"]
+margin_left = 149.0
+margin_right = 245.0
+margin_bottom = 32.0
+text = "Page Layout"
+
+[node name="Button5" type="Button" parent="HBoxContainer"]
+margin_left = 245.0
+margin_right = 323.0
+margin_bottom = 32.0
+text = "Formulas"
+
+[node name="Button6" type="Button" parent="HBoxContainer"]
+margin_left = 323.0
+margin_right = 370.0
+margin_bottom = 32.0
+text = "Data"
+
+[node name="Button7" type="Button" parent="HBoxContainer"]
+margin_left = 370.0
+margin_right = 433.0
+margin_bottom = 32.0
+text = "Review"
+
+[node name="Button8" type="Button" parent="HBoxContainer"]
+margin_left = 433.0
+margin_right = 480.0
+margin_bottom = 32.0
+text = "View"
+
+[node name="Button9" type="Button" parent="HBoxContainer"]
+margin_left = 480.0
+margin_right = 561.0
+margin_bottom = 32.0
+text = "Automate"
+
+[node name="Button10" type="Button" parent="HBoxContainer"]
+margin_left = 561.0
+margin_right = 608.0
+margin_bottom = 32.0
+text = "Help"
+
+[node name="Button11" type="Button" parent="HBoxContainer"]
+margin_left = 608.0
+margin_right = 702.0
+margin_bottom = 32.0
+custom_styles/normal = SubResource( 10 )
+text = "PI DataLink"
+
+[node name="Button12" type="Button" parent="HBoxContainer"]
+margin_left = 702.0
+margin_right = 807.0
+margin_bottom = 32.0
+text = "PDF-XChange"
+
+[node name="Button13" type="Button" parent="HBoxContainer"]
+margin_left = 807.0
+margin_right = 1027.0
+margin_bottom = 32.0
+disabled = true
+text = "                                                   "
+
+[node name="PIDataLinkTools" type="HBoxContainer" parent="."]
+anchor_top = 0.493
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -39.006
+margin_right = -3.0
+margin_bottom = 10.0
+grow_vertical = 0
+custom_constants/separation = 10
+
+[node name="SingleValue" type="VBoxContainer" parent="PIDataLinkTools"]
+margin_right = 106.0
+margin_bottom = 121.0
+custom_constants/separation = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PIDataLinkTools/SingleValue"]
+margin_right = 106.0
+margin_bottom = 85.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PIDataLinkTools/SingleValue/HBoxContainer"]
+margin_right = 52.0
+margin_bottom = 85.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="TextureButton" type="Button" parent="PIDataLinkTools/SingleValue/HBoxContainer/VBoxContainer"]
+margin_right = 52.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 3
+icon = ExtResource( 1 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/SingleValue/HBoxContainer/VBoxContainer"]
+margin_top = 47.0
+margin_right = 52.0
+margin_bottom = 85.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+text = "Current
+Value"
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PIDataLinkTools/SingleValue/HBoxContainer"]
+margin_left = 56.0
+margin_right = 106.0
+margin_bottom = 85.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="TextureButton" type="Button" parent="PIDataLinkTools/SingleValue/HBoxContainer/VBoxContainer2"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 3
+icon = ExtResource( 2 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/SingleValue/HBoxContainer/VBoxContainer2"]
+margin_top = 47.0
+margin_right = 50.0
+margin_bottom = 85.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+text = "Archive
+Value"
+align = 1
+
+[node name="Label" type="Label" parent="PIDataLinkTools/SingleValue"]
+margin_top = 88.0
+margin_right = 106.0
+margin_bottom = 108.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Single Value"
+align = 1
+valign = 1
+percent_visible = -0.0909091
+
+[node name="MultipleValue" type="VBoxContainer" parent="PIDataLinkTools"]
+margin_left = 116.0
+margin_right = 313.0
+margin_bottom = 121.0
+custom_constants/separation = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PIDataLinkTools/MultipleValue"]
+margin_right = 197.0
+margin_bottom = 85.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PIDataLinkTools/MultipleValue/HBoxContainer"]
+margin_right = 84.0
+margin_bottom = 85.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="TextureButton" type="Button" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer"]
+margin_right = 84.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 3
+icon = ExtResource( 3 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer"]
+margin_top = 47.0
+margin_right = 84.0
+margin_bottom = 85.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+text = "Compressed
+Data"
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PIDataLinkTools/MultipleValue/HBoxContainer"]
+margin_left = 88.0
+margin_right = 151.0
+margin_bottom = 85.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer2"]
+margin_right = 63.0
+margin_bottom = 50.0
+size_flags_vertical = 3
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer2"]
+margin_top = 47.0
+margin_right = 63.0
+margin_bottom = 85.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+text = "Sampled 
+Data"
+align = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="PIDataLinkTools/MultipleValue/HBoxContainer"]
+margin_left = 155.0
+margin_right = 197.0
+margin_bottom = 85.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer3"]
+margin_right = 42.0
+margin_bottom = 50.0
+size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer3"]
+margin_top = 47.0
+margin_right = 42.0
+margin_bottom = 85.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+text = "Timed
+Data"
+align = 1
+
+[node name="Label" type="Label" parent="PIDataLinkTools/MultipleValue"]
+margin_top = 88.0
+margin_right = 197.0
+margin_bottom = 108.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Multiple Value"
+align = 1
+valign = 1
