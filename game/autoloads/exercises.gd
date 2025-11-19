@@ -33,129 +33,150 @@ var exercises := [
 		"correct_responses" : [], "weight" : 1.0, 
 		"path" : "res://exercises/UnshceduledProcessDowntimeSlide.tscn", "type" : "Dynamic", 
 	},{
-		"complete_name": "Modulo 1\nDinamica 1",
-		"id": "Dynamic1", "description" : "Question 1", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/1_identifycorrect.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 2",
-		"id": "Dynamic2", "description" : "Question 2", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/2_connecting_pairs.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 3",
-		"id": "Dynamic3", "description" : "Question 3", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/3_truefalsesequence.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 4",
-		"id": "Dynamic4", "description" : "Question 4", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/4_connecting_pairs.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 5",
-		"id": "Dynamic5", "description" : "Question 5", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/5_sorting_elements.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 6",
-		"id": "Dynamic6", "description" : "Question 6", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/6_identify_corcect_image.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 7",
-		"id": "Dynamic7", "description" : "Question 7", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/7_identify_elements.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 8",
-		"id": "Dynamic8", "description" : "Question 8", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/8_identify_elements_image.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 9",
-		"id": "Dynamic9", "description" : "Question 9", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/9_truefalsesequence.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 10",
-		"id": "Dynamic10", "description" : "Question 10", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/10_drag_elements.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 11",
-		"id": "Dynamic11", "description" : "Question 11", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/11_sorting_elements.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 12",
-		"id": "Dynamic12", "description" : "Question 12", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/12_identify_elements.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 13",
-		"id": "Dynamic13", "description" : "Question 13", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/13_connecting_pairs.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 14",
-		"id": "Dynamic14", "description" : "Question 14", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/14_connecting_pairs_images.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 15",
-		"id": "Dynamic15", "description" : "Question 15", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/15_identifycorrect.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 16",
-		"id": "Dynamic16", "description" : "Question 16", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/16_connecting_pairs_images.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 17",
-		"id": "Dynamic17", "description" : "Question 17", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/17_truefalsesequence.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 18",
-		"id": "Dynamic18", "description" : "Question 18", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/18_identify_correct.tscn", "type" : "Dynamic", 
-	},
-	{
-		"complete_name": "Modulo 1\nDinamica 19",
-		"id": "Dynamic19", "description" : "Question 19", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/Dynamics/19_drag_elements.tscn", "type" : "Dynamic", 
-	},{
-		"complete_name": "Tutorial \nInteractivo",
-		"id": "Tutorial 3", "description" : "Tutorial 3", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/tutorial/tutorial_Tum1.tscn", "type" : "Dynamic", 
-	},{
-		"complete_name": "Dinamica 1\nInteractiva",
-		"id": "Dynamic20", "description" : "Question 20", "exerciseType" : ScormWrapper.ExerciseType_Default,
-		"correct_responses" : [], "weight" : 1.0, 
-		"path" : "res://exercises/HaulRouteEval.tscn", "type" : "Dynamic", 
-	}
+	"complete_name": "Modulo 1\nDinamica 1",
+	"id": "Dynamic1", "description" : "Question 1", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/1_identifycorrect.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 2",
+	"id": "Dynamic2", "description" : "Question 2", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/2_connecting_pairs.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 3",
+	"id": "Dynamic3", "description" : "Question 3", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/3_drag_elements.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 4",
+	"id": "Dynamic4", "description" : "Question 4", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/4_truefalsesequence.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 5",
+	"id": "Dynamic5", "description" : "Question 5", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/5_sorting_elements.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 6",
+	"id": "Dynamic6", "description" : "Question 6", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/6_connecting_pairs.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 7",
+	"id": "Dynamic7", "description" : "Question 7", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/7_truefalsesequence.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 8",
+	"id": "Dynamic8", "description" : "Question 8", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/8_drag_elements.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 9",
+	"id": "Dynamic9", "description" : "Question 9", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/9_connecting_pairs.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 10",
+	"id": "Dynamic10", "description" : "Question 10", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/10_truefalsesequence.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 11",
+	"id": "Dynamic11", "description" : "Question 11", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/11_identify_elements.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 12",
+	"id": "Dynamic12", "description" : "Question 12", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/12_sorting_elements.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 13",
+	"id": "Dynamic13", "description" : "Question 13", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/13_identifycorrect.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 14",
+	"id": "Dynamic14", "description" : "Question 14", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/14_drag_elements.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 15",
+	"id": "Dynamic15", "description" : "Question 15", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/15_identifycorrect.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 16",
+	"id": "Dynamic16", "description" : "Question 16", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/16_connecting_pairs.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 17",
+	"id": "Dynamic17", "description" : "Question 17", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/17_drag_elements.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 18",
+	"id": "Dynamic18", "description" : "Question 18", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/18_identify_elements.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 19",
+	"id": "Dynamic19", "description" : "Question 19", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/19_sorting_elements.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 20",
+	"id": "Dynamic20", "description" : "Question 20", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/20_connecting_pairs.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 21",
+	"id": "Dynamic21", "description" : "Question 21", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/21_drag_elements.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 22",
+	"id": "Dynamic22", "description" : "Question 22", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/22_truefalsesequence.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 23",
+	"id": "Dynamic23", "description" : "Question 23", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/23_connecting_pairs_images.tscn", "type" : "Dynamic"
+},
+{
+	"complete_name": "Modulo 1\nDinamica 24",
+	"id": "Dynamic24", "description" : "Question 24", "exerciseType" : ScormWrapper.ExerciseType_Default,
+	"correct_responses" : [], "weight" : 1.0, 
+	"path" : "res://exercises/Dynamics/24_sorting_elements.tscn", "type" : "Dynamic"
+}
+
 	
 ]
 

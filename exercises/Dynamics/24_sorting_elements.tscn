@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/main_screens/question_templates/Elements/drop_zone.tscn" type="PackedScene" id=2]
@@ -61,12 +61,25 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="19" instance=ExtResource( 3 )]
-title = "Secuencia de cálculo"
-question = "Ordena el proceso de uso de “Datos calculados”."
+[sub_resource type="StyleBoxFlat" id=6]
+resource_local_to_scene = true
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="24" instance=ExtResource( 3 )]
+title = "Flujo general PI DataLink"
+question = "Ordena los pasos para construir una hoja profesional."
 
 [node name="Title" parent="Panel" index="0"]
-text = "Secuencia de cálculo"
+text = "Flujo general PI DataLink"
 
 [node name="Enunc" parent="Panel" index="1"]
 margin_top = 76.0
@@ -83,7 +96,7 @@ stretch_mode = 6
 
 [node name="Question" parent="Panel" index="3"]
 margin_bottom = -404.0
-text = "Ordena el proceso de uso de “Datos calculados”."
+text = "Ordena los pasos para construir una hoja profesional."
 
 [node name="Zones" parent="." index="4"]
 margin_left = -32.9999
@@ -93,7 +106,7 @@ margin_bottom = 26.0
 rect_rotation = -0.227449
 
 [node name="DropZone2" parent="Zones" index="0" instance=ExtResource( 2 )]
-position = Vector2( 235.176, -44.0667 )
+position = Vector2( 266.307, -76.9434 )
 id = 1
 text = "1"
 
@@ -112,7 +125,7 @@ custom_styles/panel = SubResource( 2 )
 text = "1"
 
 [node name="DropZone3" parent="Zones" index="1" instance=ExtResource( 2 )]
-position = Vector2( 237.176, 29.9332 )
+position = Vector2( 268.307, -2.94344 )
 id = 2
 text = "2"
 
@@ -131,7 +144,7 @@ custom_styles/panel = SubResource( 3 )
 text = "2"
 
 [node name="DropZone4" parent="Zones" index="2" instance=ExtResource( 2 )]
-position = Vector2( 235.176, 98.9332 )
+position = Vector2( 266.307, 66.0565 )
 id = 3
 text = "3"
 
@@ -150,7 +163,7 @@ custom_styles/panel = SubResource( 4 )
 text = "3"
 
 [node name="DropZone5" parent="Zones" index="3" instance=ExtResource( 2 )]
-position = Vector2( 237.177, 165.934 )
+position = Vector2( 268.308, 133.057 )
 id = 4
 text = "4"
 
@@ -168,6 +181,25 @@ custom_styles/panel = SubResource( 5 )
 [node name="Label" parent="Zones/DropZone5/HighLite" index="0"]
 text = "4"
 
+[node name="DropZone6" parent="Zones" index="4" instance=ExtResource( 2 )]
+position = Vector2( 271.307, 201.057 )
+id = 5
+text = "5"
+
+[node name="CollisionShape2D" parent="Zones/DropZone6" index="0"]
+position = Vector2( 0.999847, 0.0181885 )
+shape = SubResource( 1 )
+
+[node name="HighLite" parent="Zones/DropZone6" index="1"]
+margin_left = -110.063
+margin_top = -23.9727
+margin_right = 110.063
+margin_bottom = 23.9727
+custom_styles/panel = SubResource( 6 )
+
+[node name="Label" parent="Zones/DropZone6/HighLite" index="0"]
+text = "5"
+
 [node name="CorrectElements" parent="." index="5"]
 margin_left = -32.9999
 margin_top = -14.0
@@ -176,24 +208,29 @@ margin_bottom = 26.0
 rect_rotation = -0.227449
 
 [node name="DragableElement" parent="CorrectElements" index="0" instance=ExtResource( 4 )]
-position = Vector2( -159.646, 162.368 )
+position = Vector2( -176.733, 184.3 )
 id = 1
-text = "Seleccionar elemento"
+text = "Definit objetivo"
 
-[node name="DragableElement5" parent="CorrectElements" index="1" instance=ExtResource( 4 )]
-position = Vector2( -152.835, -41.607 )
+[node name="DragableElement2" parent="CorrectElements" index="1" instance=ExtResource( 4 )]
+position = Vector2( -179.491, 123.288 )
 id = 2
-text = "Definir rango"
+text = "Buscar TAGs"
 
-[node name="DragableElement3" parent="CorrectElements" index="2" instance=ExtResource( 4 )]
-position = Vector2( -159.368, 92.3681 )
-id = 4
-text = "Visualizar matriz"
-
-[node name="DragableElement4" parent="CorrectElements" index="3" instance=ExtResource( 4 )]
-position = Vector2( -159.078, 19.3687 )
+[node name="DragableElement5" parent="CorrectElements" index="2" instance=ExtResource( 4 )]
+position = Vector2( -179.705, -74.714 )
 id = 3
-text = "Aplicar cálculo"
+text = "Insertar funciones"
+
+[node name="DragableElement3" parent="CorrectElements" index="3" instance=ExtResource( 4 )]
+position = Vector2( -176.229, 57.3009 )
+id = 4
+text = "Personalizar visualización"
+
+[node name="DragableElement4" parent="CorrectElements" index="4" instance=ExtResource( 4 )]
+position = Vector2( -178.959, -10.7105 )
+id = 5
+text = "Activar actualización"
 
 [node name="IncorrectElements" parent="." index="6"]
 margin_left = -32.9999
@@ -203,22 +240,23 @@ margin_bottom = 26.0
 rect_rotation = -0.227449
 
 [node name="PopUp" parent="." index="7"]
-text = "¡Excelente! Los cálculos automatizados ayudan a identificar patrones y eficiencia en variables operativas."
+text = "¡Muy bien! Este flujo resume todo el proceso de trabajo en PI DataLink desde la planificación hasta el monitoreo."
 
 [node name="CursorHelp" parent="." index="9" instance=ExtResource( 1 )]
-margin_left = -203.0
-margin_top = 4.0
-margin_right = -142.0
-margin_bottom = 68.0
+margin_left = -135.0
+margin_top = -21.0
+margin_right = -73.9999
+margin_bottom = 43.0
 
 [node name="Target" parent="CursorHelp" index="2"]
-margin_left = 394.0
-margin_top = 9.99997
-margin_right = 434.0
-margin_bottom = 50.0
+margin_left = 419.0
+margin_top = -19.0
+margin_right = 459.0
+margin_bottom = 21.0
 
 [editable path="Zones/DropZone2"]
 [editable path="Zones/DropZone3"]
 [editable path="Zones/DropZone4"]
 [editable path="Zones/DropZone5"]
+[editable path="Zones/DropZone6"]
 [editable path="CursorHelp"]

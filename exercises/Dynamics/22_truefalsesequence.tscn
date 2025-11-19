@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://exercises/Dynamics/22_truefalsesequence.gd" type="Script" id=1]
+[ext_resource path="res://game/main_screens/question_templates/true_false_sequence.tscn" type="PackedScene" id=2]
+
+[node name="22" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+title = "Buenas prácticas de uso"
+enunc = "Existen buenas prácticas al momento de compartir hojas de cálculo con otros usuarios. Indica si las afirmaciones son verdaderas o falsas."
+
+[node name="PopUp" parent="." index="0"]
+title = "¡Muy Bien!"
+text = "¡Correcto! Compartir correctamente asegura coherencia en los datos y evita errores de actualización."
+buton_text = "Continuar"
+show_stars = true
+
+[connection signal="button_pressed" from="PopUp" to="." method="_on_PopUp_button_pressed"]

@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://game/main_screens/question_templates/connect_pairs.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/main_screens/question_templates/Elements/pair_element.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/components/help/cursor_help.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.227451, 0.878431, 1, 1 )
+
+[node name="23" instance=ExtResource( 1 )]
+margin_right = 0.0
+title = "Despliegues relativos a activos"
+question = "Relaciona los pasos con su propósito."
+
+[node name="Title" parent="Panel" index="0"]
+text = "Despliegues relativos a activos"
+
+[node name="TextureRect" type="TextureRect" parent="Panel" index="2"]
+margin_left = 361.0
+margin_top = 150.0
+margin_right = 561.0
+margin_bottom = 270.0
+mouse_filter = 2
+expand = true
+stretch_mode = 5
+
+[node name="HighLite" type="Panel" parent="Panel/TextureRect" index="0"]
+unique_name_in_owner = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="Question" parent="Panel" index="3"]
+margin_bottom = -386.0
+text = "Relaciona los pasos con su propósito."
+
+[node name="PairElement" parent="Elements" index="0" instance=ExtResource( 2 )]
+position = Vector2( -259, -50 )
+text = "Insertar elementos"
+
+[node name="PairElement3" parent="Elements" index="1" instance=ExtResource( 2 )]
+position = Vector2( -254, 145 )
+id = 2
+text = "Seleccionar activo"
+
+[node name="PairElement2" parent="Elements" index="2" instance=ExtResource( 2 )]
+position = Vector2( -258, 46 )
+id = 1
+text = "Configurar función"
+
+[node name="PairElement5" parent="Elements" index="3" instance=ExtResource( 2 )]
+position = Vector2( 103, -50 )
+id = 1
+text = "Obtener valores"
+image_scale = 0.27
+
+[node name="PairElement9" parent="Elements" index="4" instance=ExtResource( 2 )]
+position = Vector2( 91, 49 )
+id = 2
+text = "Cambiar visualización"
+image_scale = 0.33
+
+[node name="PairElement6" parent="Elements" index="5" instance=ExtResource( 2 )]
+position = Vector2( 115, 149 )
+text = "Lista de atributos"
+image_scale = 0.18
+
+[node name="PopUp" parent="." index="5"]
+text = "¡Excelente! Los despliegues relativos permiten comparar rápidamente atributos entre distintos activos."
+
+[node name="CursorHelp" parent="." index="7" instance=ExtResource( 3 )]
+margin_left = -195.0
+margin_top = -67.0
+margin_right = -134.0
+margin_bottom = -3.0
+
+[node name="Target" parent="CursorHelp" index="2"]
+margin_left = 320.0
+margin_top = -14.0
+margin_right = 360.0
+margin_bottom = 26.0
+
+[editable path="CursorHelp"]
