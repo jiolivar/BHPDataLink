@@ -1,10 +1,28 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/images/Icons/icono1.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/Icons/icono2.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/Icons/icono3.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/Icons/icono4.png" type="Texture" id=4]
 [ext_resource path="res://assets/images/Icons/icono5.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/Icons/icono7.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Icons/icono6.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Icons/icono9.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/Icons/icono8.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/Icons/icono10.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/Icons/icono11.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/Icons/icono12.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/Icons/icono13.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/Icons/icono14.png" type="Texture" id=14]
+[ext_resource path="res://themes/windows_10_light/assets/fonts/segoeUI/OpenSans-Regular.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://assets/images/Icons/icono15.png" type="Texture" id=16]
+[ext_resource path="res://assets/images/Icons/icono16.png" type="Texture" id=17]
+[ext_resource path="res://assets/images/Icons/icono17.png" type="Texture" id=18]
+
+[sub_resource type="DynamicFont" id=12]
+size = 12
+use_mipmaps = true
+font_data = ExtResource( 15 )
 
 [sub_resource type="StyleBoxFlat" id=10]
 content_margin_left = 10.0
@@ -15,124 +33,142 @@ bg_color = Color( 0.760784, 0.760784, 0.760784, 1 )
 border_width_bottom = 5
 border_color = Color( 0.0117647, 0.309804, 0.0313726, 1 )
 
+[sub_resource type="DynamicFont" id=11]
+size = 8
+use_mipmaps = true
+font_data = ExtResource( 15 )
+
 [node name="Header" type="ColorRect"]
 anchor_right = 1.0
-anchor_bottom = 0.067
-margin_bottom = 101.8
+margin_bottom = 111.0
 rect_min_size = Vector2( 0, 21 )
 color = Color( 0.862745, 0.862745, 0.862745, 1 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 32.0
+margin_right = 1025.0
+margin_bottom = 23.0
 custom_constants/separation = 0
 
 [node name="Button" type="Button" parent="HBoxContainer"]
-margin_right = 39.0
-margin_bottom = 32.0
+margin_right = 35.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 12 )
 text = "File"
 
 [node name="Button2" type="Button" parent="HBoxContainer"]
-margin_left = 39.0
-margin_right = 94.0
-margin_bottom = 32.0
+margin_left = 35.0
+margin_right = 85.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 12 )
 text = "Home"
 
 [node name="Button3" type="Button" parent="HBoxContainer"]
-margin_left = 94.0
-margin_right = 149.0
-margin_bottom = 32.0
+margin_left = 85.0
+margin_right = 133.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 12 )
 text = "Insert"
 
 [node name="Button4" type="Button" parent="HBoxContainer"]
-margin_left = 149.0
-margin_right = 245.0
-margin_bottom = 32.0
+margin_left = 133.0
+margin_right = 217.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 12 )
 text = "Page Layout"
 
 [node name="Button5" type="Button" parent="HBoxContainer"]
-margin_left = 245.0
-margin_right = 323.0
-margin_bottom = 32.0
+margin_left = 217.0
+margin_right = 285.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 12 )
 text = "Formulas"
 
 [node name="Button6" type="Button" parent="HBoxContainer"]
-margin_left = 323.0
-margin_right = 370.0
-margin_bottom = 32.0
+margin_left = 285.0
+margin_right = 328.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 12 )
 text = "Data"
 
 [node name="Button7" type="Button" parent="HBoxContainer"]
-margin_left = 370.0
-margin_right = 433.0
-margin_bottom = 32.0
+margin_left = 328.0
+margin_right = 383.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 12 )
 text = "Review"
 
 [node name="Button8" type="Button" parent="HBoxContainer"]
-margin_left = 433.0
-margin_right = 480.0
-margin_bottom = 32.0
+margin_left = 383.0
+margin_right = 425.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 12 )
 text = "View"
 
 [node name="Button9" type="Button" parent="HBoxContainer"]
-margin_left = 480.0
-margin_right = 561.0
-margin_bottom = 32.0
+margin_left = 425.0
+margin_right = 496.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 12 )
 text = "Automate"
 
 [node name="Button10" type="Button" parent="HBoxContainer"]
-margin_left = 561.0
-margin_right = 608.0
-margin_bottom = 32.0
+margin_left = 496.0
+margin_right = 538.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 12 )
 text = "Help"
 
 [node name="Button11" type="Button" parent="HBoxContainer"]
-margin_left = 608.0
-margin_right = 702.0
-margin_bottom = 32.0
+margin_left = 538.0
+margin_right = 620.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 12 )
 custom_styles/normal = SubResource( 10 )
 text = "PI DataLink"
 
 [node name="Button12" type="Button" parent="HBoxContainer"]
-margin_left = 702.0
-margin_right = 807.0
-margin_bottom = 32.0
+margin_left = 620.0
+margin_right = 712.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 12 )
 text = "PDF-XChange"
 
 [node name="Button13" type="Button" parent="HBoxContainer"]
-margin_left = 807.0
-margin_right = 1027.0
-margin_bottom = 32.0
+margin_left = 712.0
+margin_right = 1025.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 12 )
 disabled = true
-text = "                                                   "
+text = "                                                                                                   "
 
 [node name="PIDataLinkTools" type="HBoxContainer" parent="."]
-anchor_top = 0.493
+anchor_top = 0.218
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -39.006
+anchor_bottom = 0.245
+margin_top = -0.198
 margin_right = -3.0
-margin_bottom = 10.0
+margin_bottom = 83.805
 grow_vertical = 0
-custom_constants/separation = 10
+custom_constants/separation = 8
 
 [node name="SingleValue" type="VBoxContainer" parent="PIDataLinkTools"]
-margin_right = 106.0
-margin_bottom = 121.0
+margin_right = 104.0
+margin_bottom = 87.0
 custom_constants/separation = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PIDataLinkTools/SingleValue"]
-margin_right = 106.0
-margin_bottom = 85.0
+margin_right = 104.0
+margin_bottom = 69.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PIDataLinkTools/SingleValue/HBoxContainer"]
-margin_right = 52.0
-margin_bottom = 85.0
+margin_right = 50.0
+margin_bottom = 69.0
 custom_constants/separation = -3
 alignment = 1
 
-[node name="TextureButton" type="Button" parent="PIDataLinkTools/SingleValue/HBoxContainer/VBoxContainer"]
-margin_right = 52.0
+[node name="CurrentValueButton" type="Button" parent="PIDataLinkTools/SingleValue/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_right = 50.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
 size_flags_vertical = 3
@@ -143,22 +179,24 @@ expand_icon = true
 
 [node name="Label" type="Label" parent="PIDataLinkTools/SingleValue/HBoxContainer/VBoxContainer"]
 margin_top = 47.0
-margin_right = 52.0
-margin_bottom = 85.0
+margin_right = 50.0
+margin_bottom = 69.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
 text = "Current
 Value"
 align = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PIDataLinkTools/SingleValue/HBoxContainer"]
-margin_left = 56.0
-margin_right = 106.0
-margin_bottom = 85.0
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 69.0
 custom_constants/separation = -3
 alignment = 1
 
-[node name="TextureButton" type="Button" parent="PIDataLinkTools/SingleValue/HBoxContainer/VBoxContainer2"]
+[node name="ArchiveValueButton" type="Button" parent="PIDataLinkTools/SingleValue/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
 margin_right = 50.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
@@ -171,41 +209,49 @@ expand_icon = true
 [node name="Label" type="Label" parent="PIDataLinkTools/SingleValue/HBoxContainer/VBoxContainer2"]
 margin_top = 47.0
 margin_right = 50.0
-margin_bottom = 85.0
+margin_bottom = 69.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
 text = "Archive
 Value"
 align = 1
 
 [node name="Label" type="Label" parent="PIDataLinkTools/SingleValue"]
-margin_top = 88.0
-margin_right = 106.0
-margin_bottom = 108.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 84.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
 text = "Single Value"
 align = 1
 valign = 1
-percent_visible = -0.0909091
+
+[node name="VSeparator" type="VSeparator" parent="PIDataLinkTools"]
+margin_left = 112.0
+margin_right = 116.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 4, 60 )
+size_flags_vertical = 0
 
 [node name="MultipleValue" type="VBoxContainer" parent="PIDataLinkTools"]
-margin_left = 116.0
-margin_right = 313.0
-margin_bottom = 121.0
+margin_left = 124.0
+margin_right = 239.0
+margin_bottom = 87.0
 custom_constants/separation = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PIDataLinkTools/MultipleValue"]
-margin_right = 197.0
-margin_bottom = 85.0
+margin_right = 115.0
+margin_bottom = 69.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PIDataLinkTools/MultipleValue/HBoxContainer"]
-margin_right = 84.0
-margin_bottom = 85.0
+margin_right = 50.0
+margin_bottom = 69.0
 custom_constants/separation = -3
 alignment = 1
 
-[node name="TextureButton" type="Button" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer"]
-margin_right = 84.0
+[node name="Button" type="Button" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer"]
+margin_right = 50.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
 size_flags_vertical = 3
@@ -216,23 +262,24 @@ expand_icon = true
 
 [node name="Label" type="Label" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer"]
 margin_top = 47.0
-margin_right = 84.0
-margin_bottom = 85.0
+margin_right = 50.0
+margin_bottom = 69.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
 text = "Compressed
 Data"
 align = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="PIDataLinkTools/MultipleValue/HBoxContainer"]
-margin_left = 88.0
-margin_right = 151.0
-margin_bottom = 85.0
+margin_left = 54.0
+margin_right = 88.0
+margin_bottom = 69.0
 custom_constants/separation = -3
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer2"]
-margin_right = 63.0
+[node name="Button" type="TextureButton" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer2"]
+margin_right = 34.0
 margin_bottom = 50.0
 size_flags_vertical = 3
 texture_normal = ExtResource( 4 )
@@ -241,23 +288,24 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer2"]
 margin_top = 47.0
-margin_right = 63.0
-margin_bottom = 85.0
+margin_right = 34.0
+margin_bottom = 69.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
 text = "Sampled 
 Data"
 align = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="PIDataLinkTools/MultipleValue/HBoxContainer"]
-margin_left = 155.0
-margin_right = 197.0
-margin_bottom = 85.0
+margin_left = 92.0
+margin_right = 115.0
+margin_bottom = 69.0
 custom_constants/separation = -3
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer3"]
-margin_right = 42.0
+[node name="Button" type="TextureButton" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer3"]
+margin_right = 23.0
 margin_bottom = 50.0
 size_flags_vertical = 3
 texture_normal = ExtResource( 5 )
@@ -266,19 +314,515 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="PIDataLinkTools/MultipleValue/HBoxContainer/VBoxContainer3"]
 margin_top = 47.0
-margin_right = 42.0
-margin_bottom = 85.0
+margin_right = 23.0
+margin_bottom = 69.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
 text = "Timed
 Data"
 align = 1
 
 [node name="Label" type="Label" parent="PIDataLinkTools/MultipleValue"]
-margin_top = 88.0
-margin_right = 197.0
-margin_bottom = 108.0
+margin_top = 72.0
+margin_right = 115.0
+margin_bottom = 84.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
 text = "Multiple Value"
+align = 1
+valign = 1
+
+[node name="VSeparator2" type="VSeparator" parent="PIDataLinkTools"]
+margin_left = 247.0
+margin_right = 251.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 4, 60 )
+size_flags_vertical = 0
+
+[node name="Calculation" type="VBoxContainer" parent="PIDataLinkTools"]
+margin_left = 259.0
+margin_right = 363.0
+margin_bottom = 87.0
+custom_constants/separation = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PIDataLinkTools/Calculation"]
+margin_right = 104.0
+margin_bottom = 69.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PIDataLinkTools/Calculation/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 69.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="Button" type="Button" parent="PIDataLinkTools/Calculation/HBoxContainer/VBoxContainer"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 3
+icon = ExtResource( 7 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Calculation/HBoxContainer/VBoxContainer"]
+margin_top = 47.0
+margin_right = 50.0
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
+text = "Calculated
+Data"
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PIDataLinkTools/Calculation/HBoxContainer"]
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 69.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="Button" type="Button" parent="PIDataLinkTools/Calculation/HBoxContainer/VBoxContainer2"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 3
+icon = ExtResource( 6 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Calculation/HBoxContainer/VBoxContainer2"]
+margin_top = 47.0
+margin_right = 50.0
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
+text = "Time
+ Filtered "
+align = 1
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Calculation"]
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 84.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Calculation"
+align = 1
+valign = 1
+
+[node name="VSeparator3" type="VSeparator" parent="PIDataLinkTools"]
+margin_left = 371.0
+margin_right = 375.0
+margin_bottom = 60.0
+grow_horizontal = 2
+rect_min_size = Vector2( 4, 60 )
+size_flags_vertical = 0
+
+[node name="Events" type="VBoxContainer" parent="PIDataLinkTools"]
+margin_left = 383.0
+margin_right = 487.0
+margin_bottom = 87.0
+custom_constants/separation = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PIDataLinkTools/Events"]
+margin_right = 104.0
+margin_bottom = 69.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PIDataLinkTools/Events/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 69.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="Button" type="Button" parent="PIDataLinkTools/Events/HBoxContainer/VBoxContainer"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 3
+icon = ExtResource( 9 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Events/HBoxContainer/VBoxContainer"]
+margin_top = 47.0
+margin_right = 50.0
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
+text = "Explore
+"
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PIDataLinkTools/Events/HBoxContainer"]
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 69.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="Button" type="Button" parent="PIDataLinkTools/Events/HBoxContainer/VBoxContainer2"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 3
+icon = ExtResource( 8 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Events/HBoxContainer/VBoxContainer2"]
+margin_top = 47.0
+margin_right = 50.0
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
+text = "Compare
+"
+align = 1
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Events"]
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 84.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Events"
+align = 1
+valign = 1
+
+[node name="VSeparator4" type="VSeparator" parent="PIDataLinkTools"]
+margin_left = 495.0
+margin_right = 499.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 4, 60 )
+size_flags_vertical = 0
+
+[node name="Search" type="VBoxContainer" parent="PIDataLinkTools"]
+margin_left = 507.0
+margin_right = 611.0
+margin_bottom = 87.0
+custom_constants/separation = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PIDataLinkTools/Search"]
+margin_right = 104.0
+margin_bottom = 69.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PIDataLinkTools/Search/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 69.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="SearchButton" type="Button" parent="PIDataLinkTools/Search/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 3
+icon = ExtResource( 10 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Search/HBoxContainer/VBoxContainer"]
+margin_top = 47.0
+margin_right = 50.0
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
+text = "Search
+"
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PIDataLinkTools/Search/HBoxContainer"]
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 69.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="Button" type="Button" parent="PIDataLinkTools/Search/HBoxContainer/VBoxContainer2"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 3
+icon = ExtResource( 11 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Search/HBoxContainer/VBoxContainer2"]
+margin_top = 47.0
+margin_right = 50.0
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
+text = "Asset
+Filter"
+align = 1
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Search"]
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 84.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Search"
+align = 1
+valign = 1
+
+[node name="VSeparator5" type="VSeparator" parent="PIDataLinkTools"]
+margin_left = 619.0
+margin_right = 623.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 4, 60 )
+size_flags_vertical = 0
+
+[node name="Properties" type="VBoxContainer" parent="PIDataLinkTools"]
+margin_left = 631.0
+margin_right = 681.0
+margin_bottom = 87.0
+custom_constants/separation = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PIDataLinkTools/Properties"]
+margin_right = 50.0
+margin_bottom = 69.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PIDataLinkTools/Properties/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 69.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="Button" type="Button" parent="PIDataLinkTools/Properties/HBoxContainer/VBoxContainer"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 3
+icon = ExtResource( 12 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Properties/HBoxContainer/VBoxContainer"]
+margin_top = 47.0
+margin_right = 50.0
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
+text = "Properties
+"
+align = 1
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Properties"]
+margin_top = 72.0
+margin_right = 50.0
+margin_bottom = 84.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Properties"
+align = 1
+valign = 1
+
+[node name="VSeparator6" type="VSeparator" parent="PIDataLinkTools"]
+margin_left = 689.0
+margin_right = 693.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 4, 60 )
+size_flags_vertical = 0
+
+[node name="Update" type="VBoxContainer" parent="PIDataLinkTools"]
+margin_left = 701.0
+margin_right = 751.0
+margin_bottom = 87.0
+custom_constants/separation = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PIDataLinkTools/Update"]
+margin_right = 50.0
+margin_bottom = 69.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PIDataLinkTools/Update/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 69.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="Button" type="Button" parent="PIDataLinkTools/Update/HBoxContainer/VBoxContainer"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_vertical = 3
+icon = ExtResource( 13 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Update/HBoxContainer/VBoxContainer"]
+margin_top = 47.0
+margin_right = 50.0
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
+text = "Update
+"
+align = 1
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Update"]
+margin_top = 72.0
+margin_right = 50.0
+margin_bottom = 84.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Update"
+align = 1
+valign = 1
+
+[node name="VSeparator7" type="VSeparator" parent="PIDataLinkTools"]
+margin_left = 759.0
+margin_right = 763.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 4, 60 )
+size_flags_vertical = 0
+
+[node name="Resources" type="VBoxContainer" parent="PIDataLinkTools"]
+margin_left = 771.0
+margin_right = 880.0
+margin_bottom = 87.0
+custom_constants/separation = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PIDataLinkTools/Resources"]
+margin_right = 109.0
+margin_bottom = 72.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PIDataLinkTools/Resources/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 72.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="Button" type="Button" parent="PIDataLinkTools/Resources/HBoxContainer/VBoxContainer"]
+margin_top = 1.0
+margin_right = 50.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 50, 50 )
+icon = ExtResource( 14 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Resources/HBoxContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 50.0
+margin_bottom = 70.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
+text = "Settings
+"
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PIDataLinkTools/Resources/HBoxContainer"]
+margin_left = 54.0
+margin_right = 109.0
+margin_bottom = 72.0
+custom_constants/separation = -3
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PIDataLinkTools/Resources/HBoxContainer/VBoxContainer2"]
+margin_right = 55.0
+margin_bottom = 26.0
+
+[node name="TextureButton" type="Button" parent="PIDataLinkTools/Resources/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_right = 28.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 10, 10 )
+text = "   "
+icon = ExtResource( 16 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Resources/HBoxContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 32.0
+margin_top = 7.0
+margin_right = 55.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
+text = "About"
+align = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PIDataLinkTools/Resources/HBoxContainer/VBoxContainer2"]
+margin_top = 23.0
+margin_right = 55.0
+margin_bottom = 49.0
+
+[node name="TextureButton" type="Button" parent="PIDataLinkTools/Resources/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+margin_right = 28.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 10, 10 )
+text = "   "
+icon = ExtResource( 17 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Resources/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+margin_left = 32.0
+margin_top = 7.0
+margin_right = 55.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
+text = "About"
+align = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PIDataLinkTools/Resources/HBoxContainer/VBoxContainer2"]
+margin_top = 46.0
+margin_right = 55.0
+margin_bottom = 72.0
+
+[node name="TextureButton" type="Button" parent="PIDataLinkTools/Resources/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+margin_right = 28.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 10, 10 )
+text = "   "
+icon = ExtResource( 18 )
+flat = true
+icon_align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Resources/HBoxContainer/VBoxContainer2/HBoxContainer3"]
+margin_left = 32.0
+margin_top = 7.0
+margin_right = 55.0
+margin_bottom = 19.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+custom_fonts/font = SubResource( 11 )
+text = "About"
+align = 1
+
+[node name="Label" type="Label" parent="PIDataLinkTools/Resources"]
+margin_top = 75.0
+margin_right = 109.0
+margin_bottom = 87.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Resources"
 align = 1
 valign = 1

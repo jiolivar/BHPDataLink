@@ -21,6 +21,7 @@ margin_right = 503.174
 text = "Tipos de funciones"
 
 [node name="Question" parent="Panel" index="2"]
+margin_bottom = -399.0
 text = "Arrastra solo las funciones válidas de PI DataLink."
 
 [node name="Zones" parent="." index="4"]
@@ -72,7 +73,8 @@ text = "Datos comprimidos"
 image_scale = 0.395
 
 [node name="DragableElement" parent="CorrectElements" index="2" instance=ExtResource( 2 )]
-position = Vector2( -237.826, 122 )
+position = Vector2( -238.826, -4 )
+id = 2
 text = "Valor de archivo "
 
 [node name="IncorrectElements" parent="." index="6"]
@@ -80,7 +82,7 @@ margin_left = 28.1743
 margin_right = 68.1743
 
 [node name="DragableElement14" parent="IncorrectElements" index="0" instance=ExtResource( 2 )]
-position = Vector2( -242, -3 )
+position = Vector2( -248, 125 )
 id = 4
 text = "Macro de Excel"
 image_scale = 0.395
@@ -95,10 +97,8 @@ image_scale = 0.35
 text = "¡Excelente! Estas funciones permiten trabajar con datos históricos, actuales y calculados directamente desde PI System."
 
 [node name="CursorHelp" parent="." index="9" instance=ExtResource( 3 )]
-margin_left = -244.826
-margin_top = -17.0
-margin_right = -183.826
-margin_bottom = 47.0
+margin_left = -146.826
+margin_right = -85.8257
 
 [node name="Target" parent="CursorHelp" index="2"]
 margin_left = 455.0
