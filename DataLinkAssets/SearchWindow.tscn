@@ -82,7 +82,8 @@ margin_top = 22.0
 margin_right = 647.0
 margin_bottom = 52.0
 
-[node name="LineEdit" type="LineEdit" parent="Panel/MarginContainer/PrincipalOrganizer/VBoxContainer/HBoxContainer"]
+[node name="SearchBar" type="LineEdit" parent="Panel/MarginContainer/PrincipalOrganizer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 margin_right = 559.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 0, 30 )
